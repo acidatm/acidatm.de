@@ -45,10 +45,6 @@ function setup(){
 }
 
 function draw(){
-  if(playerRunning){
-
-  }
-  let spectrum = fft.analyze();
   let container = document.getElementById('container')
   let output = ''
   let x = window.innerWidth / 3
@@ -68,7 +64,7 @@ function draw(){
     }
     else{
       for(let _x = 0; _x < x; _x++){
-        let n = noise(_x*grain,_y*grain,steps * stepAdvance);
+        let n = noise(_x*grain,_y*grain,steps);
         line += symbols[Math.floor(n * symbols.length)]
       }
     }
