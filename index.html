@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ABGEHN 24 | Bekannt aus der TV Werbung</title>
+    <meta name="title" content="ABGEHN 24 | Bekannt aus der TV Werbung">
+    <meta name="description" content="Bei abgehn24.de findest Du zahlreiche Raves in Deiner Umgebung. Verabrede Dich noch heute zu spannenden Treffen. Komm einfach vorbei und erlebe unvergessliche Momente.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/img/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/img/icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#000000">
+    <style>
+      body{
+        padding: 0;
+        margin: 0;
+        font-size: calc(3vh - 0.5vw);
+        line-height: calc(calc(3vh - 0.5vw) * 1.1);
+        background: black;
+        color: white;
+        overflow: hidden;
+        font-family: monospace;
+        cursor: crosshair;
+        width: 100vw;
+        height: 100vh;
+      }
+      a{
+        color: white;
+      }
+      #content{
+        display: none;
+      }
+      #container{
+        position: fixed;
+        top: 4rem;
+        left: 4rem;
+        width: calc(100vw - 8rem);
+        height: calc(100vh - 12rem);
+        word-break: keep-all;
+        white-space: pre;
+        overflow: hidden;
+        cursor: crosshair;
+      }
+      #player{
+        position: fixed;
+        bottom: 3rem;
+        left: 6rem;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        background-image: url('img/play.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      #player.running{
+        background-image: url('img/pause.png');
+      }
+      #scrubber{
+        position: fixed;
+        right: 6rem;
+        bottom: 4rem;
+        width: calc(100vw - 18rem);
+        transform: translateY(50%);
+        -webkit-appearance: none;
+        height: 2px;
+        background: white;
+        outline: none;
+        border: 0;
+      }
+      #scrubber::-webkit-slider-thumb,
+      #scrubber::-moz-range-thumb  {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 1rem;
+          height: 1rem;
+          border-radius: 50%;
+          background: white;
+          cursor: pointer;
+          outline: none;
+          border: 0;
+      }
+      @media (orientation: portrait){
+        #container{
+          position: fixed;
+          top: 1rem;
+          left: 1rem;
+          width: calc(100vw - 2rem);
+          height: calc(100vh - 6rem);
+        }
+        #player{
+          position: fixed;
+          bottom: 1.75rem;
+          left: 2rem;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+        #scrubber{
+          right: 2rem;
+          bottom: 2.5rem;
+          width: calc(100vw - 8rem);
+        }
+      }
+      ::selection,::-moz-selection{
+        background: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="content">
+      <li>Johannes Schier</li>
+      <li>live analog techno</li>
+      <li>digital visuals</li>
+      <li></li>
+      <li>29.08.20 Pfund und Dollar</li>
+      <li>07.08.20 Frappant</li>
+      <li></li>
+      <li><a href="https://instagram.com/johanneschier" target="_blank">Instagram</a></li>
+      <li><a href="mailto:johannes.hassenstein@protonmail.com" target="_blank">Mail</a></li>
+      <li><a href="/impressum.html">Impressum</a></li>
+    </ul>
+    <div id="container"></div>
+    <div id="player" onclick='play(this)'></div><input type="range" min="0" max="100" value="0" id="scrubber" >
+    <script src="js/p5.min.js" charset="utf-8"></script>
+    <script src="js/p5.sound.js" charset="utf-8"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+  </body>
+</html>
