@@ -93,6 +93,10 @@
           outline: none;
           border: 0;
       }
+      ::selection,::-moz-selection{
+        background: white;
+        color: black;
+      }
       @media (orientation: portrait){
         #container{
           position: fixed;
@@ -113,10 +117,6 @@
           bottom: 2.5rem;
           width: calc(100vw - 8rem);
         }
-      }
-      ::selection,::-moz-selection{
-        background: white;
-        color: black;
       }
     </style>
   </head>
