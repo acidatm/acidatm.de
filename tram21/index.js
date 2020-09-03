@@ -14,7 +14,7 @@ function TRAM(tempo,input,symbols){
     	this.refresh()
     }.bind(this))
     for(let symbol in this.SYMBOLS){
-      this.SOUNDS.push(new Audio('/sounds/' + symbol + '.mp3'));
+      this.SOUNDS.push(new Audio('/tram21/sounds/' + symbol + '.mp3'));
     }
     this.LOOP = this.createLoop(tempo)
     document.getElementById('symbols').innerText = this.SYMBOLS.join(' ')
