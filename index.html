@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>ABGEHN 24 | Bekannt aus der TV Werbung</title>
+    <title>ACID AT THE MALL | Bekannt aus der TV Werbung</title>
     <meta name="title" content="ABGEHN 24 | Bekannt aus der TV Werbung">
     <meta name="description" content="Bei abgehn24.de findest Du zahlreiche Raves in Deiner Umgebung. Verabrede Dich noch heute zu spannenden Treffen. Komm einfach vorbei und erlebe unvergessliche Momente.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,121 +23,37 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-TileImage" content="/img/icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#000000">
-    <style>
-      body{
-        padding: 0;
-        margin: 0;
-        font-size: calc(3vh - 0.5vw);
-        line-height: calc(calc(3vh - 0.5vw) * 1.1);
-        background: black;
-        color: white;
-        overflow: hidden;
-        font-family: monospace;
-        cursor: crosshair;
-        width: 100vw;
-        height: 100vh;
-      }
-      a{
-        color: white;
-      }
-      #content{
-        display: none;
-      }
-      #container{
-        position: fixed;
-        top: 4rem;
-        left: 4rem;
-        width: calc(100vw - 8rem);
-        height: calc(100vh - 12rem);
-        word-break: keep-all;
-        white-space: pre;
-        overflow: hidden;
-        cursor: crosshair;
-      }
-      #player{
-        position: fixed;
-        bottom: 3rem;
-        left: 6rem;
-        width: 2rem;
-        height: 2rem;
-        cursor: pointer;
-        background-image: url('img/play.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-      }
-      #player.running{
-        background-image: url('img/pause.png');
-      }
-      #scrubber{
-        position: fixed;
-        right: 6rem;
-        bottom: 4rem;
-        width: calc(100vw - 18rem);
-        transform: translateY(50%);
-        -webkit-appearance: none;
-        height: 2px;
-        background: white;
-        outline: none;
-        border: 0;
-      }
-      #scrubber::-webkit-slider-thumb,
-      #scrubber::-moz-range-thumb  {
-          -webkit-appearance: none;
-          appearance: none;
-          width: 1rem;
-          height: 1rem;
-          border-radius: 50%;
-          background: white;
-          cursor: pointer;
-          outline: none;
-          border: 0;
-      }
-      ::selection,::-moz-selection{
-        background: white;
-        color: black;
-      }
-      @media (orientation: portrait){
-        #container{
-          position: fixed;
-          top: 1rem;
-          left: 1rem;
-          width: calc(100vw - 2rem);
-          height: calc(100vh - 6rem);
+    <link rel="stylesheet" href="/css/styles.css">
+    <noscript>
+      <style>
+        #content{
+          display: block;
         }
-        #player{
-          position: fixed;
-          bottom: 1.75rem;
-          left: 2rem;
-          width: 1.5rem;
-          height: 1.5rem;
-        }
-        #scrubber{
-          right: 2rem;
-          bottom: 2.5rem;
-          width: calc(100vw - 8rem);
-        }
-      }
-    </style>
+      </style>
+    </noscript>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Major+Mono+Display&family=Oxygen+Mono&family=Roboto+Mono&family=Source+Code+Pro&family=VT323&family=Xanh+Mono&display=swap" rel="stylesheet">
   </head>
   <body>
     <ul id="content">
-      <li>Johannes Schier</li>
-      <li>live analog techno</li>
-      <li>digital visuals</li>
+      <li><a href="/">ACIDATM</a> <a href="/tracks">TRACKS</a> <a href="/software">SOFTWARE</a> <a href="/info">INFO</a></li>
       <li></li>
-      <li>12.09.20 Selbstgebaute Musik, Berlin</li>
-      <li>29.08.20 Pfund und Dollar</li>
-      <li>07.08.20 Frappant</li>
       <li></li>
-      <li><a href="https://instagram.com/johanneschier" target="_blank">Instagram</a></li>
-      <li><a href="mailto:johannes.hassenstein@protonmail.com" target="_blank">Mail</a></li>
-      <li><a href="/impressum.html">Impressum</a></li>
+      <li>ACID AT THE MALL</li>
+      <li>HANDMADE TECHNO</li>
+      <li></li>
+      <li>280920 <a href="https://www.youtube.com/watch?v=A-gD1WQM73c&t=1172s" target="_blank">RC3, MS STUBNITZ</a></li>
+      <li>120920 <a href="https://soundcloud.com/acidatm/deobsoleszenziator-3" target="_blank">SELBSTGEBAUTE MUSIK, BERLIN</a></li>
+      <li>290820 <a href="https://soundcloud.com/acidatm/johannes-schier-live-at-the-pfund-und-dollar" target="_blank">HAHAWI, PFUND UND DOLLAR</a></li>
+      <li>070820 <a href="https://frappant.org/" target="_blank">100% FRAPPANT, FRAPPANT</a></li>
+      <li></li>
+      <li><a href="https://soundcloud.com/acidatm" target="_blank">SOUNDCLOUD</a></li>
+      <li><a href="https://instagram.com/acidatm" target="_blank">INSTAGRAM</a></li>
+      <li><a href="https://www.youtube.com/channel/UCxZjfCEpK-Tzt5F35uiGlWA" target="_blank">YOUTUBE</a></li>
+      <li><a href="https://johassenstein.de" target="_blank">JOHANNES</a></li>
+      <li><a href="mailto:johannes.hassenstein@protonmail.com" target="_blank">MAIL</a></li>
+      <li><a href="/impressum.html">IMPRESSUM</a></li>
     </ul>
-    <div id="container"></div>
-    <div id="player" onclick='play(this)'></div><input type="range" min="0" max="100" value="0" id="scrubber" >
-    <script src="js/p5.min.js" charset="utf-8"></script>
-    <script src="js/p5.sound.js" charset="utf-8"></script>
-    <script src="js/index.js" charset="utf-8"></script>
+    <script src="/js/acidatm.min.js"></script>
   </body>
 </html>
