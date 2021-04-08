@@ -14,20 +14,12 @@ window.config = {
 window.addEventListener("load",function(){
   seed()
   noise.seed(new Date().value);
-  let container = document.getElementById('content')
-  config.content = [].slice.call(container.getElementsByTagName('li'))
-  config.maxOffset = config.content.length
-  container.remove()
   config.container = document.createElement("div")
   config.container.id = "container"
   config.container.addEventListener("click",function(){
     seed()
   })
   document.body.appendChild(config.container)
-  document.addEventListener("wheel",function(e){
-    config.scroll = Math.max(0,Math.min((config.scroll + e.deltaY * 0.01),config.maxOffset))
-    config.offset = Math.floor(config.scroll)
-  })
   calcMargins()
   window.addEventListener("resize",function(){
     calcMargins()
@@ -37,22 +29,10 @@ window.addEventListener("load",function(){
 
 function render(){
   let output = ''
-  for(let _y = 0; _y < config.y; _y++){
+  for(let y = 0; y < config.y; y++){
     let line = ""
-    let cy = _y - config.my - 1
-    if(_y > config.my && cy < config.content.length - config.offset){ //if y is for content
-      for(let _x = 0; _x < config.mx+1; _x++){ //fill left margin with noise
-        line += getNoise(_x,_y)
-      }
-      line += config.content[cy + config.offset].innerText.length > 0 ? config.content[cy + config.offset].innerHTML : "" //add content
-      for(let _x = (config.mx + config.content[cy + config.offset].innerText.length); _x < config.x; _x++){ //add noise for the rest
-        line += getNoise(_x,_y)
-      }
-    }
-    else{ //when there is no content just add noise
-      for(let _x = 0; _x < config.x; _x++){
-        line += getNoise(_x,_y)
-      }
+    for(let x = 0; x < config.x; x++){
+      line += getNoise(x,y)
     }
     output += line + "<br>"
   }
@@ -69,8 +49,6 @@ function render(){
 function calcMargins(){
   config.x = Math.ceil(window.innerWidth / 3)
   config.y = Math.ceil(window.innerHeight / 8)
-  config.mx = Math.floor(window.innerWidth * 0.01)
-  config.my = Math.floor(window.innerHeight * 0.005)
 }
 function seed(){
   config.speed = Math.random() * 0.1 + 0.005

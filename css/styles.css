@@ -26,6 +26,10 @@ a{
   text-decoration: none;
   cursor: pointer;
 }
+::selection,::-moz-selection{
+  background: white;
+  color: black;
+}
 #container{
   position: fixed;
   top: 0;
@@ -36,11 +40,49 @@ a{
   white-space: pre;
   overflow: hidden;
   cursor: crosshair;
+  user-select: none;
+  color: rgb(150,150,150);
+  z-index: 1;
 }
-#content{
-  display: none;
+nav{
+  position: fixed;
+  top: 1em;
+  left: 3em;
+  text-transform: uppercase;
+  z-index: 3;
 }
-::selection,::-moz-selection{
-  background: white;
-  color: black;
+nav li{
+  margin-right: 1em;
+  display: inline-block;
+  background: black;
+}
+main{
+  margin: 0 auto;
+  margin-left: 3em;
+  margin-top: 37.5vh;
+  width: calc(100% - 6em);
+  position: relative;
+  z-index: 2;
+}
+main ul{
+  width: calc(50% - 3em);
+  display: inline-block;
+  vertical-align: text-top;
+}
+main li{
+  display: inline-block;
+  background: black;
+  margin-bottom: 1em;
+}
+footer{
+  position: fixed;
+  bottom: 1em;
+  left: 3em;
+  text-transform: uppercase;
+  z-index: 3;
+}
+footer li{
+  margin-right: 1em;
+  display: inline-block;
+  background: black;
 }
