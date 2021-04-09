@@ -1,17 +1,17 @@
 ---
 title: "Impressum"
 ---
-## Angaben gemäß § 5 TMG<
+## Angaben gemäß § 5 TMG
 
 Johannes Hassenstein
-Hebbelstraße 11b
-22085 Hamburg
+Witthof 21
+22305 Hamburg
 
 ## Kontakt
 
 E-Mail: johannes.hassenstein@protonmail.com
 
-## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
 
 siehe Angaben gemäß § 5 TMG
 

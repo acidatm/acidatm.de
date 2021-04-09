@@ -54,8 +54,8 @@ function calcMargins(){
   config.y = Math.ceil(window.innerHeight / 8)
 }
 function seed(){
-  config.speed = Math.random() * 0.05 + 0.005
-  config.grain = Math.random() * 0.05 + 0.01
+  config.speed = Math.random() * 0.01 + 0.01
+  config.grain = Math.random() * 0.01 + 0.01
   let p = []
   for (i = 0; i < config.pool.length; i++) {
     p.push(config.pool[i])

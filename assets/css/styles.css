@@ -35,7 +35,7 @@ h1,h2,h3,h4,h5,h6{
 p{
   background: black;
   line-height: 1.5em;
-  margin-bottom: 6em;
+  margin-bottom: 1em;
 }
 strong{
   font-weight: bold;
@@ -56,8 +56,10 @@ strong{
   overflow: hidden;
   cursor: crosshair;
   user-select: none;
-  color: rgb(150,150,150);
+  color: white;
+  color: rgb(220,220,220);
   z-index: 1;
+  background: black;
 }
 .links #background{
   color: rgb(100,100,100);
@@ -94,7 +96,7 @@ nav li{
   background: black;
 }
 main{
-  margin: 37.5vh 3em;
+  margin: 6em 3em;
   position: relative;
   z-index: 2;
 }
@@ -169,6 +171,9 @@ footer li{
   display: inline-block;
   background: black;
 }
+.frame{
+  opacity: 0.8;
+}
 .frame-north{
   position: fixed;
   top: 1em;
@@ -179,7 +184,7 @@ footer li{
   background-image: url("/img/banner/logo_north.png");
   background-position: 50% 100%;
   background-repeat: repeat-x;
-  background-size: 10vw 100%;
+  background-size: 9vw 100%;
   animation: runner-north 100s infinite linear;
 }
 @keyframes runner-north {
@@ -187,7 +192,7 @@ footer li{
     background-position: 0% 0%;
   }
   100%{
-    background-position: -10000px 0%;
+    background-position: -2000px 0%;
   }
 }
 .frame-east{
@@ -200,7 +205,7 @@ footer li{
   background-image: url("/img/banner/logo_east.png");
   background-position: 50% 100%;
   background-repeat: repeat-y;
-  background-size: 100% 10vw;
+  background-size: 100% 9vw;
   animation: runner-east 100s infinite linear;
 }
 @keyframes runner-east {
@@ -208,7 +213,7 @@ footer li{
     background-position: 0% 0%;
   }
   100%{
-    background-position: 0% -10000px;
+    background-position: 0% -2000px;
   }
 }
 .frame-south{
@@ -221,7 +226,7 @@ footer li{
   background-image: url("/img/banner/logo_south.png");
   background-position: 50% 100%;
   background-repeat: repeat-x;
-  background-size: 10vw 100%;
+  background-size: 9vw 100%;
   animation: runner-south 100s infinite linear;
 }
 @keyframes runner-south {
@@ -229,20 +234,20 @@ footer li{
     background-position: 0% 0%;
   }
   100%{
-    background-position: 10000px 0%;
+    background-position: 2000px 0%;
   }
 }
 .frame-west{
   position: fixed;
   top: 3em;
-  left: 1;
+  left: 1em;
   width: 2em;
   height: calc(100% - 6em);
   overflow: hidden;
   background-image: url("/img/banner/logo_west.png");
   background-position: 50% 100%;
   background-repeat: repeat-y;
-  background-size: 100% 10vw;
+  background-size: 100% 9vw;
   animation: runner-west 100s infinite linear;
 }
 @keyframes runner-west {
@@ -250,7 +255,7 @@ footer li{
     background-position: 0% 0%;
   }
   100%{
-    background-position: 0% 10000px;
+    background-position: 0% 2000px;
   }
 }
 @media (max-width: 1024px),(orientation: portrait) {
