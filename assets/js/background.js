@@ -15,8 +15,11 @@ window.addEventListener("load",function(){
   seed()
   noise.seed(new Date().value);
   config.container = document.createElement("div")
-  config.container.id = "container"
+  config.container.id = "background"
   config.container.addEventListener("click",function(){
+    seed()
+  })
+  document.getElementById("container")?.addEventListener("click",function(){
     seed()
   })
   document.body.appendChild(config.container)
@@ -51,7 +54,7 @@ function calcMargins(){
   config.y = Math.ceil(window.innerHeight / 8)
 }
 function seed(){
-  config.speed = Math.random() * 0.1 + 0.005
+  config.speed = Math.random() * 0.05 + 0.005
   config.grain = Math.random() * 0.05 + 0.01
   let p = []
   for (i = 0; i < config.pool.length; i++) {

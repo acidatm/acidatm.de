@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>ACID AT THE MALL | Bekannt aus der TV Werbung</title>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="list">
+    {{ partial "header.html" . }}
+    <div class="container" id="container">
+      <main>
+        <ul>
+            <li>FUTURE</li><br>
+            {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).After now }}
+            <li>
+              {{ partial "index/item.html" . }}
+            </li><br>
+            {{end}}{{end}}{{end}}
+        </ul>
+        <ul>
+            <li>PAST</li><br>
+            {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).Before now }}
+            <li>
+              {{ partial "index/item.html" . }}
+            </li><br>
+            {{end}}{{end}}{{end}}
+        </ul>
+      </main>
+    </div>
+    {{ partial "footer.html" . }}
+    {{ $background := resources.Get "js/background.js"}}
+    {{ $scripts := slice $background | resources.Concat "scripts.js" | minify | fingerprint }}
+    <script src="{{ $scripts.Permalink }}"></script>
+  </body>
+</html>

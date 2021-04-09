@@ -1,0 +1,13 @@
+<time>{{ dateFormat "020106" .Date }}</time>
+{{ if (isset .Params "tag") }}<strong>[{{.Param "tag"}}]</strong> {{end}}
+{{ if (isset .Params "link") }}
+<a href='{{.Param "link" }}' target="_blank" title="{{.Title}}">
+{{ else if (gt (len .Content) 0) }}
+<a href='{{.URL}}' title="{{.Title}}">
+{{ end }}
+{{.Title}}
+{{ if (isset .Params "link") }}
+</a>
+{{ else if (gt (len .Content) 0) }}
+</a>
+{{ end }}

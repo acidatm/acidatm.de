@@ -2,3 +2,5 @@ baseURL = "/"
 languageCode = "de"
 title = "ACIDATM"
 defaultContentLanguage = 'de'
+[permalinks]
+blog="/:filename/"

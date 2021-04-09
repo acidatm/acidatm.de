@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>ACID AT THE MALL | {{.Title}}</title>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="content">
+    {{ partial "header.html" . }}
+    <div class="container" id="container">
+      <main>
+        {{.Content}}
+      </main>
+    </div>
+    {{ partial "footer.html" . }}
+    {{ $background := resources.Get "js/background.js"}}
+    {{ $scripts := slice $background | resources.Concat "scripts.js" | minify | fingerprint }}
+    <script src="{{ $scripts.Permalink }}"></script>
+  </body>
+</html>
