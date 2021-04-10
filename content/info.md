@@ -1,10 +1,10 @@
 ---
 title: "Info"
 ---
-ACIDATM is short for Acid At The Mall.
+ACIDATM is short for Acid At The Mall and is the alias of Johannes from Hamburg.
 
-Based on my Reddit username it became my primary alias for electronic music.
+I release and perform dark, futuristic techno.
 
-I release and play dark, futuristic, politically charged techno.
+To me electronic music is the deepest form of connection between strangers.
 
-Techno is the purest form of connection between strangers to me.
+What else is left, when the world becomes more and more complex? Tanzen, Techno, Trance.

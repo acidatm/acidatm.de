@@ -1,9 +1,9 @@
 ---
-date: 2021-05-31
+date: 2021-05-14
 publishdate: 2021-04-08
-title: Release SYSTEMIC TECHNO EP
-linktitle: Listen to SYSTEMIC TECHNO on
-img: "/img/links/systemictechno.png"
+title: Release Technical Solutions Single
+linktitle: Listen to Technical Solutions on
+img: "/img/links/technicalsolutions.png"
 type: links
 tag: Release
 ---

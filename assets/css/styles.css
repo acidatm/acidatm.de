@@ -3,7 +3,7 @@ body{
   margin: 0;
   font-size: 2.2vh;
   line-height: 1em;
-  background: #201f1f;
+  background: #111111;
   color: white;
   font-family: 'Roboto Mono', monospace;
   cursor: crosshair;
@@ -28,12 +28,12 @@ a{
 h1,h2,h3,h4,h5,h6{
   font-size: 1em;
   font-weight: bold;
-  background: #201f1f;
+  background: #111111;
   display: inline-block;
   margin-bottom: 3em;
 }
 p{
-  background: #201f1f;
+  background: #111111;
   line-height: 1.5em;
   margin-bottom: 1em;
 }
@@ -43,7 +43,7 @@ strong{
 }
 ::selection,::-moz-selection{
   background: white;
-  color: #201f1f;
+  color: #111111;
 }
 #background{
   position: fixed;
@@ -57,9 +57,9 @@ strong{
   cursor: crosshair;
   user-select: none;
   color: white;
-  color: rgb(220,220,220);
+  color: rgb(190,190,190);
   z-index: 1;
-  background: #201f1f;
+  background: #111111;
 }
 .links #background{
   color: rgb(100,100,100);
@@ -93,7 +93,7 @@ nav ul{
 }
 nav li{
   display: inline-block;
-  background: #201f1f;
+  background: #111111;
 }
 main{
   margin: 6em 3em;
@@ -139,7 +139,7 @@ main{
 }
 .links main li a:hover{
   background: white;
-  color: #201f1f;
+  color: #111111;
 }
 .links main li img{
   top: 1em;
@@ -151,7 +151,7 @@ main{
 }
 main li{
   display: inline-block;
-  background: #201f1f;
+  background: #111111;
   margin-bottom: 1em;
 }
 footer{
@@ -169,7 +169,7 @@ footer ul{
 }
 footer li{
   display: inline-block;
-  background: #201f1f;
+  background: #111111;
 }
 .frame{
   opacity: 0.9;
@@ -184,7 +184,7 @@ footer li{
   background-image: url("/img/banner/logo_north.png");
   background-position: 50% 100%;
   background-repeat: repeat-x;
-  background-size: 9vw 100%;
+  background-size: 7vw 100%;
   animation: runner-north 100s infinite linear;
 }
 @keyframes runner-north {
@@ -205,7 +205,7 @@ footer li{
   background-image: url("/img/banner/logo_east.png");
   background-position: 50% 100%;
   background-repeat: repeat-y;
-  background-size: 100% 9vw;
+  background-size: 100% 7vw;
   animation: runner-east 100s infinite linear;
 }
 @keyframes runner-east {
@@ -226,7 +226,7 @@ footer li{
   background-image: url("/img/banner/logo_south.png");
   background-position: 50% 100%;
   background-repeat: repeat-x;
-  background-size: 9vw 100%;
+  background-size: 7vw 100%;
   animation: runner-south 100s infinite linear;
 }
 @keyframes runner-south {
@@ -247,7 +247,7 @@ footer li{
   background-image: url("/img/banner/logo_west.png");
   background-position: 50% 100%;
   background-repeat: repeat-y;
-  background-size: 100% 9vw;
+  background-size: 100% 7vw;
   animation: runner-west 100s infinite linear;
 }
 @keyframes runner-west {
@@ -298,14 +298,14 @@ footer li{
     margin-bottom: 0.5em;
   }
   nav li a{
-    background: #201f1f;
+    background: #111111;
   }
   .list main ul{
     width: 100%;
   }
   main li{
     display: inline-block;
-    background: #201f1f;
+    background: #111111;
   }
   footer{
     top: 1em;
@@ -325,7 +325,7 @@ footer li{
     margin-bottom: 0.5em;
   }
   footer li a{
-    background: #201f1f;
+    background: #111111;
 
   }
 }
