@@ -26,7 +26,7 @@ function reseed(){
       "h": 0,
       "x": 0.01001001001001001,
       "y": 0.01001001001001001,
-      "a": 0.5,
+      "a": 0.55,
       "mod": "rgb",
       "clrs": [],
       "optimization": {
@@ -99,17 +99,17 @@ function reseed(){
         },
         "config": {
           "x": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0
           },
           "y": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0
           },
           "z": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0,
-            "len": Math.random(),
+            "len": Math.random() * 0.4,
             "mod": Math.random(),
             "cen": Math.random(),
             "shp": Math.random()
@@ -145,17 +145,17 @@ function reseed(){
         },
         "config": {
           "x": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0
           },
           "y": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0
           },
           "z": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0,
-            "len": Math.random(),
+            "len": Math.random() * 0.4,
             "mod": Math.random(),
             "cen": Math.random(),
             "shp": Math.random()
@@ -190,17 +190,17 @@ function reseed(){
         },
         "config": {
           "x": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0
           },
           "y": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0
           },
           "z": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0,
-            "len": Math.random(),
+            "len": Math.random() * 0.4,
             "mod": Math.random(),
             "cen": Math.random(),
             "shp": Math.random()
@@ -236,17 +236,17 @@ function reseed(){
         },
         "config": {
           "x": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0
           },
           "y": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0
           },
           "z": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0,
-            "len": Math.random(),
+            "len": Math.random() * 0.4,
             "mod": Math.random(),
             "cen": Math.random(),
             "shp": Math.random()
@@ -279,17 +279,17 @@ function reseed(){
         },
         "config": {
           "x": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0
           },
           "y": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0
           },
           "z": {
-            "frq": Math.random(),
+            "frq": Math.random() * 0.1,
             "off": 0,
-            "len": Math.random(),
+            "len": Math.random() * 0.4,
             "mod": Math.random(),
             "cen": Math.random(),
             "shp": Math.random()
@@ -454,6 +454,7 @@ function ACID(canvas){
       i++
     }
     /*Different amp behaviors for clipping values*/
+    let max = 0.5
     switch(config.typ){
       /*Simply clips of the signal*/
       case "clp":
@@ -464,10 +465,10 @@ function ACID(canvas){
         break
       /*Uses mod on the signal, turning a signal of 1.1 to 0.1*/
       case "mod":
-        n[0] = n[0] > 1 ? n[0] % 1 : n[0]
-        n[1] = n[1] > 1 ? n[1] % 1 : n[1]
-        n[2] = n[2] > 1 ? n[2] % 1 : n[2]
-        n[3] = n[3] > 1 ? n[3] % 1 : n[3]
+        n[0] = n[0] > max ? n[0] % max : n[0]
+        n[1] = n[1] > max ? n[1] % max : n[1]
+        n[2] = n[2] > max ? n[2] % max : n[2]
+        n[3] = n[3] > max ? n[3] % max : n[3]
         break
       /*Dynamically determines maximum amplitude over time and scales all signals accordingly*/
       case "dyn":

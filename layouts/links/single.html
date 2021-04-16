@@ -5,17 +5,18 @@
     {{ partial "head.html" . }}
   </head>
   <body class="links">
-      <main>
-        {{if isset .Params "img"}}
-        <img class="links-image" src='{{.Param "img"}}'>
-        {{end}}
-        {{if isset .Params "linktitle"}}
-        <h1>{{.Param "linktitle"}}:</h1>
-        {{else}}
-        <h1>{{.Title}}:</h1>
-        {{end}}
-        {{.Content}}
-      </main>
+    <canvas id="canvas"></canvas>
+    <main>
+      {{if isset .Params "img"}}
+      <img class="links-image" src='{{.Param "img"}}'>
+      {{end}}
+      {{if isset .Params "linktitle"}}
+      <h1>{{.Param "linktitle"}}:</h1>
+      {{else}}
+      <h1>{{.Title}}:</h1>
+      {{end}}
+      {{.Content}}
+    </main>
     <!-- {{ $background := resources.Get "js/background.js"}}
     {{ $scripts := slice $background | resources.Concat "scripts.js" | minify | fingerprint }}
     <script src="{{ $scripts.Permalink }}"></script> -->
