@@ -30,7 +30,7 @@ function reseed(){
       "clrs": [],
       "optimization": {
         "effects": "off",
-        "subpixels": "on",
+        "subpixels": "off",
         "feedback": "off",
         "colormodes": "off",
         "txt": "off"
@@ -54,19 +54,19 @@ function reseed(){
           "active": true
         },
         "g": {
-          "amp": 0,
+          "amp": 1,
           "base": 0,
           "mod": 1,
           "active": true
         },
         "b": {
-          "amp": 0,
+          "amp": 1,
           "base": 0,
           "mod": 1,
           "active": true
         },
         "a": {
-          "amp": 0,
+          "amp": 1,
           "base": 0,
           "mod": 1,
           "active": true
