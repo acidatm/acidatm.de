@@ -1,6 +1,7 @@
 window.addEventListener("load",function(){
   let canvas = document.getElementById("canvas")
   document.body.addEventListener("click",reseed)
+  window.addEventListener("resize",reseed)
   reseed()
   new ACID(canvas)
 })
@@ -20,7 +21,7 @@ function reseed(){
       "showDimensions": "on"
     },
     "render": {
-      "resolution": 0.5005005005005005,
+      "resolution": Math.min(1,(((window.innerWidth + window.innerHeight) * 0.5) / 2000)) * 0.9 + 0.1,
       "w": 0,
       "h": 0,
       "x": 0.01001001001001001,
@@ -30,7 +31,7 @@ function reseed(){
       "clrs": [],
       "optimization": {
         "effects": "off",
-        "subpixels": "off",
+        "subpixels": "on",
         "feedback": "off",
         "colormodes": "off",
         "txt": "off"
@@ -76,8 +77,8 @@ function reseed(){
     "osc": [
       {
         "typ": "sin",
-        "min": Math.random(),
-        "max": Math.random(),
+        "min": 0.5 * Math.random(),
+        "max": 0.5 + Math.random() * 0.5,
         "mix": "add",
         "run": true,
         "fx": {
@@ -93,8 +94,8 @@ function reseed(){
           "drv": Math.random()
         },
         "filter": {
-          "lpf": Math.random(),
-          "hpf": Math.random()
+          "lpf": 0.8 * Math.random(),
+          "hpf": 0.8 * Math.random()
         },
         "config": {
           "x": {
@@ -123,8 +124,8 @@ function reseed(){
       },
       {
         "typ": "prl",
-        "min": Math.random(),
-        "max": Math.random(),
+        "min": 0.5 * Math.random(),
+        "max": 0.5 + Math.random() * 0.5,
         "mix": "add",
         "run": true,
         "fx": {
@@ -139,8 +140,8 @@ function reseed(){
           "drv": Math.random()
         },
         "filter": {
-          "lpf": Math.random(),
-          "hpf": Math.random()
+          "lpf": 0.8 * Math.random(),
+          "hpf": 0.8 * Math.random()
         },
         "config": {
           "x": {
@@ -169,8 +170,8 @@ function reseed(){
       },
       {
         "typ": "osc",
-        "min": 0.44744744744744747,
-        "max": 1,
+        "min": 0.5 * Math.random(),
+        "max": 0.5 + Math.random() * 0.5,
         "mix": "add",
         "run": true,
         "fx": {
@@ -184,8 +185,8 @@ function reseed(){
           "drv": Math.random()
         },
         "filter": {
-          "lpf": Math.random(),
-          "hpf": Math.random()
+          "lpf": 0.8 * Math.random(),
+          "hpf": 0.8 * Math.random()
         },
         "config": {
           "x": {
@@ -214,8 +215,8 @@ function reseed(){
       },
       {
         "typ": "plx",
-        "min": Math.random(),
-        "max": Math.random(),
+        "min": 0.5 * Math.random(),
+        "max": 0.5 + Math.random() * 0.5,
         "mix": "add",
         "run": true,
         "fx": {
@@ -230,8 +231,8 @@ function reseed(){
           "drv": Math.random()
         },
         "filter": {
-          "lpf": Math.random(),
-          "hpf": Math.random()
+          "lpf": 0.8 * Math.random(),
+          "hpf": 0.8 * Math.random()
         },
         "config": {
           "x": {
@@ -260,8 +261,8 @@ function reseed(){
       },
       {
         "typ": "osc",
-        "min": Math.random(),
-        "max": Math.random(),
+        "min": 0.5 * Math.random(),
+        "max": 0.5 + Math.random() * 0.5,
         "mix": "add",
         "run": true,
         "fx": {
@@ -273,8 +274,8 @@ function reseed(){
           "drv": Math.random()
         },
         "filter": {
-          "lpf": Math.random(),
-          "hpf": Math.random()
+          "lpf": 0.8 * Math.random(),
+          "hpf": 0.8 * Math.random()
         },
         "config": {
           "x": {
@@ -601,7 +602,7 @@ function ACIDRENDER(canvas,mothership){
           }
         }
         if(subpixels){
-          colors.push(r * (1-grayscale) + bw * grayscale,config.render.burn,config.render.burn,config.render.burn,g * (1-grayscale) + bw * grayscale,config.render.burn,config.render.burn,config.render.burn,b * (1-grayscale) + bw * grayscale)
+          colors.push(r * (1-grayscale) + bw * grayscale,0,0,0,g * (1-grayscale) + bw * grayscale,0,0,0,b * (1-grayscale) + bw * grayscale)
           vertices.push((x / this.dimensions.width * 2) - 1,-((y / this.dimensions.height * 2) - 1),(x / this.dimensions.width * 2) - 1,-(((y + 0.33333333 * res) / this.dimensions.height * 2) - 1),(x / this.dimensions.width * 2) - 1,-(((y + 0.66666666 * res) / this.dimensions.height * 2) - 1))
           verticeN+=3
         }
