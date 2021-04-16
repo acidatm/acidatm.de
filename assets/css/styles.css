@@ -3,13 +3,21 @@ body{
   margin: 0;
   font-size: 2.2vh;
   line-height: 1em;
-  background: #111111;
-  color: white;
-  font-family: 'Roboto Mono', monospace;
+  background: #0F0F0F;
+  color: #DDDDDD;
+font-family: 'Roboto Mono', sans-serif;
+  font-weight: 500;
   cursor: crosshair;
   width: 100%;
-  height: 100%;
+  height: 100vh ;
   user-select: none;
+}
+#canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 ul{
   list-style: none;
@@ -21,52 +29,32 @@ li{
   padding: 0;
 }
 a{
-  color: white;
+  color: #FFFFFF;
   text-decoration: none;
   cursor: pointer;
 }
 h1,h2,h3,h4,h5,h6{
   font-size: 1em;
-  font-weight: bold;
-  background: #111111;
+  /* font-weight: bold; */
+  color: #FFFFFF;
+  /* background: #0F0F0F; */
   display: inline-block;
   margin-bottom: 3em;
 }
 p{
-  background: #111111;
+  /* background: #0F0F0F; */
   line-height: 1.5em;
   margin-bottom: 1em;
 }
 strong{
-  font-weight: bold;
   text-transform: uppercase;
 }
 ::selection,::-moz-selection{
-  background: white;
-  color: #111111;
+  background: #DDDDDD;
+  color: #0F0F0F;
 }
-#background{
-  position: fixed;
-  top: 4em;
-  left: 4em;
-  width: calc(100vw - 8em);
-  height: calc(100vh - 8em);
-  word-break: keep-all;
-  white-space: pre;
-  overflow: hidden;
-  cursor: crosshair;
-  user-select: none;
-  color: white;
-  color: rgb(190,190,190);
-  z-index: 1;
-  background: #111111;
-}
-.links #background{
-  color: rgb(100,100,100);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.links #canvas{
+  display: none;
 }
 .container{
   width: calc(100vw - 6em);
@@ -93,10 +81,11 @@ nav ul{
 }
 nav li{
   display: inline-block;
-  background: #111111;
+  /* background: #0F0F0F; */
 }
 main{
   margin: 6em 3em;
+  line-height: 1.4em;
   position: relative;
   z-index: 2;
 }
@@ -110,13 +99,14 @@ main{
   vertical-align: text-top;
 }
 .links main{
+  line-height: 1em;
   margin: 3em auto 0 auto;
   width: 80%;
   max-width: 480px;
   text-align: center;
 }
 .links main h1{
-  background: transparent;
+  /* background: transparent; */
   width: 100%;
 }
 .links main .links-image{
@@ -124,13 +114,13 @@ main{
   height: 6em;
 }
 .links main li{
-  background: transparent;
+  /* background: transparent; */
   display: inline-block;
   width: 100%;
   position: relative;
 }
 .links main li a{
-  border: 2px solid white;
+  border: 2px solid #DDDDDD;
   width: calc(calc(100% - 2em) - 4px);
   text-align: center;
   padding: 1em;
@@ -138,8 +128,8 @@ main{
   transition: all 0.2s ease-in-out;
 }
 .links main li a:hover{
-  background: white;
-  color: #111111;
+  background: #DDDDDD;
+  color: #0F0F0F;
 }
 .links main li img{
   top: 1em;
@@ -151,7 +141,7 @@ main{
 }
 main li{
   display: inline-block;
-  background: #111111;
+  /* background: #0F0F0F; */
   margin-bottom: 1em;
 }
 footer{
@@ -169,7 +159,7 @@ footer ul{
 }
 footer li{
   display: inline-block;
-  background: #111111;
+  /* background: #0F0F0F; */
 }
 .frame{
   opacity: 0.9;
@@ -258,20 +248,18 @@ footer li{
     background-position: 0% 2000px;
   }
 }
+.index-item{
+  display: flex;
+}
+.index-item-time{
+  margin-right: 1em;
+}
 @media (max-width: 1024px),(orientation: portrait) {
   body{
     font-size: 16px;
   }
   .frame{
     display: none;
-  }
-  #background{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    word-break: keep-all;
   }
   .container{
     width: 100%;
@@ -284,36 +272,36 @@ footer li{
     overflow-y: scroll;
   }
   nav{
-    top: 1em;
-    left: 1em;
-    width: calc(100% - 4em);
+    top: 3em;
+    left: 3em;
+    width: calc(50% - 4em);
   }
   nav ul{
     display: block;
     width: 100%;
   }
   nav li{
-    background: transparent;
+    /* background: transparent; */
     display: block;
     margin-bottom: 0.5em;
   }
   nav li a{
-    background: #111111;
+    /* background: #0F0F0F; */
   }
   .list main ul{
     width: 100%;
   }
   main li{
     display: inline-block;
-    background: #111111;
+    /* background: #0F0F0F; */
   }
   footer{
-    top: 1em;
-    right: 1em;
+    top: 3em;
+    right: 3em;
     bottom: auto;
     left: auto;
     text-align: right;
-    width: calc(100% - 4em);
+    width: calc(50% - 4em);
   }
   footer ul{
     display: block;
@@ -325,7 +313,7 @@ footer li{
     margin-bottom: 0.5em;
   }
   footer li a{
-    background: #111111;
+    /* background: #0F0F0F; */
 
   }
 }

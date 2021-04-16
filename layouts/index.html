@@ -11,7 +11,7 @@
         <ul>
             <li>FUTURE</li><br>
             {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).After now }}
-            <li>
+            <li class="index-item">
               {{ partial "index/item.html" . }}
             </li><br>
             {{end}}{{end}}{{end}}
@@ -19,7 +19,7 @@
         <ul>
             <li>PAST</li><br>
             {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).Before now }}
-            <li>
+            <li class="index-item">
               {{ partial "index/item.html" . }}
             </li><br>
             {{end}}{{end}}{{end}}
@@ -28,7 +28,7 @@
     </div>
     {{ partial "footer.html" . }}
     {{ $background := resources.Get "js/background.js"}}
-    {{ $scripts := slice $background | resources.Concat "scripts.js" | minify | fingerprint }}
+    {{ $scripts := slice $background | resources.Concat "scripts.js"  | minify | fingerprint }}
     <script src="{{ $scripts.Permalink }}"></script>
   </body>
 </html>

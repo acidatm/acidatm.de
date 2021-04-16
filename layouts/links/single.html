@@ -14,13 +14,10 @@
         {{else}}
         <h1>{{.Title}}:</h1>
         {{end}}
-        <ul>
         {{.Content}}
-          <li><a href="/impressum">Impressum</a></li>
-        </ul>
       </main>
-    {{ $background := resources.Get "js/background.js"}}
+    <!-- {{ $background := resources.Get "js/background.js"}}
     {{ $scripts := slice $background | resources.Concat "scripts.js" | minify | fingerprint }}
-    <script src="{{ $scripts.Permalink }}"></script>
+    <script src="{{ $scripts.Permalink }}"></script> -->
   </body>
 </html>
