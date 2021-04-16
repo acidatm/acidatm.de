@@ -54,19 +54,19 @@ function reseed(){
           "active": true
         },
         "g": {
-          "amp": 1,
+          "amp": 0,
           "base": 0,
           "mod": 1,
           "active": true
         },
         "b": {
-          "amp": 1,
+          "amp": 0,
           "base": 0,
           "mod": 1,
           "active": true
         },
         "a": {
-          "amp": 1,
+          "amp": 0,
           "base": 0,
           "mod": 1,
           "active": true
