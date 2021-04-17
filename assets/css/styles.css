@@ -93,7 +93,7 @@ nav li{
   /* background: #0F0F0F; */
 }
 main{
-  margin: 6em 3em;
+  margin: 6em 2em;
   line-height: 1.4em;
   position: relative;
   z-index: 2;
@@ -272,7 +272,7 @@ footer li{
   }
   .container{
     width: 100%;
-    height: calc(100vh - 12em);
+    height: calc(100vh - 11em);
     position: fixed;
     top: 9em;
     left: 0;
@@ -281,8 +281,8 @@ footer li{
     overflow-y: scroll;
   }
   nav{
-    top: 3em;
-    left: 3em;
+    top: 2em;
+    left: 2em;
     width: calc(50% - 4em);
   }
   nav ul{
@@ -305,8 +305,8 @@ footer li{
     /* background: #0F0F0F; */
   }
   footer{
-    top: 3em;
-    right: 3em;
+    top: 2em;
+    right: 2em;
     bottom: auto;
     left: auto;
     text-align: right;
