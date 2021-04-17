@@ -2,6 +2,7 @@ window.addEventListener("load",function(){
   let canvas = document.getElementById("canvas")
   document.body.addEventListener("click",reseed)
   window.addEventListener("resize",reseed)
+  window.addEventListener("keypress",reseed)
   reseed()
   new ACID(canvas)
 })
@@ -12,7 +13,7 @@ function reseed(){
     "settings": {
       "defaultColor": "#ffffff",
       "defaultFx": "drv",
-      "framerate": 8,
+      "framerate": 24,
       "zoom": 0.2972972972972973,
       "tips": "off",
       "labels": "on",
@@ -21,7 +22,7 @@ function reseed(){
       "showDimensions": "on"
     },
     "render": {
-      "resolution": Math.min(1,(((window.innerWidth + window.innerHeight) * 0.5) / 2000)) * 0.9 + 0.1,
+      "resolution": (Math.min(1,(((window.innerWidth + window.innerHeight) * 0.5) / 2000)) * 0.9 + 0.1) * 0.5 ,
       "w": 0,
       "h": 0,
       "x": 0.01001001001001001,
@@ -76,7 +77,7 @@ function reseed(){
     },
     "osc": [
       {
-        "typ": "sin",
+        "typ": "osc",
         "min": 0.5 * Math.random(),
         "max": 0.5 + Math.random() * 0.5,
         "mix": "add",
@@ -100,11 +101,11 @@ function reseed(){
         "config": {
           "x": {
             "frq": Math.random() * 0.1,
-            "off": 0
+            "off": Math.random()
           },
           "y": {
             "frq": Math.random() * 0.1,
-            "off": 0
+            "off": Math.random()
           },
           "z": {
             "frq": Math.random() * 0.1,
@@ -146,11 +147,11 @@ function reseed(){
         "config": {
           "x": {
             "frq": Math.random() * 0.1,
-            "off": 0
+            "off": Math.random()
           },
           "y": {
             "frq": Math.random() * 0.1,
-            "off": 0
+            "off": Math.random()
           },
           "z": {
             "frq": Math.random() * 0.1,
@@ -191,11 +192,11 @@ function reseed(){
         "config": {
           "x": {
             "frq": Math.random() * 0.1,
-            "off": 0
+            "off": Math.random()
           },
           "y": {
             "frq": Math.random() * 0.1,
-            "off": 0
+            "off": Math.random()
           },
           "z": {
             "frq": Math.random() * 0.1,
@@ -237,11 +238,11 @@ function reseed(){
         "config": {
           "x": {
             "frq": Math.random() * 0.1,
-            "off": 0
+            "off": Math.random()
           },
           "y": {
             "frq": Math.random() * 0.1,
-            "off": 0
+            "off": Math.random()
           },
           "z": {
             "frq": Math.random() * 0.1,
@@ -280,11 +281,11 @@ function reseed(){
         "config": {
           "x": {
             "frq": Math.random() * 0.1,
-            "off": 0
+            "off": Math.random()
           },
           "y": {
             "frq": Math.random() * 0.1,
-            "off": 0
+            "off": Math.random()
           },
           "z": {
             "frq": Math.random() * 0.1,
