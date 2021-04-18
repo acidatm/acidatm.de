@@ -1,5 +1,6 @@
 ---
 title: "Info"
+type: "info"
 ---
 analog techno, digital visuals
 

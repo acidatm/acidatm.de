@@ -2,5 +2,4 @@ baseURL = "/"
 languageCode = "de"
 title = "ACIDATM"
 defaultContentLanguage = 'de'
-[permalinks]
-blog="/:filename/"
+disableKinds = ["section", "taxonomy","taxonomyTerm","term", "RSS"]

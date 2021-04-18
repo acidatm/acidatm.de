@@ -1,7 +1,7 @@
 window.addEventListener("load",function(){
   let canvas = document.getElementById("canvas")
   document.body.addEventListener("click",reseed)
-  window.addEventListener("resize",reseed)
+  // window.addEventListener("resize",reseed)
   window.addEventListener("keypress",reseed)
   reseed()
   new ACID(canvas)
@@ -33,7 +33,7 @@ function reseed(){
       "optimization": {
         "effects": "off",
         "subpixels": "on",
-        "feedback": "off",
+        "feedback": "on",
         "colormodes": "off",
         "txt": "off"
       },
@@ -46,7 +46,7 @@ function reseed(){
         "centerY": Math.random(),
         "centerX": Math.random(),
         "step": Math.random(),
-        "darken": Math.random()
+        "darken": 0
       },
       "channels": {
         "r": {
@@ -56,7 +56,7 @@ function reseed(){
           "active": true
         },
         "g": {
-          "amp": 1,
+          "amp": 0.7,
           "base": 0,
           "mod": 1,
           "active": true
@@ -455,7 +455,7 @@ function ACID(canvas){
       i++
     }
     /*Different amp behaviors for clipping values*/
-    let max = 0.5
+    let max = 0.7
     switch(config.typ){
       /*Simply clips of the signal*/
       case "clp":
@@ -509,7 +509,7 @@ function ACIDRENDER(canvas,mothership){
   this.mothership = mothership
   this.count = 1000
   this.upCount = function(){
-    this.count += 1 / config.settings.framerate
+    this.count += 0.1 / config.settings.framerate
     if(this.count > 2147483646){
       this.count = 1000
     }
@@ -517,6 +517,7 @@ function ACIDRENDER(canvas,mothership){
   this.initiated = false
   this.running = true
   this.stopped = false
+  this.scrollContainer = false
   this.dimensions = {
     width: 0,
     height: 0
@@ -552,6 +553,7 @@ function ACIDRENDER(canvas,mothership){
     let grayscale = config.render.a
     var y = 0
     var x = 0
+    var time = this.scrollContainer ? this.count + this.scrollContainer.scrollTop * 0.005 : this.count
     var r,g,b,a,rgb,bw,timeshift,relX,relY,centeredRelX,centeredRelX,n,m,isEdge,lShift,sShift,darken,q
     while(y < this.dimensions.height){
       while(x < this.dimensions.width){
@@ -571,14 +573,14 @@ function ACIDRENDER(canvas,mothership){
           }
           timeshift = 1 - timeshift
           darken = (timeshift * config.render.feedback.darken + (1 - config.render.feedback.darken)) * 0.99 + 0.01
-          rgb = this.mothership.get(x,y,0,this.count + timeshift * config.render.feedback.intensity * 100)
+          rgb = this.mothership.get(x,y,0,time + timeshift * config.render.feedback.intensity * 100)
           r = config.render.channels.r.active ? ((config.render.channels.r.base + rgb[0] * config.render.channels.r.mod) * config.render.channels.r.amp) * darken: 0
           g = config.render.channels.g.active ? ((config.render.channels.g.base + rgb[1] * config.render.channels.g.mod) * config.render.channels.g.amp) * darken: 0
           b = config.render.channels.b.active ? ((config.render.channels.b.base + rgb[2] * config.render.channels.b.mod) * config.render.channels.b.amp) * darken: 0
           a = config.render.channels.a.active ? ((config.render.channels.a.base + rgb[3] * config.render.channels.a.mod) * config.render.channels.a.amp) * darken: 0
         }
         else{
-          rgb = this.mothership.get(x,y,0,this.count)
+          rgb = this.mothership.get(x,y,0,time)
           r = config.render.channels.r.active ? ((config.render.channels.r.base + rgb[0] * config.render.channels.r.mod) * config.render.channels.r.amp): 0
           g = config.render.channels.g.active ? ((config.render.channels.g.base + rgb[1] * config.render.channels.g.mod) * config.render.channels.g.amp): 0
           b = config.render.channels.b.active ? ((config.render.channels.b.base + rgb[2] * config.render.channels.b.mod) * config.render.channels.b.amp): 0
@@ -640,6 +642,7 @@ function ACIDRENDER(canvas,mothership){
     this.upCount()
   }
   this.init = function(){
+    this.scrollContainer = document.getElementById("container") || false
     let gl = this.gl
     gl.clearColor(0,0,0,1);
 

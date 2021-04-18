@@ -4,9 +4,9 @@
 {{ if (isset .Params "link") }}
 <a href='{{.Param "link" }}' target="_blank" title="{{.Title}}">
 {{ else if (gt (len .Content) 0) }}
-<a href='{{.URL}}' title="{{.Title}}">
+<a href='{{.URL}}'  target="_blank" title="{{.Title}}">
 {{ end }}
-{{.Title}}
+<h2>{{.Title}}</h2>
 {{ if (isset .Params "link") }}
 </a>
 {{ else if (gt (len .Content) 0) }}

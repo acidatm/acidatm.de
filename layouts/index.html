@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Acid At The Mall | Bekannt aus der TV Werbung</title>
+    <title>ACID AT THE MALL | Bekannt aus der TV Werbung</title>
     {{ partial "head.html" . }}
   </head>
   <body class="list">
@@ -9,20 +9,22 @@
     <div class="container" id="container">
       <main>
         <ul>
-            <li>FUTURE</li><br>
-            {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).After now }}
-            <li class="index-item">
-              {{ partial "index/item.html" . }}
-            </li><br>
-            {{end}}{{end}}{{end}}
-        </ul>
-        <ul>
-            <li>PAST</li><br>
-            {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).Before now }}
-            <li class="index-item">
-              {{ partial "index/item.html" . }}
-            </li><br>
-            {{end}}{{end}}{{end}}
+          <li id="top" class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text">FUTURE</li>
+          {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).After now }}
+          <li class="index-item">
+            {{ partial "index/item.html" . }}
+          </li>
+          {{end}}{{end}}{{end}}
+          <li class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text">PAST</li>
+          {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).Before now }}
+          <li class="index-item">
+            {{ partial "index/item.html" . }}
+          </li>
+          {{end}}{{end}}{{end}}
+          {{ range where .Pages "Type" "info" }}
+          <li id="info" class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text">INFO</li>
+          <li class="index-item"><div class="index-item-time alt-on-mobile"></div><div class="index-item-text alt-on-mobile">{{.Content}}</li>
+          {{end}}
         </ul>
       </main>
     </div>

@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Acid At The Mall | {{.Title}}</title>
+    <title>ACID AT THE MALL | {{.Title}}</title>
     {{ partial "head.html" . }}
   </head>
   <body class="links">
     <canvas id="canvas"></canvas>
     <main>
-      {{if isset .Params "img"}}
-      <img class="links-image" src='{{.Param "img"}}'>
-      {{end}}
       {{if isset .Params "linktitle"}}
       <h1>{{.Param "linktitle"}}:</h1>
       {{else}}
@@ -17,8 +14,8 @@
       {{end}}
       {{.Content}}
     </main>
-    <!-- {{ $background := resources.Get "js/background.js"}}
+    {{ $background := resources.Get "js/background.js"}}
     {{ $scripts := slice $background | resources.Concat "scripts.js" | minify | fingerprint }}
-    <script src="{{ $scripts.Permalink }}"></script> -->
+    <script src="{{ $scripts.Permalink }}"></script>
   </body>
 </html>

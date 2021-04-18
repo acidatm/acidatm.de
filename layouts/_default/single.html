@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Acid At The Mall | {{.Title}}</title>
+    <title>ACID AT THE MALL | {{.Title}}</title>
     {{ partial "head.html" . }}
   </head>
   <body class="content">
     {{ partial "header.html" . }}
     <div class="container" id="container">
       <main>
-        {{.Content}}
+        <ul>
+          <li class="index-item index-item-title"><div class="index-item-time alt-on-mobile">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><div class="index-item-text alt-on-mobile">{{.Title}}</li>
+          <li class="index-item"><div class="index-item-time alt-on-mobile">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><div class="index-item-text alt-on-mobile">{{.Content}}</li>
+        </ul>
       </main>
     </div>
     {{ partial "footer.html" . }}

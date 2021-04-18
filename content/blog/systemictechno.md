@@ -7,7 +7,7 @@ img: "../img/logo_square.png"
 type: links
 tag: Release
 ---
-- ![](/img/icons/bandcamp.png) [Bandcamp](https://acidatm.bandcamp.com/)
-- ![](/img/icons/soundcloud.png) [Soundcloud](https://soundcloud.com/acidatm)
-- ![](/img/icons/youtube.png) [Youtube](https://www.youtube.com/channel/UCxZjfCEpK-Tzt5F35uiGlWA)
+- [Bandcamp](https://acidatm.bandcamp.com/)
+- [Soundcloud](https://soundcloud.com/acidatm)
+- [Youtube](https://www.youtube.com/channel/UCxZjfCEpK-Tzt5F35uiGlWA)
 - [Impressum](/impressum)
