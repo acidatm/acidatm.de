@@ -1,7 +1,7 @@
 window.addEventListener("load",function(){
   let canvas = document.getElementById("canvas")
   document.body.addEventListener("click",reseed)
-  window.addEventListener("mousemove",updateXY)
+  // window.addEventListener("mousemove",updateXY)
   // window.addEventListener("resize",reseed)
   window.addEventListener("keypress",reseed)
   // let button = document.getElementById("toggleBackground")
@@ -14,9 +14,9 @@ window.addEventListener("load",function(){
   new ACID(canvas)
 })
 window.mousePosition = [0,0]
-function updateXY(e){
-  window.mousePosition = [e.clientX,e.clientY]
-}
+// function updateXY(e){
+//   window.mousePosition = [e.clientX,e.clientY]
+// }
 
 function reseed(){
   window.config = {
