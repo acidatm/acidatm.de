@@ -1,11 +1,22 @@
 window.addEventListener("load",function(){
   let canvas = document.getElementById("canvas")
   document.body.addEventListener("click",reseed)
+  window.addEventListener("mousemove",updateXY)
   // window.addEventListener("resize",reseed)
   window.addEventListener("keypress",reseed)
+  // let button = document.getElementById("toggleBackground")
+  // if(button){
+  //   button.addEventListener("click",function(){
+  //     document.body.classList.toggle("video-only")
+  //   })
+  // }
   reseed()
   new ACID(canvas)
 })
+window.mousePosition = [0,0]
+function updateXY(e){
+  window.mousePosition = [e.clientX,e.clientY]
+}
 
 function reseed(){
   window.config = {
@@ -505,7 +516,7 @@ function ACID(canvas){
 }
 function ACIDRENDER(canvas,mothership){
   this.canvas = canvas
-  this.gl = this.canvas.getContext('webgl',{preserveDrawingBuffer: true});
+  this.gl = this.canvas.getContext('webgl',{preserveDrawingBuffer: false});
   this.mothership = mothership
   this.count = 1000
   this.upCount = function(){
@@ -573,14 +584,14 @@ function ACIDRENDER(canvas,mothership){
           }
           timeshift = 1 - timeshift
           darken = (timeshift * config.render.feedback.darken + (1 - config.render.feedback.darken)) * 0.99 + 0.01
-          rgb = this.mothership.get(x,y,0,time + timeshift * config.render.feedback.intensity * 100)
+          rgb = this.mothership.get(x + window.mousePosition[0],y + window.mousePosition[1],0,time + timeshift * config.render.feedback.intensity * 100)
           r = config.render.channels.r.active ? ((config.render.channels.r.base + rgb[0] * config.render.channels.r.mod) * config.render.channels.r.amp) * darken: 0
           g = config.render.channels.g.active ? ((config.render.channels.g.base + rgb[1] * config.render.channels.g.mod) * config.render.channels.g.amp) * darken: 0
           b = config.render.channels.b.active ? ((config.render.channels.b.base + rgb[2] * config.render.channels.b.mod) * config.render.channels.b.amp) * darken: 0
           a = config.render.channels.a.active ? ((config.render.channels.a.base + rgb[3] * config.render.channels.a.mod) * config.render.channels.a.amp) * darken: 0
         }
         else{
-          rgb = this.mothership.get(x,y,0,time)
+          rgb = this.mothership.get(x + window.mousePosition[0],y + window.mousePosition[1],0,time)
           r = config.render.channels.r.active ? ((config.render.channels.r.base + rgb[0] * config.render.channels.r.mod) * config.render.channels.r.amp): 0
           g = config.render.channels.g.active ? ((config.render.channels.g.base + rgb[1] * config.render.channels.g.mod) * config.render.channels.g.amp): 0
           b = config.render.channels.b.active ? ((config.render.channels.b.base + rgb[2] * config.render.channels.b.mod) * config.render.channels.b.amp): 0
