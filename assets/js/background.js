@@ -466,7 +466,7 @@ function ACID(canvas){
       i++
     }
     /*Different amp behaviors for clipping values*/
-    let max = 0.7
+    let max = 0.9
     switch(config.typ){
       /*Simply clips of the signal*/
       case "clp":
@@ -564,7 +564,7 @@ function ACIDRENDER(canvas,mothership){
     let grayscale = config.render.a
     var y = 0
     var x = 0
-    var time = this.scrollContainer ? this.count + this.scrollContainer.scrollTop * 0.005 : this.count
+    var time = this.scrollContainer ? this.count + (this.scrollContainer.scrollTop / window.innerHeight) * 2 : this.count
     var r,g,b,a,rgb,bw,timeshift,relX,relY,centeredRelX,centeredRelX,n,m,isEdge,lShift,sShift,darken,q
     while(y < this.dimensions.height){
       while(x < this.dimensions.width){
