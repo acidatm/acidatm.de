@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Work Sans";
   font-weight: 500;
+  font-display: optional;
   src: url("/fonts/WorkSans-Medium.ttf") format("truetype");
 }
 body{

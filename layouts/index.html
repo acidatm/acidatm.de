@@ -8,6 +8,7 @@
     {{ partial "header.html" . }}
     <div class="container" id="container">
       <main>
+        <h1 style="display: none; opacity: 0; pointer-event: none;">Acid At The Mall</h1>
         <ul>
           <li id="top" class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text">FUTURE</li>
           {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).After now }}
@@ -25,7 +26,7 @@
           <li id="info" class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text">INFO</li>
           <li class="index-item"><div class="index-item-time alt-on-mobile"></div><div class="index-item-text alt-on-mobile">{{.Content}}</li>
           {{end}}
-          <!-- <li id="toggleBackground" class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text">VIDEO ONLY</li> -->
+          <!-- <li <i></i>d="toggleBackground" class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text">VIDEO ONLY</li> -->
         </ul>
       </main>
     </div>
