@@ -1,6 +1,6 @@
 <div class="index-item-time"><time>{{ dateFormat "020106" .Date }}</time></div>
 <div class="index-item-text">
-{{ if (isset .Params "tag") }}<strong>[{{.Param "tag"}}]</strong> {{end}}
+{{ if (isset .Params "tag") }}[{{.Param "tag"}}]&nbsp;{{end}}
 {{ if (isset .Params "link") }}
 <a href='{{.Param "link" }}' target="_blank" title="{{.Title}}">
 {{ else if (gt (len .Content) 0) }}
