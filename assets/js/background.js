@@ -4,12 +4,18 @@ window.addEventListener("load",function(){
   // window.addEventListener("mousemove",updateXY)
   // window.addEventListener("resize",reseed)
   window.addEventListener("keypress",reseed)
-  // let button = document.getElementById("toggleBackground")
-  // if(button){
-  //   button.addEventListener("click",function(){
-  //     document.body.classList.toggle("video-only")
-  //   })
-  // }
+  let button = document.getElementById("toggleBackground")
+  if(button){
+    button.addEventListener("click",function(){
+      document.body.classList.toggle("video-only")
+    })
+  }
+  let mail = document.getElementById("mailLink")
+  if (mail){
+    mail.addEventListener("click",function(){
+      location.href = "mailto:johannes.hassenstein@pm.me"
+    })
+  }
   reseed()
   new ACID(canvas)
 })
