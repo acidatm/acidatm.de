@@ -1,7 +1,8 @@
 ---
 date: 2021-05-31
 publishdate: 2021-04-08
-title: Find the Systemic Techno EP on
+title: Systemic Techno EP
+linktitle: Find the Systemic Techno EP on
 tag: Release
 type: links
 ---
