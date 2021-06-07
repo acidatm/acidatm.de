@@ -57,15 +57,12 @@
         line-height: 1em;
         text-decoration: underline;
       }
-      body,html,main{
+      body{
         background: black;
+      }
+      body,html,main{
         position: relative;
-        z-index: 1;
-        /* background-image: url(/img/d.png);
-        background-size: 100px 100px;
-        background-position: 0 0;
-        background-attachment: fixed;
-        animation: backer 10s infinite linear; */
+        z-index: 2;
       }
       @keyframes backer{
         0%{
@@ -130,7 +127,7 @@
         pointer-events: none;
         /* mix-blend-mode: difference; */
         user-select: none;
-        z-index: 2;
+        z-index: 1;
       }
       @keyframes spinner {
         0%{
