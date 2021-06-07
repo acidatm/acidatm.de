@@ -84,6 +84,7 @@
         font-weight: 700;
         text-transform: uppercase
       }
+
       .signup-important,
       strong{
         font-weight: bold;
@@ -137,6 +138,14 @@
           transform: translate(-50%,-50%) rotateY(360deg);
         }
       }
+      @media (orientation: portrait){
+        main{
+          margin-top: 20vh;
+        }
+        .signup-headline{
+          font-size: 1.5em;
+        }
+      }
     </style>
   </head>
   <body class="signup">
@@ -146,11 +155,12 @@
         „Das Theater ist tot“
       </h1>
       <h2 class="signup-headline">
-        Das D im Kreis – LIVE
+        Das D im Kreis – LIVE<br>
+        18.06.2021
       </h2>
       <div class="signup-spacer"></div>
       <p class="signup-paragraph signup-important" style="text-align: center">
-        18.06.2021, 20:00 - 23:00<br>
+        20:00 - 22:00<br>
         Melde dich jetzt zur Livefolge auf "Laptops in Space" an!
       </p>
       <form class="signup-form" name="signup" netlify>
