@@ -35,11 +35,15 @@
         font-display: swap;
         src: url("/fonts/WorkSans-Bold.ttf") format("truetype");
       }
+      ::selection, ::-moz-selection{
+        background: white;
+        color: black;
+      }
       *{
         padding: 0;
         margin: 0;
         text-decoration: none;
-        color: black;
+        color: white;
         font-size: 18px;
         line-height: 1.5em;
         font-family: 'Work Sans', sans-serif;
@@ -54,12 +58,12 @@
         text-decoration: underline;
       }
       body{
-        background: white;
-        background-image: url(/img/d.png);
+        background: black;
+        /* background-image: url(/img/d.png);
         background-size: 100px 100px;
         background-position: 0 0;
         background-attachment: fixed;
-        animation: backer 10s infinite linear;
+        animation: backer 10s infinite linear; */
       }
       @keyframes backer{
         0%{
@@ -92,11 +96,11 @@
         text-align: center;
       }
       .signup-form-input{
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid white;
       }
       .signup-form-button{
-        background: black;
-        color: white;
+        background: white;
+        color: black;
         padding: 0.5em 1em;
         margin-top: 1em;
       }
@@ -112,9 +116,34 @@
         font-size: 1em;
         line-height: 1.5em;
       }
+      .signup-spinner{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 50vh;
+        height: 50vh;
+        background-image: url(/img/d.png);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        transform: translate(-50%,-50%) rotateY(0deg);
+        animation: spinner 10s infinite linear;
+        pointer-events: none;
+        mix-blend-mode: difference;
+        user-select: none;
+      }
+      @keyframes spinner {
+        0%{
+          transform: translate(-50%,-50%) rotateY(0deg);
+        }
+        100%{
+          transform: translate(-50%,-50%) rotateY(360deg);
+        }
+      }
     </style>
   </head>
   <body class="signup">
+    <div class="signup-spinner"></div>
     <main class="signup-container">
       <h1 class="signup-headline">
         „Das Theater ist tot“
