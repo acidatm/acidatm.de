@@ -9,4 +9,5 @@ type: links
 - [Bandcamp](https://acidatm.bandcamp.com/album/german-angst)
 - [Spotify](https://open.spotify.com/album/4j2cbtreg8Dc2R70HX9YqV?si=O6vO3WOSQwqQ4OJafHJ1wg&dl_branch=1)
 - [ITunes](https://music.apple.com/de/album/german-angst/1582990321?l=en)
+- [Soundcloud](https://soundcloud.com/acidatm/sets/german-angst)
 - all other streaming services
