@@ -49,7 +49,7 @@ function reseed(){
       "clrs": [],
       "optimization": {
         "effects": "off",
-        "subpixels": "on",
+        "subpixels": "off",
         "feedback": "on",
         "colormodes": "off",
         "txt": "off"

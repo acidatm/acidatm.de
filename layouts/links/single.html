@@ -13,6 +13,8 @@
       <h1>{{.Title}}:</h1>
       {{end}}
       {{.Content}}
+      <li>&nbsp;</li>
+      <li><a href="/" title="Homepage">Go To Homepage</li>
     </main>
     {{ $background := resources.Get "js/background.js"}}
     {{ $scripts := slice $background | resources.Concat "scripts.js" | minify | fingerprint }}
