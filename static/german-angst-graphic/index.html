@@ -7,6 +7,7 @@
     <style>
       html,body{
           background: #cccccc;
+          cursor: none;
       }
       #svgContainer{
         position: fixed;
@@ -791,6 +792,7 @@
           }, 3000);
         }
         else{
+          window.addEventListener("touchstart",animate)
           window.addEventListener("click",animate)
         }
 
