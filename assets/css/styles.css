@@ -3,7 +3,7 @@
   font-weight: 400;
   src: url("/fonts/WorkSans-Regular.ttf") format("truetype");
 } */
-@font-face {
+/* @font-face {
   font-family: "Space Mono";
   font-weight: 400;
   src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
@@ -12,11 +12,17 @@
   font-family: "Space Mono";
   font-weight: 700;
   src: url("/fonts/SpaceMono-Bold.ttf") format("truetype");
+} */
+
+@font-face {
+  font-family: "Space Mono";
+  font-weight: 400;
+  src: url("/fonts/apple.ttf") format("truetype");
 }
 body{
   padding: 0;
   margin: 0;
-  font-size: 4vh;
+  font-size: 2vh;
   line-height: 1em;
   background: #black;
   color: #ffffff;
@@ -100,7 +106,7 @@ footer{
   width: calc(100% - 2em);
   height: 1em;
   padding: 1em;
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 0.1em solid #ffffff;
   z-index: 3;
   transition: opacity 0.2s ease-in-out;
 }
@@ -108,7 +114,7 @@ footer{
   top: auto;
   bottom: 0em;
   border-bottom: none;
-  border-top: 2px solid #ffffff;
+  border-top: 0.1em solid #ffffff;
 }
 nav ul,
 footer ul{
@@ -126,7 +132,7 @@ main li{
 }
 .index-item{
   display: flex;
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 0.1em solid #ffffff;
   padding-bottom: 1em;
   padding-top: 1em;
 }
@@ -134,7 +140,7 @@ main li{
   border-bottom: 0;
 }
 .index-item-title{
-  padding: 0;
+  padding: 1em 0;
 }
 .index-item h2{
   margin: 0;
@@ -158,7 +164,7 @@ main li{
   padding: 0 1em;
   line-height: 1em;
   width: calc(100% - 2em);
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 0.1em solid #ffffff;
   color: #ffffff;
   display: block;
 }
@@ -172,54 +178,16 @@ main li{
 #toggleBackground{
   cursor: pointer;
 }
-/* .video-only nav,
-.video-only main li,
-.video-only footer{
-  opacity: 0;
-  pointer-events: none;
-}
-.video-only #toggleBackground{
-  opacity: 1;
-  pointer-events: all;
-  position: fixed;
-  border-top: 2px solid #ffffff;
-  width: 100%;
-  left: 0;
-  bottom: 3em;
-} */
 @media (max-width: 1024px),(orientation: portrait) {
   body{
-    font-size: 3vh;
-  }
-  /* .video-only #toggleBackground{
-    bottom: 6vh;
-  } */
-  .links{
-    font-size: 5vh;
-  }
-  .index-item-time.alt-on-mobile{
-    display: none;
-  }
-  .index-item-text.alt-on-mobile{
-    padding: 0 1em;
-    width: calc(100% - 2em);
-  }
-  .container{
-    top: 6vh;
-    height: calc(100% - 12vh);
-  }
-  nav,footer{
-    font-size: 2vh;
-    line-height: 1em;
+    font-size: 1.8vh;
   }
 }
 @media (max-width: 640px),(orientation: portrait) {
-  nav,footer{
-    font-size: 4vw;
-    line-height: 1em;
-  }
-  .container{
-    top: 12vw;
-    height: calc(100% - 24vw);
+  body{
+    font-size: 1.5vh;
   }
 }
+/* #container,footer,nav{
+  mix-blend-mode: difference;
+} */
