@@ -97,6 +97,7 @@ p{
   overflow: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
+  mix-blend-mode: difference;
 }
 nav,
 footer{
@@ -109,6 +110,7 @@ footer{
   border-bottom: 0.1em solid #ffffff;
   z-index: 3;
   transition: opacity 0.2s ease-in-out;
+  mix-blend-mode: difference;
 }
 footer{
   top: auto;

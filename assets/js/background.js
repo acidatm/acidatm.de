@@ -50,7 +50,7 @@ function reseed(){
       "optimization": {
         "effects": "off",
         "subpixels": "off",
-        "feedback": "on",
+        "feedback": "off",
         "colormodes": "off",
         "txt": "off"
       },
@@ -604,7 +604,7 @@ function ACIDRENDER(canvas,mothership){
           a = config.render.channels.a.active ? ((config.render.channels.a.base + rgb[3] * config.render.channels.a.mod) * config.render.channels.a.amp): 0
         }
         bw = (0.2126 * r + 0.7152 * g + 0.0722 * b)
-        bw = bw < 0.5 ? 0.1 : 0.5
+        bw = bw > 0.5 ? 1 : 0
         if(config.render.mod != "rgb" && colormodes){
           switch(config.render.mod){
             case "ndx":
