@@ -23,10 +23,10 @@ window.mousePosition = [0,0]
 // function updateXY(e){
 //   window.mousePosition = [e.clientX,e.clientY]
 // }
-
+const flooring = 0
 function reseed(){
   window.config = {
-    "typ": "mod",
+    "typ": "dyn",
     "settings": {
       "defaultColor": "#ffffff",
       "defaultFx": "drv",
@@ -68,20 +68,20 @@ function reseed(){
       "channels": {
         "r": {
           "amp": 1,
-          "base": 0,
-          "mod": 1,
+          "base": flooring,
+          "mod": 1 - flooring,
           "active": true
         },
         "g": {
           "amp": 1,
-          "base": 0,
-          "mod": 1,
+          "base": flooring,
+          "mod": 1 - flooring,
           "active": true
         },
         "b": {
           "amp": 1,
-          "base": 0,
-          "mod": 1,
+          "base": flooring,
+          "mod": 1 - flooring,
           "active": true
         },
         "a": {
@@ -490,6 +490,10 @@ function ACID(canvas){
         break
       /*Dynamically determines maximum amplitude over time and scales all signals accordingly*/
       case "dyn":
+      if(t != this.dynamics.t){
+        this.dynamics.t = t
+        this.dynamics.d = 0
+      }
         if(n[0] > this.dynamics.d){
           this.dynamics.d = n[0]
         }
@@ -506,10 +510,7 @@ function ACID(canvas){
         n[1] = n[1] / this.dynamics.d
         n[2] = n[2] / this.dynamics.d
         n[3] = n[3] / this.dynamics.d
-        if(t != this.dynamics.t){
-          this.dynamics.t = t
-          this.dynamics.d = 0
-        }
+
         break
     }
     return n
@@ -604,7 +605,7 @@ function ACIDRENDER(canvas,mothership){
           a = config.render.channels.a.active ? ((config.render.channels.a.base + rgb[3] * config.render.channels.a.mod) * config.render.channels.a.amp): 0
         }
         bw = (0.2126 * r + 0.7152 * g + 0.0722 * b)
-        bw = bw > 0.5 ? 1 : 0
+        bw = bw > 0.5 ? 1 : 0 //IMPORTANT
         if(config.render.mod != "rgb" && colormodes){
           switch(config.render.mod){
             case "ndx":

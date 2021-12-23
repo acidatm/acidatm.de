@@ -5,10 +5,6 @@ type: "info"
 formation of interactive spaces: analog techno/digital visuals
 
 ACIDATM is short for Acid At The Mall.
-The alias descends from my reddit username which descends from multiple sources, among other things the track "Acid at my house" by "Kid Paul".
-
-I release and perform dark, futuristic techno.
-I take strong influence from industrial, tribal, darkroom, dub and acid of cause.
 
 To me electronic music is the deepest form of connection between strangers.
 
