@@ -26,7 +26,7 @@ window.mousePosition = [0,0]
 const flooring = 0
 function reseed(){
   window.config = {
-    "typ": "dyn",
+    "typ": "mod",
     "settings": {
       "defaultColor": "#ffffff",
       "defaultFx": "drv",

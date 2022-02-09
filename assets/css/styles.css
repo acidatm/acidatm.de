@@ -69,6 +69,9 @@ a{
   text-decoration: none;
   cursor: pointer;
 }
+a,time,p,span{
+  background: black;
+}
 h1,h2,h3,h4,h5,h6{
   font-size: 1em;
   color: #ffffff;
@@ -97,7 +100,7 @@ p{
   overflow: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 }
 nav,
 footer{
@@ -110,7 +113,7 @@ footer{
   border-bottom: 0.1em solid #ffffff;
   z-index: 3;
   transition: opacity 0.2s ease-in-out;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 }
 footer{
   top: auto;
@@ -128,7 +131,7 @@ main{
   line-height: 1.4em;
   position: relative;
   z-index: 2;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 }
 main li{
   transition: opacity 0.2s ease-in-out;
