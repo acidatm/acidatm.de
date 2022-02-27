@@ -548,6 +548,8 @@ function ACIDRENDER(canvas,mothership){
     this.gl.viewport(0,0,this.canvas.width,canvas.height);
   }
   this.render = function(){
+    let whitepixels = 0
+    let totalpixels = 0
     //RECURSIVE LOOP
     if(!this.stopped){
       setTimeout(function () {
@@ -606,6 +608,10 @@ function ACIDRENDER(canvas,mothership){
         }
         bw = (0.2126 * r + 0.7152 * g + 0.0722 * b)
         bw = bw > 0.5 ? 1 : 0 //IMPORTANT
+        if(bw == 1){
+          whitepixels++
+        }
+        totalpixels++
         if(config.render.mod != "rgb" && colormodes){
           switch(config.render.mod){
             case "ndx":
@@ -659,6 +665,10 @@ function ACIDRENDER(canvas,mothership){
     gl.drawArrays(gl.POINTS, 0, verticeN)
     //UPCOUNT
     this.upCount()
+    let filled = whitepixels / totalpixels
+    if(filled < 0.05 || filled > 0.3){
+      reseed()
+    }
   }
   this.init = function(){
     this.scrollContainer = document.getElementById("container") || false
