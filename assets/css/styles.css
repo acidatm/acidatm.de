@@ -14,10 +14,15 @@
   src: url("/fonts/SpaceMono-Bold.ttf") format("truetype");
 } */
 
-@font-face {
+/* @font-face {
   font-family: "Space Mono";
   font-weight: 400;
   src: url("/fonts/apple.ttf") format("truetype");
+} */
+@font-face {
+  font-family: "Roboto Mono";
+  font-weight: 700;
+  src: url("/fonts/RobotoMono-Bold.ttf") format("truetype");
 }
 body{
   padding: 0;
@@ -26,7 +31,7 @@ body{
   line-height: 1.2em;
   background: #black;
   color: #ffffff;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 400;
   text-transform: uppercase;
   cursor: crosshair;
@@ -69,7 +74,7 @@ a{
   text-decoration: none;
   cursor: pointer;
 }
-a,time,p,span{
+a,time,p,span,strong,h2,h3,h4,h5,h6{
   background: black;
 }
 h1,h2,h3,h4,h5,h6{
@@ -79,7 +84,6 @@ h1,h2,h3,h4,h5,h6{
   margin: 0;
   padding: 0;
   font-weight: 400;
-  background: black;
 }
 p{
   line-height: 1.5em;

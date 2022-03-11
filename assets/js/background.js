@@ -1,7 +1,7 @@
 window.addEventListener("load",function(){
   let canvas = document.getElementById("canvas")
   document.body.addEventListener("click",reseed)
-  // window.addEventListener("mousemove",updateXY)
+  window.addEventListener("mousemove",updateXY)
   // window.addEventListener("resize",reseed)
   window.addEventListener("keypress",reseed)
   let button = document.getElementById("toggleBackground")
@@ -20,9 +20,9 @@ window.addEventListener("load",function(){
   new ACID(canvas)
 })
 window.mousePosition = [0,0]
-// function updateXY(e){
-//   window.mousePosition = [e.clientX,e.clientY]
-// }
+function updateXY(e){
+  window.mousePosition = [e.clientX * 0.25,e.clientY * 0.25]
+}
 const flooring = 0
 function reseed(){
   window.config = {
@@ -351,10 +351,16 @@ function ACID(canvas){
     random: [0.834,0.924,0.075,0.335,0.517,0.13,0.101,0.646,0.389,0.947,0.385,0.353,0.512,0.494,0.946,0.999,0.621,0.341,0.049,0.05,0.279,0.315,0.465,0.405,0.019,0.669,0.545,0.752,0.793,0.23,0.814,0.348,0.979,0.277,0.404,0.215,0.073,0.065,0.026,0.039,0.579,0.382,0.864,0.92,0.139,0.712,0.506,0.29,0.805,0.4,0.775,0.901,0.563,0.764,0.813,0.558,0.744,0.871,0.225,0.273,0.988,0.357,0.141,0.145,0.008,0.271,0.137,0.325,0.342,0.847,0.455,0.837,0.247,0.565,0.461,0.034,0.54,0.161,0.341,0.156,0.565,0.004,0.286,0.105,0.418,0.713,0.615,0.229,0.143,0.205,0.64,0.948,0.292,0.433,0.047,0.062,0.704,0.342,0.147,0.935],
   }
   this.get = function(x,y,z,t){
+    let _x = x + window.mousePosition[0]
+    let _y = y + window.mousePosition[1]
     let n = [0,0,0,0]
     let _n = 0
     var i = 0
     while(i < 5){
+      if(i > 3){
+        x = _x
+        y = _y
+      }
       let osc = config.osc[i]
       if(osc.run && osc.type != "off"){
         /*processing the oscilator*/
@@ -593,14 +599,14 @@ function ACIDRENDER(canvas,mothership){
           }
           timeshift = 1 - timeshift
           darken = (timeshift * config.render.feedback.darken + (1 - config.render.feedback.darken)) * 0.99 + 0.01
-          rgb = this.mothership.get(x + window.mousePosition[0],y + window.mousePosition[1],0,time + timeshift * config.render.feedback.intensity * 100)
+          rgb = this.mothership.get(x,y,0,time + timeshift * config.render.feedback.intensity * 100)
           r = config.render.channels.r.active ? ((config.render.channels.r.base + rgb[0] * config.render.channels.r.mod) * config.render.channels.r.amp) * darken: 0
           g = config.render.channels.g.active ? ((config.render.channels.g.base + rgb[1] * config.render.channels.g.mod) * config.render.channels.g.amp) * darken: 0
           b = config.render.channels.b.active ? ((config.render.channels.b.base + rgb[2] * config.render.channels.b.mod) * config.render.channels.b.amp) * darken: 0
           a = config.render.channels.a.active ? ((config.render.channels.a.base + rgb[3] * config.render.channels.a.mod) * config.render.channels.a.amp) * darken: 0
         }
         else{
-          rgb = this.mothership.get(x + window.mousePosition[0],y + window.mousePosition[1],0,time)
+          rgb = this.mothership.get(x,y,0,time)
           r = config.render.channels.r.active ? ((config.render.channels.r.base + rgb[0] * config.render.channels.r.mod) * config.render.channels.r.amp): 0
           g = config.render.channels.g.active ? ((config.render.channels.g.base + rgb[1] * config.render.channels.g.mod) * config.render.channels.g.amp): 0
           b = config.render.channels.b.active ? ((config.render.channels.b.base + rgb[2] * config.render.channels.b.mod) * config.render.channels.b.amp): 0
@@ -666,7 +672,7 @@ function ACIDRENDER(canvas,mothership){
     //UPCOUNT
     this.upCount()
     let filled = whitepixels / totalpixels
-    if(filled < 0.05 || filled > 0.3){
+    if(filled < 0.05 || filled > 0.2  ){
       reseed()
     }
   }
