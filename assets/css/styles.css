@@ -19,19 +19,24 @@
   font-weight: 400;
   src: url("/fonts/apple.ttf") format("truetype");
 } */
-@font-face {
+/* @font-face {
   font-family: "Roboto Mono";
   font-weight: 700;
   src: url("/fonts/RobotoMono-Bold.ttf") format("truetype");
+} */
+@font-face {
+  font-family: "Elektron";
+  font-weight: 700;
+  src: url("/fonts/Elektron.ttf") format("truetype");
 }
 body{
   padding: 0;
   margin: 0;
-  font-size: 2vh;
+  font-size: 2.4vh;
   line-height: 1.2em;
   background: #black;
   color: #ffffff;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Elektron', monospace;
   font-weight: 400;
   text-transform: uppercase;
   cursor: crosshair;
