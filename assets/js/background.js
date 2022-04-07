@@ -581,7 +581,7 @@ function ACIDRENDER(canvas,mothership){
     var x = 0
     var time = this.scrollContainer ? this.count + (this.scrollContainer.scrollTop / window.innerHeight) * 2 : this.count
     var r,g,b,a,rgb,bw,timeshift,relX,relY,centeredRelX,centeredRelX,n,m,isEdge,lShift,sShift,darken,q
-    while(y < this.dimensions.height){
+    while(y < this.dimensions.height * 0.25){
       while(x < this.dimensions.width){
         if(feedback){
           relX = x / this.dimensions.width // 0 - 1
