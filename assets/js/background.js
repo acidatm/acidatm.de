@@ -551,7 +551,7 @@ function ACIDRENDER(canvas,mothership){
     this.dimensions.height = window.innerHeight
     this.canvas.width = this.dimensions.width
     this.canvas.height = this.dimensions.height
-    this.gl.viewport(0,0,this.canvas.width,canvas.height);
+    this.gl.viewport(0,0,this.canvas.width,this.canvas.height);
   }
   this.render = function(){
     let whitepixels = 0
@@ -581,7 +581,7 @@ function ACIDRENDER(canvas,mothership){
     var x = 0
     var time = this.scrollContainer ? this.count + (this.scrollContainer.scrollTop / window.innerHeight) * 2 : this.count
     var r,g,b,a,rgb,bw,timeshift,relX,relY,centeredRelX,centeredRelX,n,m,isEdge,lShift,sShift,darken,q
-    while(y < this.dimensions.height * 0.25){
+    while(y < this.dimensions.height){
       while(x < this.dimensions.width){
         if(feedback){
           relX = x / this.dimensions.width // 0 - 1
