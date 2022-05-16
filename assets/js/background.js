@@ -672,7 +672,7 @@ function ACIDRENDER(canvas,mothership){
     //UPCOUNT
     this.upCount()
     let filled = whitepixels / totalpixels
-    if(filled < 0.05 || filled > 0.2  ){
+    if(filled < 0.05 || filled > 0.1  ){
       reseed()
     }
   }
