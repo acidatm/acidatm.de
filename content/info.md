@@ -4,12 +4,14 @@ type: "info"
 ---
 ACIDATM is short for Acid At The Mall
 
-interactive spaces
+i do not sell drugs
 
-analog techno
+but i still enjoy you asking
 
-digital visuals
+no pads
+no vocals
+no cowbells
 
-electronic music is the deepest form of connection between strangers
+electronic music is the deepest form of connection between strangers to me
 
-What else is left, when the world becomes more and more complex
+what else is left, when the world becomes more and more complex

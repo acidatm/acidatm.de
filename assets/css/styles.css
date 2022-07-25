@@ -120,7 +120,7 @@ footer{
   width: calc(100% - 2em);
   height: 1em;
   padding: 1em;
-  border-bottom: 0.1em solid #ffffff;
+  border-bottom: 0.15em solid #ffffff;
   z-index: 3;
   transition: opacity 0.2s ease-in-out;
   /* mix-blend-mode: difference; */
@@ -129,7 +129,7 @@ footer{
   top: auto;
   bottom: 0em;
   border-bottom: none;
-  border-top: 0.1em solid #ffffff;
+  border-top: 0.15em solid #ffffff;
 }
 nav ul,
 footer ul{
@@ -148,7 +148,7 @@ main li{
 }
 .index-item{
   display: flex;
-  border-bottom: 0.1em solid #ffffff;
+  border-bottom: 0.15em solid #ffffff;
   padding-bottom: 1em;
   padding-top: 1em;
 }
@@ -180,7 +180,7 @@ main li{
   padding: 0 1em;
   line-height: 2em;
   width: calc(100% - 2em);
-  border-bottom: 0.1em solid #ffffff;
+  border-bottom: 0.15em solid #ffffff;
   color: #ffffff;
   display: block;
 }
