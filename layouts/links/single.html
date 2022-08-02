@@ -8,9 +8,9 @@
     <canvas id="canvas"></canvas>
     <main>
       {{if isset .Params "linktitle"}}
-      <h1>{{.Param "linktitle"}}:</h1>
+      <h1><span>{{.Param "linktitle"}}:</span></h1>
       {{else}}
-      <h1>{{.Title}}:</h1>
+      <h1><span>{{.Title}}:</span></h1>
       {{end}}
       {{.Content}}
       <li>&nbsp;</li>

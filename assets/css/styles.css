@@ -32,7 +32,8 @@
 body{
   padding: 0;
   margin: 0;
-  font-size: 2.4vh;
+  /* font-size: 2.4vh; */
+  font-size: 5vh;
   line-height: 1.2em;
   background: #black;
   color: #ffffff;
@@ -120,7 +121,7 @@ footer{
   width: calc(100% - 2em);
   height: 1em;
   padding: 1em;
-  border-bottom: 0.15em solid #ffffff;
+  /* border-bottom: 0.15em solid #ffffff; */
   z-index: 3;
   transition: opacity 0.2s ease-in-out;
   /* mix-blend-mode: difference; */
@@ -129,7 +130,7 @@ footer{
   top: auto;
   bottom: 0em;
   border-bottom: none;
-  border-top: 0.15em solid #ffffff;
+  /* border-top: 0.15em solid #ffffff; */
 }
 nav ul,
 footer ul{
@@ -148,7 +149,7 @@ main li{
 }
 .index-item{
   display: flex;
-  border-bottom: 0.15em solid #ffffff;
+  /* border-bottom: 0.15em solid #ffffff; */
   padding-bottom: 1em;
   padding-top: 1em;
 }
@@ -165,14 +166,14 @@ main li{
   color: #ffffff;
 }
 .index-item-time{
-  width: 37%;
+  width: 20%;
   user-select: none;
 }
 .index-item-time{
   margin-left: 1em;
 }
 .index-item-text{
-  width: calc(63% - 2em);
+  width: calc(80% - 2em);
 }
 .links li,
 .links h1{
@@ -180,7 +181,7 @@ main li{
   padding: 0 1em;
   line-height: 2em;
   width: calc(100% - 2em);
-  border-bottom: 0.15em solid #ffffff;
+  /* border-bottom: 0.15em solid #ffffff; */
   color: #ffffff;
   display: block;
 }
@@ -190,6 +191,9 @@ main li{
 .links a{
   color: #ffffff;
   line-height: 1em;
+}
+.links h1 span{
+  background: black;
 }
 #toggleBackground{
   cursor: pointer;

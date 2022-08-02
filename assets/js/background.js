@@ -13,7 +13,7 @@ window.addEventListener("load",function(){
   let mail = document.getElementById("mailLink")
   if (mail){
     mail.addEventListener("click",function(){
-      location.href = "mailto:johannes.hassenstein@pm.me"
+      location.href = "mailto:hi@acidatm.de"
     })
   }
   reseed()
