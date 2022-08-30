@@ -39,7 +39,7 @@ function reseed(){
       "showDimensions": "on"
     },
     "render": {
-      "resolution": (Math.min(1,(((window.innerWidth + window.innerHeight) * 0.5) / 2000)) * 0.9 + 0.1) * 0.5 ,
+      "resolution": (Math.min(1,(((window.innerWidth + window.innerHeight) * 0.5) / 2000)) * 0.9 + 0.1) * 0.4 ,
       "w": 0,
       "h": 0,
       "x": 0.01001001001001001,
