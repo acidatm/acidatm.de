@@ -7,7 +7,7 @@
   <body class="visual">
     <canvas id="canvas"></canvas>
     {{ $visual := resources.Get "js/visual.js"}}
-    {{ $scripts := slice $visual | resources.Concat "scripts.js"  | minify | fingerprint }}
+    {{ $scripts := slice $visual | resources.Concat "visuals.js"  | minify | fingerprint }}
     <script src="{{ $scripts.Permalink }}"></script>
   </body>
 </html>

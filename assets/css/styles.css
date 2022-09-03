@@ -211,3 +211,6 @@ main li{
 /* #container,footer,nav{
   mix-blend-mode: difference;
 } */
+.visual{
+  cursor:none;
+}
