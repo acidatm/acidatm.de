@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>ACID AT THE MALL | Visual</title>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="visual">
+    <canvas id="canvas"></canvas>
+    {{ $visual := resources.Get "js/visual.js"}}
+    {{ $scripts := slice $visual | resources.Concat "scripts.js"  | minify | fingerprint }}
+    <script src="{{ $scripts.Permalink }}"></script>
+  </body>
+</html>

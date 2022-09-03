@@ -1,0 +1,4 @@
+---
+title: "Visual"
+type: "visual"
+---
