@@ -1,4 +1,4 @@
-<div class="index-item-time"><time>{{ dateFormat "020106" .Date }}</time></div>
+<div class="index-item-time"><time>{{ dateFormat "02\n01\n06" .Date }}</time></div>
 <div class="index-item-text">
 {{ if (isset .Params "tag") }}<span>[{{.Param "tag"}}]</span>&nbsp;{{end}}
 {{ if (isset .Params "link") }}

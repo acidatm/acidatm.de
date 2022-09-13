@@ -168,9 +168,13 @@ main li{
 .index-item-time{
   width: 20%;
   user-select: none;
-}
-.index-item-time{
   margin-left: 1em;
+}
+.index-item-time time{
+  width: 2ch;
+  display: inline-block;
+  line-height: 1em;
+  margin-top: 0.4em;
 }
 .index-item-text{
   width: calc(80% - 2em);
@@ -200,12 +204,17 @@ main li{
 }
 @media (max-width: 1024px),(orientation: portrait) {
   body{
-    font-size: 1.8vh;
+    font-size: 24px;
   }
 }
 @media (max-width: 640px),(orientation: portrait) {
   body{
-    font-size: 1.5vh;
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px),(orientation: portrait) {
+  body{
+    font-size: 16px;
   }
 }
 /* #container,footer,nav{
