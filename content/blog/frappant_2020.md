@@ -1,6 +1,6 @@
 ---
 date: 2020-08-07
-title: 100% Frappant Ausstellung, Frappant Galerie, Hamburg
+title: Performance
 link: https://frappant.org/
-tag: Live
 ---
+@Frappant Galerie

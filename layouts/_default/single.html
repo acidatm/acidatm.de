@@ -5,16 +5,21 @@
     {{ partial "head.html" . }}
   </head>
   <body class="content">
-    {{ partial "header.html" . }}
-    <div class="container" id="container">
-      <main>
-        <ul>
-          <li class="index-item index-item-title"><div class="index-item-time alt-on-mobile">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><div class="index-item-text alt-on-mobile">{{.Title}}</li>
-          <li class="index-item"><div class="index-item-time alt-on-mobile">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><div class="index-item-text alt-on-mobile">{{.Content}}</li>
-        </ul>
-      </main>
-    </div>
-    {{ partial "footer.html" . }}
+    <canvas id="canvas"></canvas>
+    <div class="container" id="contaier">
+      <main class="content">
+          <ul>
+            <li class="index-item">
+              <h1>
+                {{.Title}}
+              </h1>
+            </li>
+            <li class="index-item">
+              {{.Content}}
+            </li>
+          </ul>
+        </main>
+      </div>
     {{ $background := resources.Get "js/background.js"}}
     {{ $scripts := slice $background | resources.Concat "scripts.js" | minify | fingerprint }}
     <script src="{{ $scripts.Permalink }}"></script>

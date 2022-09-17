@@ -1,15 +1,17 @@
-<div class="index-item-time"><time>{{ dateFormat "02\n01\n06" .Date }}</time></div>
-<div class="index-item-text">
-{{ if (isset .Params "tag") }}<span>[{{.Param "tag"}}]</span>&nbsp;{{end}}
 {{ if (isset .Params "link") }}
 <a href='{{.Param "link" }}' target="_blank" title="{{.Title}}">
 {{ else if (gt (len .Content) 0) }}
 <a href='{{.URL}}'  title="{{.Title}}">
 {{ end }}
-<h2>{{.Title}}</h2>
+  <time class="index-item-time">{{ dateFormat "0201" .Date }}</time>
+  <div class="index-item-title">
+    <h2>
+      {{.Title}}
+    </h2>
+    {{.Content}}
+  </div>
 {{ if (isset .Params "link") }}
 </a>
 {{ else if (gt (len .Content) 0) }}
 </a>
 {{ end }}
-</div>

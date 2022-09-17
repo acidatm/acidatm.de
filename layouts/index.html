@@ -1,40 +1,52 @@
 <!DOCTYPE html>
+{{ $lastyear := dateFormat "2006" (now.AddDate 1 0 0) }}
 <html lang="en" dir="ltr">
   <head>
     <title>ACID AT THE MALL | Bekannt aus dem Radio</title>
     {{ partial "head.html" . }}
   </head>
-  <body class="list">
-    {{ partial "header.html" . }}
-    <div class="container" id="container">
-      <main>
-        <h1 style="display: none; opacity: 0; pointer-event: none;">Acid At The Mall</h1>
-        <ul>
-          <li id="top" class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text"><span>Future</span></li>
-          {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).After now }}
-          <li class="index-item">
-            {{ partial "index/item.html" . }}
-          </li>
-          {{end}}{{end}}{{end}}
-          <li class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text"><span>Past</span></li>
-          {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).Before now }}
-          <li class="index-item">
-            {{ partial "index/item.html" . }}
-          </li>
-          {{end}}{{end}}{{end}}
-          {{ range where .Pages "Type" "info" }}
-          <li id="info" class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text"><span>Info</span></li>
-          <li class="index-item"><div class="index-item-time alt-on-mobile"></div><div class="index-item-text alt-on-mobile">{{.Content}}</li>
-          {{end}}
-          <!-- <li id="toggleBackground" class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text">VIDEO ONLY</li>
-          <li id="mailLink" class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text">CONTACT</li> -->
-          <li class="index-item index-item-title"><div class="index-item-time"></div><div class="index-item-text"><a href="/impressum">Impressum</a></div></li>
-        </ul>
-      </main>
-    </div>
-    {{ partial "footer.html" . }}
+  <body class="list" id="container">
+    <canvas id="canvas"></canvas>
+    <div class="container" id="contaier">
+      <main class="content">
+          <ul>
+            <li class="index-item">
+              <h1>
+                Acid At The Mall
+              </h1>
+            </li>
+            {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).After now }}
+            <li class="index-item">
+              {{ partial "index/item.html" . }}
+            </li>
+            {{end}}{{end}}{{end}}
+            {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).Before now }}
+            {{ $year := dateFormat "2006" .Date }}
+            {{ if ne $lastyear $year}}
+            {{ $lastyear = $year}}
+            <li class="index-item index-item-year">
+              <time class="index-item-time">{{ $year}}</time>
+            </li>
+            {{end}}
+            <li class="index-item">
+              {{ partial "index/item.html" . }}
+            </li>
+            {{end}}{{end}}{{end}}
+            <li class="index-item">
+              <div class="index-item-text">
+                hi[at]acidatm.de
+              </div>
+            </li>
+            <li class="index-item">
+              <div class="index-item-text">
+                <a href="/impressum">Impressum</a>
+              </div>
+            </li>
+          </ul>
+        </main>
+      </div>
     {{ $background := resources.Get "js/background.js"}}
-    {{ $scripts := slice $background | resources.Concat "scripts.js"  | minify | fingerprint }}
+    {{ $scripts := slice $background | resources.Concat "scripts.js"  | fingerprint }}
     <script src="{{ $scripts.Permalink }}"></script>
   </body>
 </html>

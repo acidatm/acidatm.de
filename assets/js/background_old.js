@@ -23,10 +23,8 @@ window.mousePosition = [0,0]
 function updateXY(e){
   window.mousePosition = [e.clientX * 0.25,e.clientY * 0.25]
 }
-let clock = 0
 const flooring = 0
 function reseed(){
-  clock = 0
   window.config = {
     "typ": "mod",
     "settings": {
@@ -41,7 +39,7 @@ function reseed(){
       "showDimensions": "on"
     },
     "render": {
-      "resolution": (Math.min(1,(((window.innerWidth + window.innerHeight) * 0.5) / 2000)) * 0.9 + 0.1) * 0.2 ,
+      "resolution": (Math.min(1,(((window.innerWidth + window.innerHeight) * 0.5) / 2000)) * 0.9 + 0.1) * 0.4 ,
       "w": 0,
       "h": 0,
       "x": 0.01001001001001001,
@@ -536,7 +534,6 @@ function ACIDRENDER(canvas,mothership){
   this.count = 1000
   this.upCount = function(){
     this.count += 0.1 / config.settings.framerate
-    clock++
     if(this.count > 2147483646){
       this.count = 1000
     }
@@ -571,7 +568,6 @@ function ACIDRENDER(canvas,mothership){
      gl = this.gl
      let colors = []
     let vertices = []
-    let base = 0.8
     var verticeN = 0
     let d = (this.dimensions.width + this.dimensions.height) * 0.5
     let res = 2 + config.render.resolution * 24
@@ -584,13 +580,13 @@ function ACIDRENDER(canvas,mothership){
     var y = 0
     var x = 0
     var time = this.scrollContainer ? this.count + (this.scrollContainer.scrollTop / window.innerHeight) * 2 : this.count
-    var r,g,b,a,rgb,bw,_bw,timeshift,relX,relY,rel,centeredRelX,centeredRelX,n,m,isEdge,lShift,sShift,darken,q
+    var r,g,b,a,rgb,bw,timeshift,relX,relY,centeredRelX,centeredRelX,n,m,isEdge,lShift,sShift,darken,q
     while(y < this.dimensions.height){
       while(x < this.dimensions.width){
-        relX = x / this.dimensions.width // 0 - 1
-        relY = y / this.dimensions.height // 0 - 1
         if(feedback){
+          relX = x / this.dimensions.width // 0 - 1
           centeredRelX = relX <= config.render.feedback.centerX ? relX / config.render.feedback.centerX : 1- ((relX - config.render.feedback.centerX) / (1 - config.render.feedback.centerX))// 0 - 1 - 0
+          relY = y / this.dimensions.height // 0 - 1
           centeredRelY = relY <= (1 - config.render.feedback.centerY) ? relY / (1 - config.render.feedback.centerY) : 1 - ((relY - (1 - config.render.feedback.centerY)) / config.render.feedback.centerY)// 0 - 1 - 0
           n = centeredRelX * config.render.feedback.skew + centeredRelY * (1 - config.render.feedback.skew)
           m = n * config.render.feedback.bend + config.render.feedback.mix * (1 - config.render.feedback.bend)
@@ -616,20 +612,12 @@ function ACIDRENDER(canvas,mothership){
           b = config.render.channels.b.active ? ((config.render.channels.b.base + rgb[2] * config.render.channels.b.mod) * config.render.channels.b.amp): 0
           a = config.render.channels.a.active ? ((config.render.channels.a.base + rgb[3] * config.render.channels.a.mod) * config.render.channels.a.amp): 0
         }
-        // rel = base + ((relX + relY) * 0.5) * (1 - base)
-        rel = base + (1 - relX) * (1 - base)
-        // rel = ((relX + relY) * 0.5)
-        // rel = 0.8
-        _bw = (0.2126 * r + 0.7152 * g + 0.0722 * b)
-        bw = _bw > 0.5 ? 1 : 0 //IMPORTANT
+        bw = (0.2126 * r + 0.7152 * g + 0.0722 * b)
+        bw = bw > 0.5 ? 1 : 0 //IMPORTANT
         if(bw == 1){
           whitepixels++
         }
         totalpixels++
-        _bw = _bw * rel
-        let v = Math.round(x) % 2  && Math.round(y + 1) % 2
-        bw = _bw > 0.5 ? v : 0 //IMPORTANT
-
         if(config.render.mod != "rgb" && colormodes){
           switch(config.render.mod){
             case "ndx":
@@ -684,13 +672,12 @@ function ACIDRENDER(canvas,mothership){
     //UPCOUNT
     this.upCount()
     let filled = whitepixels / totalpixels
-    let fillTreshold = 0.2 - clock * 0.001
-    if(filled < 0.05 || filled > fillTreshold ){
+    if(filled < 0.05 || filled > 0.2  ){
       reseed()
     }
   }
   this.init = function(){
-    this.scrollContainer = document.documentElement
+    this.scrollContainer = document.getElementById("container") || false
     let gl = this.gl
     gl.clearColor(0,0,0,1);
 
