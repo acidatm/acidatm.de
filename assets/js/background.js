@@ -41,7 +41,7 @@ function reseed(){
       "showDimensions": "on"
     },
     "render": {
-      "resolution": (Math.min(1,(((window.innerWidth + window.innerHeight) * 0.5) / 2000)) * 0.9 + 0.1) * 0.2 ,
+      "resolution": (Math.min(1,(((window.innerWidth + window.innerHeight) * 0.5) / 2000)) * 0.9 + 0.1) * 0.14 ,
       "w": 0,
       "h": 0,
       "x": 0.01001001001001001,
@@ -557,6 +557,7 @@ function ACIDRENDER(canvas,mothership){
     this.gl.viewport(0,0,this.canvas.width,this.canvas.height);
   }
   this.render = function(){
+    console.log("hi");
     let whitepixels = 0
     let totalpixels = 0
     //RECURSIVE LOOP
@@ -583,6 +584,8 @@ function ACIDRENDER(canvas,mothership){
     let grayscale = config.render.a
     var y = 0
     var x = 0
+    var _y = 0
+    var _x = 0
     var time = this.scrollContainer ? this.count + (this.scrollContainer.scrollTop / window.innerHeight) * 2 : this.count
     var r,g,b,a,rgb,bw,_bw,timeshift,relX,relY,rel,centeredRelX,centeredRelX,n,m,isEdge,lShift,sShift,darken,q
     while(y < this.dimensions.height){
@@ -627,8 +630,8 @@ function ACIDRENDER(canvas,mothership){
         }
         totalpixels++
         _bw = _bw * rel
-        let v = Math.round(x) % 2  && Math.round(y + 1) % 2
-        bw = _bw > 0.5 ? v : 0 //IMPORTANT
+        let v = Math.round(_x) % 2  && Math.round(_y + 1) % 2
+        bw = bw && v //IMPORTANT
 
         if(config.render.mod != "rgb" && colormodes){
           switch(config.render.mod){
@@ -662,9 +665,12 @@ function ACIDRENDER(canvas,mothership){
           verticeN+=1
         }
         x+=res
+        _x++
       }
       x = 0
+      _x = 0
       y += res
+      _y++
     }
     //WEBGL RENDER
     let colorBuffer = gl.createBuffer();
