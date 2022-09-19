@@ -557,7 +557,6 @@ function ACIDRENDER(canvas,mothership){
     this.gl.viewport(0,0,this.canvas.width,this.canvas.height);
   }
   this.render = function(){
-    console.log("hi");
     let whitepixels = 0
     let totalpixels = 0
     //RECURSIVE LOOP
@@ -696,7 +695,7 @@ function ACIDRENDER(canvas,mothership){
     }
   }
   this.init = function(){
-    this.scrollContainer = document.documentElement
+    this.scrollContainer = document.getElementById("container")
     let gl = this.gl
     gl.clearColor(0,0,0,1);
 
