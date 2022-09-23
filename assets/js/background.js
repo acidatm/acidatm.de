@@ -32,7 +32,7 @@ function reseed(){
     "settings": {
       "defaultColor": "#ffffff",
       "defaultFx": "drv",
-      "framerate": 24,
+      "framerate": 30,
       "zoom": 0.2972972972972973,
       "tips": "off",
       "labels": "on",

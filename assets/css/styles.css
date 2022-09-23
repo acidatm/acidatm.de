@@ -29,12 +29,15 @@
   font-weight: 700;
   src: url("/fonts/Elektron.ttf") format("truetype");
 }
+html{
+  background: #000000;
+}
 body{
   padding: 0;
   margin: 0;
   font-size: 3vh;
   line-height: 1.2em;
-  background: #black;
+  background: #000000;
   color: #ffffff;
   font-family: 'Elektron', monospace;
   font-weight: 400;
