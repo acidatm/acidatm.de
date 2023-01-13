@@ -629,7 +629,8 @@ function ACIDRENDER(canvas,mothership){
         }
         totalpixels++
         _bw = _bw * rel
-        let v = Math.round(_x) % 2  && Math.round(_y + 1) % 2
+        // let v = Math.round(_x) % 2  && Math.round(_y + 1) % 2
+        let v = Math.round(_x) % 4 == 0 && Math.round(_y + 1) % 4 == 0
         bw = bw && v //IMPORTANT
 
         if(config.render.mod != "rgb" && colormodes){
