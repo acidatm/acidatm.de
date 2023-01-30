@@ -1,6 +1,6 @@
 ---
 date: 2022-09-02
-title: TRAM Exhibit
+title: Exhibit
 link: https://frappant.org/galerie/ausstellung/news/blur/
 ---
 @Frappant

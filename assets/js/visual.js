@@ -1,4 +1,7 @@
 window.addEventListener("load",function(){
+  const urlParams = new URLSearchParams(window.location.search);
+  const grid = urlParams.get('grid');
+  window.gridsize = Number(grid) || 4
   let canvas = document.getElementById("canvas")
   reseed()
   new ACID(canvas)
@@ -610,7 +613,7 @@ function ACIDRENDER(canvas,mothership){
         totalpixels++
         _bw = _bw * rel
         // let v = Math.round(_x) % 2  && Math.round(_y + 1) % 2
-        let v = Math.round(_x) % 4 == 0 && Math.round(_y + 1) % 4 == 0
+        let v = Math.round(_x) % gridsize == 0 && Math.round(_y + 1) % gridsize == 0
         bw = bw && v //IMPORTANT
 
         if(config.render.mod != "rgb" && colormodes){

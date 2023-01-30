@@ -9,7 +9,7 @@ Witthof 21
 
 ## Kontakt
 
-E-Mail: johannes.hassenstein@protonmail.com
+E-Mail: hi@acidatm.de
 
 ## Verantwortlich fuer den Inhalt nach § 55 Abs. 2 RStV
 
