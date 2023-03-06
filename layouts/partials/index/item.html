@@ -1,7 +1,5 @@
 {{ if (isset .Params "link") }}
 <a href='{{.Param "link" }}' target="_blank" title="{{.Title}}">
-{{ else if (gt (len .Content) 0) }}
-<a href='{{.URL}}'  title="{{.Title}}">
 {{ end }}
   <time class="index-item-time">{{ dateFormat "0201" .Date }}</time>
   <div class="index-item-title">
@@ -11,7 +9,5 @@
     {{.Content}}
   </div>
 {{ if (isset .Params "link") }}
-</a>
-{{ else if (gt (len .Content) 0) }}
 </a>
 {{ end }}
