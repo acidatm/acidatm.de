@@ -26,12 +26,12 @@
             <li class="index-item">
             <br>
           </li>
-            {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).After now }}
+            {{ range where .Site.Pages.ByDate.Reverse "Type" "blog" }}{{ if (time .Date).After now }}
             <li class="index-item">
               {{ partial "index/item.html" . }}
             </li>
-            {{end}}{{end}}{{end}}
-            {{ range where .Pages "Type" "blog" }}{{ range (.Pages.ByParam "Date").Reverse }}{{ if (time .Params.Date).Before now }}
+            {{end}}{{end}}
+            {{ range where .Site.Pages.ByDate.Reverse "Type" "blog" }}{{ if (time .Date).Before now }}
             {{ $year := dateFormat "2006" .Date }}
             {{ if ne $lastyear $year}}
             {{ $lastyear = $year}}
@@ -42,7 +42,7 @@
             <li class="index-item">
               {{ partial "index/item.html" . }}
             </li>
-            {{end}}{{end}}{{end}}
+            {{end}}{{end}}
             <li class="index-item">
               <div class="index-item-text">
                 <a href="/impressum" target="_blank">Legal Stuff</a>

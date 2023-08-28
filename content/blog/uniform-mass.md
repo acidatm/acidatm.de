@@ -4,4 +4,4 @@ publishdate: 2021-09-16
 title: Release
 link: https://acidatm.bandcamp.com/album/uniform-mass
 ---
-Uniform Mass EP
+Uniform Mass
