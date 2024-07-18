@@ -1,0 +1,2672 @@
+<!doctype html>
+<html style='font-size:12px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #000000; --text-color: #ffffff; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+html {
+	font-size: 19px;
+}
+
+html, body {
+	margin: auto;
+	background: #000000;
+}
+*{
+	font-family: "Space Mono", Consolas, monospace;
+}
+body {
+	font-family: "Space Mono", Consolas, monospace;
+	color: #ffffff;
+	line-height: 1.4;
+	text-align: justify;
+}
+
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
+}
+
+h1 {
+	font-size:3em;
+}
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
+}
+
+h1,
+h2,
+h3{
+	text-align: center;
+}
+@media print, (overflow-block: paged) or (overflow-block: optional-paged)
+{
+  /* Move top-level headings to a new page on the right-hand side: */
+  h1
+  {
+    page-break-before: right; /* CSS 2 */
+    break-before: recto;      /* CSS 3+,
+      also works for languages written and paginated right-to-left */
+  }
+  /* Override the previous ruleset for the very first heading: */
+  h1:first-of-type,
+  section > h1:first-child
+  {
+    page-break-before: avoid; /* CSS 2 */
+    break-before: avoid;      /* CSS 3+ */
+  }
+  /* Force second-level headings to begin in a new column or
+     possiblyon a new page if it was in the last of multiple columns otherwise: */
+  h2
+  {
+    break-before: column;
+  }
+  /* Headings should not be the last paragraph on a page: */
+  h1, h2, h3, h4, h5, h6
+  {
+    page-break-after: avoid;
+  }
+  /* Consecutive headings with deepening level should not be split across pages: */
+  h1+h2, h2+h3, h3+h4, h4+h5, h5+h6
+  {
+    page-break-before: avoid;
+  }
+}
+
+/* h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+} */
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+blockquote {
+	/* margin-left: 1em;
+	padding-left: 1em; */
+	/* border-left: 1px solid #ddd; */
+	text-align: center;
+}
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+@media print, (overflow-block: paged) or (overflow-block: optional-paged)
+{
+  hr
+  {
+    page-break-after: always; /* CSS 2 */
+         break-after: region; /* CSS 3+ */
+    /* minimal layout disruption: */
+    height: 0.1mm; visibility: hidden;
+  }
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+.md-tag {
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
+}
+
+.md-toc {
+	margin-top: 40px;
+}
+
+.md-toc-content {
+	padding-bottom: 20px;
+}
+
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.typora-node .file-list-item-parent-loc,
+.typora-node .file-list-item-time,
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-fences .code-tooltip {
+	bottom: -2em !important;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>die letzen dinge [TEXT]</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><p><img src="./cover.gif" referrerpolicy="no-referrer"></p><h1 id='die-letzten-dinge'><span>die letzten dinge</span></h1><blockquote><p><em><span>andeutung eines weltuntergangs</span></em>
+<strong><span>johannes hassenstein</span></strong></p></blockquote><blockquote><hr /></blockquote><h2 id='in-einer-tankstelle-an-einem-dorf'><span>in einer tankstelle an einem dorf</span></h2><blockquote><p><em><span>ANFANG</span></em></p></blockquote><p><span>einmal die äh</span>
+<span>-</span>
+<span>fuck warte</span>
+<span>-</span>
+<span>3 glaube ich</span>
+<span>der bus </span>
+<span>der blaue</span>
+<span>also weiße</span>
+<span>also weiße mit blauem dach</span>
+<span>das einzige auto halt</span></p><p><span>3</span></p><p><span>3 genau</span>
+<span>-</span>
+<span>nimmst du karte</span></p><p><span>ne</span></p><p><span>fuck</span>
+<span>-</span>
+<span>was macht das</span></p><p><span>guckst du nicht wenn du tankst</span></p><p><span>ne ich mach immer voll</span>
+<span>-</span>
+<span>weißt du viele menschen tanken immer ein bisschen</span>
+<span>und tanken wenn leer ist</span>
+<span>aber ich tank immer voll</span>
+<span>das kostet genau das gleiche</span>
+<span>man muss nur einmal damit anfangen</span>
+<span>aber man hat dann immer einen vollen tank</span></p><p><span>wenn man mal schnell weit weg will</span></p><p><span>wenn man mal schell weit weg will</span></p><p><span>du hast also nicht geguckt</span></p><p><span>ne</span></p><p><span>18 und ein bisschen</span>
+<span>-</span>
+<span>wie viel hast du?</span></p><p><span>bist du 18 und ein bisschen</span></p><p><span>danke</span></p><p><span>wieso danke</span></p><p><span>das war ironie</span></p><p><span>okay</span>
+<span>-</span>
+<span>aber bist du 18</span></p><p><span>kostet 18 20</span>
+<span>wenn du es genau wissen willst</span></p><p><span>lenk nicht ab</span>
+<span>bist du 18</span></p><p><span>wie viel hast du</span></p><p><span>nicht genug wenn du nicht 18 bist</span></p><p><span>ja</span></p><p><span>wie ja</span></p><p><span>ja ich bin 18</span>
+<span>wie viel hast du jetzt?</span></p><p><span>warum</span></p><p><span>weil du getankt hast</span>
+<span>da zahlt man normalerweise</span></p><p><span>nicht wenn man gut aussieht</span></p><p><span>deswegen zahlst du ja</span></p><p><span>hm</span></p><p><span>ja</span>
+<span>-</span>
+<span>hm</span></p><p><span>ich hab</span>
+<span>-</span>
+<span>20</span>
+<span>22</span>
+<span>22 40</span></p><p><span>das reicht doch</span></p><p><span>nicht wenn ich dich noch einlade</span></p><p><span>für 4 40</span></p><p><span>besser als nicht eingeladen zu werden</span></p><p><span>ich kann selber zahlen</span></p><p><span>das heißt wir gehen aus</span></p><p><span>das habe ich nicht gesagt</span></p><p><span>aber du hast nicht nein gesagt </span></p><p><span>nein</span></p><p><span>also 18</span></p><p><span>ja</span></p><p><span>war das ein ja</span></p><p><span>ja</span>
+<span>-</span>
+<span>wo willst du mich denn</span>
+<span>für 4 40 einladen</span></p><p><span>wann hast du feierabend</span></p><p><span>um 6</span></p><p><span>also 18 uhr</span></p><p><span>-</span></p><p><span>kann ja auch 6 morgens sein</span>
+<span>-</span>
+<span>was kosten 2 brezeln und 2 bier</span></p><p><span>7</span>
+<span>-</span>
+<span>60</span></p><p><span>scheiß tankenpreise</span></p><p><span>du wolltest mich ja einladen</span></p><p><span>was kosten 2 brezeln und 2 bier nach 18 uhr</span></p><p><span>das gleiche</span>
+<span>ich zahl selber</span></p><p><span>oder nur bier</span></p><p><span>sehr romantisch</span>
+<span>4 20</span></p><p><span>passt doch</span></p><p><span>plus pfand</span></p><p><span>kannst ja wieder mitnehmen</span></p><p><span>das ist kein pfandautomat hier</span></p><p><span>bei mir um die ecke ist einer</span></p><p><span>wer hat den gesagt das wir zu dir gehen</span></p><p><span>niemand</span>
+<span>ich sagte nur das bei mir um die ecke einer ist</span>
+<span>-</span></p><p><span>ich hab um 6 feierabend</span></p><p><span>schön</span>
+<span>um 6</span></p><p><span>18 uhr</span></p><hr /><h2 id='in-einem-restaurant-an-einem-campingplatz'><span>in einem restaurant an einem campingplatz</span></h2><p><span>für 2 bitte</span></p><p><span>setzt euch einfach</span>
+<span>alles frei</span></p><p><span>willst du ans fenster</span>
+<span>-</span>
+<span>bank</span>
+<span>oder stuhl</span></p><p><span>bank</span>
+<span>rücken zum fenster</span></p><p><span>bier</span>
+<span>oder wein</span></p><p><span>korn</span>
+<span>meistens</span>
+<span>hier ouzo</span>
+<span>-</span>
+<span>guck</span>
+<span>da ist ein sprachkurs auf der serviette</span>
+<span>-</span>
+<span>warst du schonmal woanders</span>
+<span>so woanders anders</span>
+<span>richtig draussen</span>
+<span>mit dem bus</span></p><p><span>noch nicht</span>
+<span>aber bald</span>
+<span>du</span></p><p><span>nie</span>
+<span>-</span>
+<span>nur einmal</span>
+<span>da war ich klein</span>
+<span>polen</span>
+<span>zigaretten schmuggeln glaube ich</span>
+<span>wüsste nicht</span>
+<span>was mein vater da sonst wollen würde</span>
+<span>in polen</span>
+<span>-</span>
+<span>in polen</span>
+<span>sieht es aus wie hier</span>
+<span>also eigentlich</span>
+<span>war ich nie woanders</span>
+<span>immer nur hier</span>
+<span>-</span>
+<span>schnaps ist gut</span>
+<span>aber erst nach dem essen</span></p><p><span>was nehmen wir</span></p><p><span>ich nehm hier immer gyrosteller</span>
+<span>mit doppelt tzaziki</span></p><p><span>haben wir heute nichts mehr vor</span></p><p><span>das ergibt sich schon</span></p><p><span>es ergibt sich</span></p><p><span>von ganz alleine</span></p><p><span>auch mit tzaziki</span>
+<span>wenn wir es wirklich wollen</span></p><p><span>-</span></p><p><span>kennst du lustige fakten</span>
+<span>irgendwas spannendes</span>
+<span>in deinem leben</span>
+<span>oder einfach so</span></p><p><span>bestimmt</span>
+<span>-</span>
+<span>lass mich überlegen</span></p><p><span>äh</span>
+<span>-</span>
+<span>wusstest du</span>
+<span>wusstest du zum beispiel dass</span>
+<span>dass man das erste schwarze loch entdeckt hat</span>
+<span>bevor es drucker gab</span>
+<span>oder plotter</span>
+<span>weißt du was ein plotter ist</span>
+<span>also der malt im prinzip einfach nur kleine punkte an bestimmten stellen</span>
+<span>und an welchen stellen</span>
+<span>das steht in einer datei</span>
+<span>als man das erste schwarze loch gefunden hat</span>
+<span>haben sie ein foto gemacht</span>
+<span>aber das foto war nur eine plotterdatei</span>
+<span>also einfach nur anweisungen wo man punkte hinmalen muss</span>
+<span>damit man das schwarze loch sehen kann</span>
+<span>es gab also einen menschen der monatelang kleine schwarze punkte gemalt hat</span>
+<span>bis man das schwarze loch sehen kann</span>
+<span>ich hab gedacht</span>
+<span>es wäre wohl schlauer gewesen</span>
+<span>auf einem schwarzen blatt nur da weiße punkte zu malen</span>
+<span>wo kein schwarzes loch ist</span>
+<span>weißt du</span>
+<span>wenn ich über sowas nachdenke fühle ich mich immer ganz klein</span>
+<span>schwarze löcher</span>
+<span>ein universum dass sich ausdehnt und wieder zusammenfällt</span>
+<span>so</span>
+<span>so werden wir alle mal sterben</span>
+<span>also energie liegt in verschiedenen formen vor</span>
+<span>und manche formen lassen sich in andere formen umwandeln</span>
+<span>also lageenergie wenn etwas irgendwo drauf steht</span>
+<span>in kinetische energie wenn es runterfällt</span>
+<span>und ein ganz bisschen davon wird auch wärme</span>
+<span>wegen der reibung</span>
+<span>weißt du wir haben nämlich immer reibung</span>
+<span>und diese wärme</span>
+<span>die lässt sich in nichts mehr zurück verwandeln</span>
+<span>alles was passiert erzeugt immer mehr wärme</span>
+<span>und das universum dehnt sich nur so lange aus</span>
+<span>wie es etwas auseinanderdrückt</span>
+<span>wenn alles wärme ist</span>
+<span>dann fällt das universum zusammen</span>
+<span>in einen kleinen schwarzen punkt</span>
+<span>und dort ist dann alles zu einem einzigen punkt von unglaublich großer maße fusioniert</span>
+<span>wie ein schwarzes loch</span>
+<span>und von da aus ist dann wieder ganz viel energie da</span>
+<span>die alles auseinander treibt</span>
+<span>und dann bilden sich</span>
+<span>helium und wasserstoff</span>
+<span>und fusionieren zu mehr</span>
+<span>elementen und planeten und lebewesen</span>
+<span>alles ganz zufällig</span>
+<span>immer wieder fällt das universum zusammen</span>
+<span>und entsteht neu</span>
+<span>wie du einatmest</span>
+<span>und wieder ausatmest</span>
+<span>so lebt das universum</span>
+<span>weißt du</span>
+<span>ich glaube</span>
+<span>das ist das worauf alle religion</span>
+<span>aller glaube abziehlt</span>
+<span>wissenschaft erklärt das wie</span>
+<span>aber glaube sucht das warum</span>
+<span>ich glaube</span>
+<span>wir sollen sowas nicht verstehen</span>
+<span>dazu sind wir nicht gedacht</span>
+<span>das ist wie eine ganz dünne membran</span>
+<span>durch die man verschwommen erahnen kann</span>
+<span>was dahinter ist</span>
+<span>und du kannst es ein wenig berühren</span>
+<span>leicht durch die membran fühlen</span>
+<span>welche form es haben muss</span>
+<span>aber du kannst nicht durch die membran</span>
+<span>alles was dahinter ist</span>
+<span>das bleibt ein vager</span>
+<span>formloser schatten</span>
+<span>man kann es nicht verstehen</span>
+<span>weil man es nicht verstehen soll</span>
+<span>aber es ist ein schöner gedanke</span>
+<span>machst du dir nicht manchmal</span>
+<span>manchmal sorgen</span>
+<span>dass wenn du morgen stirbst</span>
+<span>du nichts erreicht hast</span>
+<span>was von bedeutung ist</span>
+<span>ich habe angst zu sterben</span>
+<span>bevor all die dinge</span>
+<span>die ich tuen kann</span>
+<span>getan sind</span>
+<span>wir werden nichts zurück lassen weißt du</span>
+<span>außer den strahlenden müll</span>
+<span>der akws</span>
+<span>man fragt sich</span>
+<span>wie wir die kinder unser kinder</span>
+<span>die menschen die mal sein werden</span>
+<span>warnen können</span>
+<span>vor dem müll</span>
+<span>der strahlt</span>
+<span>man meint</span>
+<span>es würde sinn machen</span>
+<span>katzen so zu züchten</span>
+<span>dass sie leuchten</span>
+<span>blau leuchten</span>
+<span>wenn strahlung in der nähe ist</span>
+<span>und das wissen</span>
+<span>als sage der alten</span>
+<span>von mund zu mund weiterzugeben</span>
+<span>nur so wird es alle sprachen überdauern</span>
+<span>von generation zu generation weitergegeben</span>
+<span>das wissen von den blauen katzen</span>
+<span>die schlimmes unglück bringen</span>
+<span>das ist wirklich</span>
+<span>das beste was uns einfällt</span>
+<span>da beruhigt es mich zu wissen</span>
+<span>dass alles hier zufall</span>
+<span>und am ende wärme</span>
+<span>eine gemütliche wärme</span>
+<span>in der selbst das monumentalste</span>
+<span>zu einheitlichkeit und durchschnitt zerläuft</span>
+<span>weißt du</span>
+<span>die dinge</span>
+<span>die existieren nur im wiederspruch</span>
+<span>bewegung gibt es nur durch stillstand</span>
+<span>wärme nur durch kälte</span>
+<span>größe nur durch das kleine</span>
+<span>der mensch definiert alles relativ zu anderen dingen</span>
+<span>nichts kann er einfach für sich sein lassen</span>
+<span>allem müssen wir namen geben</span>
+<span>wer weiß was da draussen noch alles ist</span>
+<span>ob man alles benennen kann</span>
+<span>ob worte dafür reichen werden</span>
+<span>wir sehen ja nur vergangenheit</span>
+<span>licht ist schnell aber nicht sofort da</span>
+<span>alles braucht seine zeit</span>
+<span>und auf der großen skala ist unsere zeit sehr kurz</span>
+<span>wenn wir jetzt einen planeten sehen</span>
+<span>und da ist leben</span>
+<span>dann ist das leben bestimmt schon wieder weg</span>
+<span>oder etwas ganz anderes</span>
+<span>wenn wir dahin fliegen</span>
+<span>aber das geht gar nicht</span>
+<span>weisst du das ist auch sehr beruhigend</span>
+<span>man kann zivilisation in stufen einteilen</span>
+<span>nach dem energieverbrauch</span>
+<span>wir sind zum beispiel fast stufe 1</span>
+<span>also energieverbrauch eines planeten</span>
+<span>aber dauerhaft</span>
+<span>also ohne fossile brennstoffe sondern nur erneuerbar</span>
+<span>das wäre dann richtig stufe 1</span>
+<span>stufe 2 ist dann ein sonnensystem</span>
+<span>und stufe 3 alles darüber hinaus</span>
+<span>um von einer in die andere stufe zu kommen</span>
+<span>muss man bestimmte bedingungen erfüllen</span>
+<span>sonst wäre der technische fortschritt nicht möglich</span>
+<span>für stufe 1 zum beispiel</span>
+<span>das konzept von krieg verwerfen</span>
+<span>deswegen werden uns auch nie die aliens angreifen</span>
+<span>wenn sie zu uns fliegen können</span>
+<span>wollen sie gar keinen krieg mehr</span>
+<span>für stufe 2 das individuum</span>
+<span>und das eigene leben</span>
+<span>als maß der dinge</span>
+<span>ablegen</span>
+<span>weißt du um die ganze energie einer sonne zu nutzen</span>
+<span>müsste man eine riesen kugel</span>
+<span>aus solarpanelen um die sonne bauen</span>
+<span>sonst geht zu viel strom verloren</span>
+<span>um diese riesenkugel zu bauen</span>
+<span>braucht man aber</span>
+<span>ganz viel energie auf einmal</span>
+<span>ungefähr so viel wie eine sonne erzeugt</span>
+<span>deswegen baut man erst eine solarzelle</span>
+<span>und schickt die hin</span>
+<span>mit der energie</span>
+<span>dann die zweite</span>
+<span>damit dann vier</span>
+<span>dann acht</span>
+<span>dann sechszehn</span>
+<span>wie das schachbrett mit dem reis</span>
+<span>aber das dauert länger als ein menschenleben</span>
+<span>wenn wir eines tages die energie der sonne nutzen wollen</span>
+<span>müssen wir jetzt damit anfangen</span>
+<span>es wird uns jetzt nichts bringen</span>
+<span>also wird niemals jemand anfangen</span>
+<span>weil man selber nichts davon hat</span>
+<span>man muss selbstlos sein</span>
+<span>danach sucht man übrigens</span>
+<span>nach diesen kugeln</span>
+<span>die verdunkeln die sonne</span>
+<span>also den stern</span>
+<span>und alle sterne sind gleich hell</span>
+<span>wenn ein stern also etwas dunkler ist </span>
+<span>weiß man dass da eine kugel drum gebaut wurde</span>
+<span>und dass da leben ist</span>
+<span>aber eine fertige kugel würde man gar nicht mehr sehen</span>
+<span>und eine halbfertige kugel wäre gruselig</span>
+<span>weil wieso ist sie nicht fertig</span>
+<span>was hat eine zivilisation an diesem punkt aufgehalten</span>
+<span>warum haben sie nicht weiter gebaut</span>
+<span>was lauert da</span></p><p><span>zweimal gyrosteller</span>
+<span>und</span>
+<span>-</span>
+<span>viermal tzaziki</span>
+<span>-</span>
+<span>uozo ist aufs haus</span></p><p><span>wir teilen einfach</span></p><p><span>stell in die mitte</span></p><hr /><h2 id='auf-einem-feld'><span>auf einem feld</span></h2><p><span>(ein feld)</span></p><p><span>(das hinter feldern liegt)</span></p><p><span>ich glaube die bauleuchten da sind eine landebahn</span></p><p><span>für</span></p><p><span>für drogenjets</span></p><p><span>für drogenjets</span>
+<span>sicher</span>
+<span>-</span>
+<span>hier wohnen doch nicht genug dass das lohnt</span>
+<span>-</span>
+<span>lohnt drogen im jet zu bringen</span></p><p><span>muss ja niemand</span>
+<span>nur verkaufen</span>
+<span>-</span><span> </span>
+<span>wir sind brandenburg hallo</span></p><p><span>tschechien</span></p><p><span>pseudoephedrin</span>
+<span>wick</span></p><p><span>medinait</span>
+<span>bayer</span></p><p><span>aspirin</span></p><p><span>oder snickers</span>
+<span>die sind immer aus</span></p><p><span>oder hobbyflieger</span></p><p><span>wer hat denn die fucking zeit hobbyzufliegen</span></p><p><span>hier hat niemand hobbys</span></p><p><span>oder zeit</span></p><p><span>nur schichtarbeit</span>
+<span>und nichtmal davon genug</span></p><p><span>hier hat man nur große hunde</span>
+<span>viele kinder</span>
+<span>ausgebleichte klamotten vom primark berlin</span>
+<span>vertrockneten rasen</span>
+<span>kohlgeruch</span>
+<span>fliesentisch</span></p><p><span>es wird dunkel</span>
+<span>die nacht wird schwarz</span>
+<span>hinter den feldern</span>
+<span>der wald</span>
+<span>aus fichten</span>
+<span>hinter den fichten</span>
+<span>die hütten</span>
+<span>in den hütten</span>
+<span>die menschen</span>
+<span>an den menschen</span>
+<span>die handschuhe</span>
+<span>wenn die menschen nicht aufpassen</span>
+<span>stecken bald geschmolzene schlüssel</span>
+<span>in den schlössern der hütten mit den mensch noch darin</span>
+<span>auf dem feld die bauleuchten</span>
+<span>in zwei langen reihen</span>
+<span>schwarz diese nacht</span>
+<span>uns ist kalt</span>
+<span>erst ein brummen</span>
+<span>wie überlandleitung</span>
+<span>genau fünfzig hertz</span>
+<span>dann ein motor</span>
+<span>dann ein flugzeug</span>
+<span>es landet nicht</span>
+<span>aus</span>
+<span>dem</span>
+<span>himmel</span>
+<span>stürzt</span>
+<span>ein</span>
+<span>paket</span>
+<span>auf das feld</span></p><p><span>ein päckchen</span>
+<span>bleibt dort liegen zwischen den bauleuchten</span>
+<span>ein kleiner würfel</span></p><p><span>eingewickelt in wasserdichtes ductape</span></p><p><span>ein kleiner schwarzer würfel</span></p><p><span>steht auf dem feld</span></p><p><span>wir werden das paket suchen</span>
+<span>öffnen</span>
+<span>mitnehmen</span>
+<span>probieren</span>
+<span>angst bekommen</span>
+<span>ins klo schütten</span>
+<span>wochen später</span>
+<span>werde ich in die ecke gedrängt sein</span></p><p><span>man wird mich fragen wo das paket ist</span>
+<span>der kleine schwarze würfel</span>
+<span>ich werde sagen</span></p><p><span>welches paket</span></p><p><span>blutiges kinn</span>
+<span>stirn</span>
+<span>knie</span>
+<span>niere</span>
+<span>leberhaken</span></p><p><span>welches paket</span></p><p><span>schienbein</span>
+<span>kehlkopf</span>
+<span>schläfe</span></p><p><span>wir werden geld brauchen</span>
+<span>und wissen dass</span>
+<span>in der kasse</span>
+<span>in der tankstelle</span>
+<span>in der du arbeitest</span>
+<span>viel geld sein wird</span>
+<span>werden vollgetankt haben</span>
+<span>schnell ganz weit weg wollen</span></p><p><span>du wirst auf der sitzbank</span>
+<span>sitzen</span>
+<span>knien</span>
+<span>lehnen</span>
+<span>keine gute haltung finden</span>
+<span>da irgendwie rumlungern</span>
+<span>halb angeschnallt</span>
+<span>auf der sitzdecke</span>
+<span>mit dem muster</span>
+<span>wir werden erst wieder in bayern tanken</span>
+<span>dann in der schweiz</span></p><p><span>ich werde die nacht durch fahren</span>
+<span>bis wird in italien sind</span></p><p><span>italien im sommer</span>
+<span>wir werden kein geld mehr haben</span></p><p><span>nackt baden</span>
+<span>im stausee</span></p><p><span>vor touristen</span>
+<span>nackt baden</span></p><p><span>am privatstrand</span></p><p><span>an der cote d azur</span></p><p><span>uns von polizist</span><span>*</span><span>inn</span><span>*</span><span>en beschimpfen lassen</span>
+<span>auf französisch</span></p><p><span>ich werde sagen</span>
+<span>dass ich hier mal eine yacht haben will</span>
+<span>geld haben will</span>
+<span>anzüge haben will</span>
+<span>uhren haben will</span>
+<span>wohnungen haben will</span>
+<span>geschmack haben will</span>
+<span>alles haben will</span></p><p><span>das leben ist so fucking kurz</span></p><p><span>nur einmal</span>
+<span>nur ein einziges mal geschenkt</span></p><p><span>diese welt</span></p><p><span>diese beschissene komplexe unfaire welt</span></p><p><span>ist</span>
+<span>was wir gemeinsam draus</span>
+<span>aus diesem geschenk</span></p><p><span>da kann man nichts machen</span>
+<span>das kann man nicht reparieren</span></p><p><span>das ist idealismus</span>
+<span>blinder idealismus</span></p><p><span>da kann man sich auch einfach einen anzug kaufen</span>
+<span>geld haben</span>
+<span>alles kaufen können</span></p><p><span>wir werden uns streiten</span>
+<span>uns vertragen</span>
+<span>kinder haben wollen</span>
+<span>nie kinder haben werden</span></p><p><span>ich werde in einer agentur anfangen</span>
+<span>einen anzug kaufen</span>
+<span>das machen</span>
+<span>was ich nie machen wollte</span>
+<span>was meine eltern machen</span>
+<span>das was ich nie machen wollte</span>
+<span>weil es meine eltern machen</span>
+<span>bw fucking l</span>
+<span>aber da ist das geld</span>
+<span>wir werden nach frankfurt ziehen</span>
+<span>du wirst trotzdem mitkommen</span>
+<span>wir werden nach tokyo ziehen </span>
+<span>du wirst nicht mitkommen</span>
+<span>ich werde mich mit uhren auskennen</span></p><p><span>wir werden uns wieder sehen</span>
+<span>wenn jed* sein</span><span>*</span><span>ihr päckchen trägt</span></p><p><span>das kleine schwarze päckchen</span></p><hr /><h2 id='auf-einer-autobahn'><span>auf einer autobahn</span></h2><p><span>privatstrasse</span>
+<span>befahren auf eigene gefahr</span>
+<span>(kein winterdienst)</span></p><p><span>das ist militärgebiet</span>
+<span>glaube ich</span></p><p><span>nicht dass die uns nachher noch abschiessen</span></p><p><span>ich hör nichts</span></p><p><span>halt mal an</span>
+<span>ich muss</span></p><p><span>willst du da an den zaun pinkeln</span></p><p><span>ja</span>
+<span>das ist lustig</span>
+<span>vielleicht schießt jemand</span></p><p><span>-</span></p><p><span>wohin fahren wir eigentlich</span></p><p><span>tschechien</span></p><p><span>der rave ist in tschechien</span></p><p><span>ja</span>
+<span>wieso</span></p><p><span>du meintest das wäre nur ein katzensprung</span>
+<span>ein leuchtend blauer katzensprung</span>
+<span>meintest du</span></p><p><span>soweit ist das ja gar nicht</span>
+<span>ist doch alles osten</span>
+<span>immer nach osten</span>
+<span>dann sind wir schon da</span></p><p><span>-</span></p><p><span>willst du auch ein pilz</span></p><p><span>beim fahren</span></p><p><span>ey das ist landstrasse</span>
+<span>wer will nach fucking tschechien</span>
+<span>-</span>
+<span>und langweilig</span>
+<span>-</span>
+<span>komm einen</span></p><p><span>einen</span></p><p><span>-</span></p><p><span>was ist eigentlich mit deinem auge</span></p><p><span>wieso</span></p><p><span>weil dein auge</span>
+<span>so blau (blau blau) ist</span>
+<span>so blau</span></p><p><span>ach das</span></p><p><span>ist nichts</span></p><p><span>nein</span></p><p><span>sicher</span></p><p><span>ja</span></p><p><span>du kannst mir das ruhig erzählen</span></p><p><span>-</span></p><p><span>vertraust du mir nicht</span></p><p><span>doch natürlich</span></p><p><span>du bist immer so ein</span><span>*</span><span>e heimlichtuer</span><span>*</span><span>in</span></p><p><span>du darfst das nicht wissen</span></p><p><span>ist das ein geheimnis</span></p><p><span>sozusagen</span></p><p><span>aber das sieht doch jed*</span>
+<span>das mit deinem auge</span></p><p><span>ne das ist nicht geheim</span>
+<span>aber warum (das) ist geheim</span></p><p><span>witzig</span>
+<span>echt witzig</span>
+<span>-</span>
+<span>jetzt sag schon</span>
+<span>-</span>
+<span>sag einfach das ist vom boxen</span>
+<span>dann bin ich ruhig</span></p><p><span>ist vom boxen</span></p><p><span>bullshit</span>
+<span>jetzt sag</span></p><p><span>das war d* griech*</span></p><p><span>was will denn d* griech* von dir</span></p><p><span>weißt du noch dieser würfel</span>
+<span>den wir auf dem feld gefunden haben</span></p><p><span>ja</span></p><p><span>das war sein*ihr</span></p><p><span>ach du scheiße</span>
+<span>scheiße</span>
+<span>fuck</span>
+<span>was</span>
+<span>-</span>
+<span>woher wusste er*sie</span>
+<span>dass du</span>
+<span>dass du das hast</span>
+<span>hattest</span>
+<span>wir das hatten</span>
+<span>gefunden hatten</span></p><p><span>keine ahnung</span>
+<span>irgendwie hat er*sie das mitbekommen</span>
+<span>mich mal zur seite genommen</span>
+<span>als ich stellplatzmiete zahlen wollte</span>
+<span>und so gesagt</span></p><p><span>da neulich</span>
+<span>als du so spät von den feldern gekommen bist</span>
+<span>wo warst du</span></p><p><span>kann dir doch egal sein</span></p><p><span>wo warst du</span></p><p><span>hatte n date</span></p><p><span>wo warst du</span></p><p><span>auf dem feld</span>
+<span>hatte ein date</span>
+<span>was geht dich das an</span></p><p><span>liefs gut</span>
+<span>bist ja allein zurück gekommen</span></p><p><span>ich nehm mein date doch nicht mit auf den campingplatz</span></p><p><span>süß</span></p><p><span>hallo</span>
+<span>mein campingplatz</span>
+<span>ist doch schön hier</span>
+<span>kannst ja woanders pennen</span>
+<span>-</span>
+<span>aber war gut</span></p><p><span>ja meinte ich doch schon</span>
+<span>-</span>
+<span>was willst du von mir</span></p><p><span>miete</span>
+<span>und</span>
+<span>-</span>
+<span>willst du mir nicht was sagen</span></p><p><span>was</span></p><p><span>nichts besonderes passiert</span></p><p><span>n date halt</span></p><p><span>keine mysteriösen lichter</span>
+<span>ufos</span>
+<span>aliens vielleicht</span></p><p><span>nein</span></p><p><span>sicher</span>
+<span>ganz sicher</span>
+<span>bist du dir sicher</span></p><p><span>wieso</span>
+<span>hast du was gesehen</span>
+<span>ein leuchten vielleicht</span>
+<span>leuchtend blaue katzen vielleicht</span></p><p><span>ne</span>
+<span>aber ich vermiss was</span></p><p><span>tuen wir das nicht alle</span></p><p><span>so spaß vorbei jetzt</span>
+<span>ich weiß dass ihr da was mitgenommen habt</span>
+<span>das war meins</span>
+<span>nicht deins</span>
+<span>wo ist das</span></p><p><span>was</span></p><p><span>verarsch mich nicht klein*</span>
+<span>du weist genau wovon ich rede</span></p><p><span>ja blaues auge halt</span></p><p><span>mehr nicht</span></p><p><span>nein</span>
+<span>-</span>
+<span>fast nichts</span>
+<span>-</span>
+<span>ich soll</span>
+<span>-</span>
+<span>er</span><span>*</span><span>sie wusste dass ich mit dir</span>
+<span>-</span>
+<span>nach</span>
+<span>-</span>
+<span>tschechien wollte</span>
+<span>zu dem open air</span>
+<span>-</span>
+<span>ich soll für ihn</span><span>*</span><span>sie</span>
+<span>da was hinbringen</span></p><p><span>ne oder</span>
+<span>du verarscht mich jetzt</span>
+<span>alte*r</span>
+<span>warum sagst du nichts</span></p><p><span>-</span></p><p><span>was bringen</span>
+<span>wann</span>
+<span>jetzt</span>
+<span>haben wir drogen im kofferraum</span></p><p><span>mh</span>
+<span>-</span>
+<span>ja</span>
+<span>sozusagen</span>
+<span>-</span>
+<span>ist in dem gitarrenverstärker</span>
+<span>-</span>
+<span>er</span><span>*</span><span>sie meinte da guckt niemand rein</span>
+<span>weil niemand weiß</span>
+<span>-</span>
+<span>dass die hohl sind</span></p><p><span>scheiße</span></p><p><span>ja scheiße</span>
+<span>ich weiß</span></p><p><span>-</span></p><p><span>ey das geht nicht</span>
+<span>-</span>
+<span>was wenn die</span>
+<span>polizei(eiei)</span>
+<span>uns kontrolliert</span></p><p><span>auf der landstrasse</span>
+<span>nach tschechien</span>
+<span>du meintest doch</span>
+<span>hier ist nichts</span>
+<span>und</span>
+<span>wer will nach fucking tschechien</span></p><p><span>ja niemand</span>
+<span>-</span>
+<span>ausser leute</span>
+<span>die drogen schmuggeln</span>
+<span>wie wir anscheinend</span>
+<span>jetzt</span>
+<span>welche</span>
+<span>sind</span>
+<span>wir sind jetzt leute die drogen schmuggeln</span>
+<span>-</span>
+<span>(geil ey)</span>
+<span>(voll kriminell)</span></p><p><span>mh geht so</span></p><p><span>ja</span>
+<span>das geht nicht</span></p><p><span>was willst du machen</span>
+<span>aussteigen</span>
+<span>im militärgebiet</span>
+<span>dich erschiessen lassen</span></p><p><span>ist vielleicht besser</span></p><p><span>mh</span></p><p><span>-</span>
+<span>ne aber lass mal wirklich bitte nicht fahren</span>
+<span>können ja durch den wald laufen</span>
+<span>mit dem verstärker</span>
+<span>und das da hinbringen</span>
+<span>-</span>
+<span>das kann man laufen</span></p><p><span>die pilze wirken langsam</span></p><p><span>ne ehrlich</span>
+<span>guck mal aufs navi</span>
+<span>das sind vielleicht noch 40 kilometer</span>
+<span>durch den wald</span>
+<span>über die grenze</span>
+<span>das geht</span></p><hr /><h2 id='in-einem-wald'><span>in einem wald</span></h2><p><span>das ist gruselig hier</span>
+<span>vielleicht sind hier bären</span></p><p><span>-</span></p><p><span>guck mal der fliegenpilz</span>
+<span>der spricht</span>
+<span>mit mir</span>
+<span>alte*r</span>
+<span>der weiß was abgeht</span></p><p><span>-</span></p><p><span>ich glaube shrooms</span>
+<span>sind von den pilzen</span>
+<span>gemacht worden</span>
+<span>damit wir sie besser verstehen können</span>
+<span>damit wir</span>
+<span>die natur</span>
+<span>mit ihr reden</span>
+<span>damit wir besser</span>
+<span>mit der natur reden können</span>
+<span>-</span>
+<span>das gibts doch gar nicht mehr</span>
+<span>natur</span>
+<span>überall ist nur</span>
+<span>truppenübungsplatz</span>
+<span>oder</span>
+<span>fußgängerzone</span>
+<span>nix dazwischen</span>
+<span>nur landeinsamkeit</span>
+<span>und zugezogene</span>
+<span>jalousien</span>
+<span>massentierhaltung</span>
+<span>und aktivist*innen</span>
+<span>die sich an scheiß bahnschienen ketten</span>
+<span>wo ist die natur</span>
+<span>die wahre natur</span>
+<span>die freie</span>
+<span>wilde natur</span>
+<span>wo sind die verdammten bären denn alle hin</span>
+<span>ist das hier alles</span>
+<span>fuck</span>
+<span>all das hier</span>
+<span>ich hab</span>
+<span>hab das gefühl</span>
+<span>etwas in mir verhungert</span>
+<span>will</span>
+<span>irgendwas</span>
+<span>dass nicht wir geschaffen haben</span>
+<span>das sich selbst geschaffen hat</span>
+<span>will ankommen</span>
+<span>mit dem schiff</span>
+<span>aus rauhem holz</span>
+<span>über das salzige meer</span>
+<span>an einen strand</span>
+<span>aus sand</span>
+<span>der noch nie etwas gewesen ist</span>
+<span>nur stein und küste war</span>
+<span>dahinter land</span>
+<span>nichts als land</span>
+<span>land aus</span>
+<span>wald</span>
+<span>bergen</span>
+<span>ebenen</span>
+<span>tieren</span>
+<span>hunderten kilometern</span>
+<span>endlosigkeit</span>
+<span>stimmen der amphibien die starben bevor sie katalogisiert werden konnten</span>
+<span>das haben wir uns genommen</span>
+<span>ehrfurcht vor dem </span>
+<span>nichts über uns</span>
+<span>alles wissen</span>
+<span>alles beherrschen</span>
+<span>das ist kein mensch</span>
+<span>das ist etwas</span>
+<span>ganz</span>
+<span>anderes</span>
+<span>etwas verstümmeltes</span>
+<span>blindes</span>
+<span>taubes</span>
+<span>gehandicaptes</span>
+<span>wir waren nie wirklich da</span>
+<span>ich meine wirklich echt</span>
+<span>echt am leben</span></p><p><span>ey</span></p><p><span>wo ist der beutel</span></p><p><span>du hast den verstärker doch</span></p><p><span>ja ne</span>
+<span>wo ist das was im verstärker war</span></p><p><span>ja im verstärker</span>
+<span>hä</span></p><p><span>wo ist das päckchen fuck</span></p><p><span>das hab ich wieder reingepackt</span>
+<span>als es geregnet hat</span></p><p><span>fuck</span></p><p><span>das päckchen ist weg</span></p><p><span>scheiße</span>
+<span>ist das schlimm</span></p><p><span>schlimm</span>
+<span>schlimm</span>
+<span>-</span>
+<span>wir sind tot</span>
+<span>komplett tot</span></p><p><span>-</span></p><p><span>wasser</span>
+<span>handy bitte abkleben oder abgeben</span>
+<span>psycare ist da vorne</span>
+<span>ihr seht ganz schon drauf aus</span>
+<span>wenn ich mal ehrlich sein darf</span>
+<span>gehts euch gut</span></p><p><span>wir haben im wald geschlafen</span>
+<span>und unseren würfel verloren</span>
+<span>bären</span>
+<span>katzen</span></p><p><span>katzen waren auch da</span></p><p><span>blaue</span>
+<span>leuchtende</span>
+<span>katzen</span></p><p><span>macht mal halblang ne</span>
+<span>viel spaß</span></p><p><span>ich bin so durch</span>
+<span>fuck ich bin so</span>
+<span>fucking durch</span></p><p><span>was ist mit</span></p><p><span>scheiß drauf</span>
+<span>scheiß</span>
+<span>drauf</span>
+<span>scheiß da drauf</span>
+<span>wir sind tot</span>
+<span>fucking tot einfach</span></p><p><span>jetzt sind wir erstmal hier</span></p><p><span>ja</span>
+<span>wir sind hier</span></p><p><span>wir leben</span></p><p><span>sind echt am leben</span></p><p><span>am echten leben ey</span></p><blockquote><p><span>BESCHWÖRUNG</span></p></blockquote><p><em><span>(gemeinsam)</span></em>
+<span>wir tanzen</span></p><p><span>in einheit</span></p><p><span>in masse</span></p><p><span>sind alle hier</span>
+<span>aus dem selben</span></p><p><span>kennen einander nicht</span></p><p><span>sind füreinander nur</span></p><p><span>aufblitzende gesichtszüge</span></p><p><span>kurz berührte körperteile</span></p><p><span>und der geruch</span></p><p><span>dieser geruch</span></p><p><span>sind nur kurzer schweißgeruch</span>
+<span>füreinander</span></p><p><span>aber diese masse</span></p><p><span>diese verbindung</span></p><p><span>sie ist</span>
+<span>so eng</span>
+<span>so echt</span>
+<span>so ehrlich</span>
+<span>wie nichts sonst</span>
+<span>jemals für uns war</span></p><p><span>wir tanzen</span>
+<span>um den stachelkreis</span></p><p><span>stachelkreis</span>
+<span>stachelkreis</span></p><p><span>wir tanzen</span>
+<span>um den stachelkreis</span></p><p><span>und doch ist da etwas zwischen uns</span>
+<span>eine verbindung zwischen uns</span></p><p><span>da ist der stachelkreis zwischen uns</span></p><p><span>was wir fürchten</span></p><p><span>was wir nicht verstehen</span></p><p><span>wir tanzen</span>
+<span>um den stachelkreis</span></p><p><span>stachelkreis</span>
+<span>stachelkreis</span></p><p><span>in unser mitte</span>
+<span>im kreis herum</span></p><p><span>nicht anfassen</span></p><p><span>es sticht</span></p><p><span>wir tänzeln</span>
+<span>um das</span>
+<span>was wir nicht</span></p><p><span>greifen können</span></p><p><span>greifen dürfen</span></p><p><span>wir wollen es rufen</span></p><p><span>es soll zwischen uns</span></p><p><span>unser zwilling sein</span></p><p><span>uns erkennen</span>
+<span>verstehen</span>
+<span>erklären</span>
+<span>wer wir</span>
+<span>warum wir</span>
+<span>wie wir</span>
+<span>wie</span>
+<span>alles </span>
+<span>miteinander</span>
+<span>zusammenhängt</span></p><p><span>wir tanzen</span>
+<span>um den stachelkreis</span></p><p><span>stachelkreis</span>
+<span>stachelkreis</span></p><p><span>um fünf</span>
+<span>früh morgens</span>
+<span>kurz hinter</span>
+<span>der grenze</span>
+<span>zu tschechien</span>
+<span>tanzen wir</span>
+<span>um etwas</span>
+<span>ein gemeinsames begehren</span>
+<span>nach verbindung</span>
+<span>nach einheit</span>
+<span>sinn</span>
+<span>ein klein wenig antwort</span></p><p><span>beschwört es</span></p><p><span>es soll sein</span>
+<span>soll werden</span></p><p><span>es soll sein</span>
+<span>soll werden</span></p><p><span>was wir sind</span>
+<span>was wir alle sind</span>
+<span>was uns eint</span>
+<span>was uns enthält</span>
+<span>was uns alle enthält</span></p><p><span>beschwört es</span></p><p><span>es erkennt uns nicht</span>
+<span>versteht nicht</span></p><p><span>verstehen nicht</span>
+<span>erkennen es nicht</span></p><p><span>tuen es ab</span></p><p><span>was dort</span>
+<span>in unsere mitte</span>
+<span>der schatten</span>
+<span>der abgrund</span></p><p><span>in den wir schauen</span></p><p><span>er schaut zurück</span></p><p><span>aber nicht uns an</span></p><p><span>durch uns hindurch</span></p><p><span>wir</span></p><p><span>sind</span></p><p><span>dem</span></p><p><span>scheiß</span></p><p><span>abgrund</span></p><p><span>vollkommen</span></p><p><span>egal</span></p><blockquote><hr /></blockquote><h2 id='ein-bett-in-einem-mietshaus'><span>ein bett in einem mietshaus</span></h2><p><span>hey hey wach auf</span></p><p><em><span>(verschlafen)</span></em>
+<span>ja</span>
+<span>ja</span>
+<span>ja</span>
+<span>ja</span>
+<span>was</span>
+<span>was ist denn</span></p><p><span>dah</span>
+<span>da am himmel da</span>
+<span>guck doch</span>
+<span>da am himmel</span></p><p><span>was ist am himmel</span>
+<span>da ist nichts</span>
+<span>da ist nichts am himmel</span></p><p><span>doch da</span>
+<span>siehst du das nicht</span>
+<span>guck doch</span></p><p><span>was ist denn da</span></p><p><span>dieses</span>
+<span>dieses riesen</span>
+<span>-</span>
+<span>riesen</span>
+<span>-</span>
+<span>ding</span></p><p><span>da ist nichts</span>
+<span>schlaf weiter</span></p><p><span>guck doch raus</span>
+<span>das kannst du nicht nicht sehen</span>
+<span>verarsch mich nicht</span>
+<span>das ist doch</span>
+<span>riesig</span></p><p><span>da ist nichts</span>
+<span>was soll denn da sein</span></p><p><span>ich kanns nicht sagen</span>
+<span>-</span>
+<span>es ist irgendwie einfach da</span>
+<span>ganz groß vor dem fenster</span></p><p><span>am himmel</span></p><p><span>ja ein großer schwarzer kasten oder würfel direkt vor dem fenster am himmel</span></p><p><span>das ist einfach der himmel</span>
+<span>der ist schwarz</span></p><p><span>aber da ist was</span></p><p><span>da ist der himmel</span>
+<span>sonst nichts</span></p><p><span>aber der himmel ist doch ganz hell</span></p><p><span>das ist</span>
+<span>die wand</span>
+<span>vom haus</span>
+<span>nicht der himmel</span>
+<span>-</span>
+<span>der himmel ist schwarz und die wand ist weiß</span>
+<span>da ist nichts vor dem fenster</span>
+<span>nur der himmel</span></p><p><span>oh</span>
+<span>-</span>
+<span>du hast recht</span>
+<span>-</span>
+<span>sorry</span>
+<span>-</span>
+<span>sorry dass ich dich</span>
+<span>deswegen gewecket hab</span></p><p><span>ist okay</span>
+<span>alles gut</span></p><p><span>ich dachte da ist so ein riesen kasten vor dem haus</span>
+<span>aber das ist nur der schwarze himmel</span>
+<span>und die weiße wand</span>
+<span>-</span>
+<span>und ich dachte die wand wär der himmel</span>
+<span>und der himmel wäre </span>
+<span>halt dieser riesen kasten</span></p><p><span>alles gut</span>
+<span>alles gut</span>
+<span>schlaf wieder</span>
+<span>ja</span>
+<span>alles gut</span></p><p><span>sorry</span></p><p><span>alles gut</span>
+<span>schlaf schön</span></p><p><span>du auch</span></p><p><span>gute nacht</span></p><p><span>hast du den wecker gestellt</span></p><p><span>ja</span></p><p><span>wann stehst du auf</span></p><p><span>halb acht etwa</span>
+<span>glaub ich</span></p><p><span>musst du früh los</span></p><p><span>ja</span>
+<span>ich wollte noch schwimmen</span></p><p><span>okay</span>
+<span>schlaf gut</span></p><p><span>du auch</span>
+<span>gute nacht</span></p><hr /><h2 id='ein-balkon-an-einem-mietshaus'><span>ein balkon an einem mietshaus</span></h2><p><span>(ich) stehe auf dem balkon</span>
+<span>habe durch das fenster hineingeschaut</span>
+<span>auf das klappsofa</span>
+<span>auf dem mein</span><span>*</span><span>e </span><span>*</span>
+<span>im wohnzimmer</span>
+<span>schläft</span>
+<span>*</span><span> liegt eingewickelt</span>
+<span>in eine decke </span>
+<span>die hand hält</span>
+<span>eine ezigarette</span>
+<span>die neue</span>
+<span>*</span><span> ist stolz</span>
+<span>schaut fern</span>
+<span>schlafend</span>
+<span>stummgeschaltet</span>
+<span>werde ich so</span>
+<span>werden wenn ich alt bin</span>
+<span>wie </span><span>*</span>
+<span>nicht</span>
+<span>dass das schlimm ist</span>
+<span>dass </span><span>*</span><span> leben schlimm ist</span>
+<span>es ist nur so</span>
+<span>leer</span>
+<span>gleich</span>
+<span>immer gleich</span>
+<span>immer gleich leer</span>
+<span>alle (</span><span>*</span><span>) träume ausgeschnitten</span>
+<span>aus den magazinen</span>
+<span>auf der innentür</span>
+<span>des schranks</span>
+<span>kommode</span>
+<span>sekretär</span>
+<span>wie auch immer das heißt</span>
+<span>aufgeklebt</span>
+<span>träume aus papier geschnitten</span>
+<span>es ist nicht so</span>
+<span>das nichts passiert</span>
+<span>ist das leben besser auf einer yacht</span>
+<span>in einem schnellen auto</span>
+<span>in einem anzug</span>
+<span>mit geld</span>
+<span>ich lebe gerne</span>
+<span>den tag</span>
+<span>die tage</span>
+<span>an denen plötzlich alles möglich ist</span>
+<span>geburtstage</span>
+<span>hochzeiten</span>
+<span>todesfälle</span>
+<span>man altert nicht die ganze zeit</span>
+<span>sondern in riesen sprüngen</span>
+<span>mit viel pause dazwischen</span>
+<span>in denen die jahre</span>
+<span>durch finger rinnen</span>
+<span>wie sand</span>
+<span>sand</span>
+<span>der einmal etwas sein wird</span>
+<span>solche sprungtage</span>
+<span>an solchen sprungtagen</span>
+<span>lebe ich gerne</span>
+<span>tage an denen plötzlich</span>
+<span>alles möglich ist</span>
+<span>zu sein scheint</span>
+<span>schimmert</span>
+<span>das leben wendet</span>
+<span>in sekunden</span>
+<span>eine neue richtung einschlägt</span>
+<span>die parallelen universen</span>
+<span>sind seifenblasen</span>
+<span>im luftleeren raum</span>
+<span>stoßen (an)einander</span>
+<span>(ihre) wände berühren</span>
+<span>vermischen sich</span>
+<span>werden kurz</span>
+<span>eine (einz(ige)elnde) blase</span>
+<span>mit (einem) übergang dazwischen</span>
+<span>von einem universum in das andere</span>
+<span>springen</span>
+<span>an solchen tagen</span>
+<span>das leben müsste damit voll sein</span>
+<span>jeder tag muss so ein tag sein</span>
+<span>das leben ist ja in meiner hand</span>
+<span>es ist meins</span>
+<span>mein leben</span>
+<span>nur</span>
+<span>es fühlt sich nicht so an</span>
+<span>dass es meins ist</span>
+<span>es ist</span>
+<span>fremd</span>
+<span>bestimmt</span>
+<span>von anderen</span>
+<span>systemen</span>
+<span>gesetzen </span>
+<span>die andere gemacht haben</span>
+<span>nein eigentlich wir</span>
+<span>ich selbst auch</span>
+<span>aber das geflecht</span>
+<span>ist so verworren</span>
+<span>das niemand es versteht</span>
+<span>auch nicht wir</span>
+<span>die es gemacht haben</span>
+<span>es ist (eine) ohnmacht</span>
+<span>eingewebt in den knoten (aus) zivilisation</span>
+<span>wenn alle aus allen richtungen ziehen</span>
+<span>bleibt der knoten in der mitte fest</span>
+<span>wird fester sogar</span>
+<span>aber es ist ein echtes leben</span>
+<span>das nicht echt sein echt sein</span>
+<span>des echten lebens</span>
+<span>das gefühl</span>
+<span>das wind aufkommt</span>
+<span>im april</span>
+<span>der mond groß am himmel steht</span>
+<span>größer als sonst</span>
+<span>es riecht nach gewitter</span>
+<span>der himmel hat diese</span>
+<span>unnatürliche farbe</span>
+<span>eine farbe die es nicht gibt</span>
+<span>die es nicht geben kann</span>
+<span>nicht geben soll</span>
+<span>der blick gefiltert</span>
+<span>es liegt direkt vor mir</span>
+<span>ein moment nur</span>
+<span>in dem etwas in mir erwacht</span>
+<span>mich überkommt</span>
+<span>mein leben in eine neue richtung lenkt</span>
+<span>es liegt direkt vor mir</span>
+<span>ist immer nur einen schritt</span>
+<span>eine falsche geste</span>
+<span>ein falsches wort</span>
+<span>entfernt</span>
+<span>falsch</span>
+<span>als ob da oben etwas wäre</span>
+<span>das entscheidet was falsch ist</span>
+<span>als ob irgendjemand das entscheiden könnte</span>
+<span>da oben ist nichts</span>
+<span>das entscheidet</span>
+<span>nichts ist falsch</span>
+<span>und doch hält mich etwas auf</span>
+<span>diesen einen schritt zu machen</span>
+<span>durch die membran</span>
+<span>hindurch in das dahinter</span>
+<span>ein anderer mensch sein</span>
+<span>in der nächsten sekunde schon</span>
+<span>ein anderes leben haben</span>
+<span>sachen packen</span>
+<span>perso</span>
+<span>tanken</span>
+<span>weg</span>
+<span>ein anderes land</span>
+<span>ein neuer mensch werden dort</span>
+<span>in italien</span>
+<span>kleines dorf zwischen hügeln</span>
+<span>eine bäckerei eröffnen</span>
+<span>sich in die blumenperson gegenüber verlieben</span>
+<span>eine wohung mieten</span>
+<span>ein haus kaufen</span>
+<span>kinder haben</span>
+<span>die von den hügeln purzeln</span>
+<span>und erst nach 10 jahren</span>
+<span>sehen wir uns wieder</span>
+<span>du machst urlaub in italien</span></p><p><span>nein</span>
+<span>bist du es</span></p><p><span>-</span></p><p><span>wir dachten du wärst</span></p><p><span>nein</span>
+<span>ich bin es</span>
+<span>oder war</span>
+<span>bin jemand neues jetzt</span>
+<span>jemand anders jetzt</span>
+<span>schau das ist mein kind</span>
+<span>und mein*e partner</span><span>*</span><span>in</span>
+<span>und das mein haus</span></p><p><span>du bist immer noch d</span><span>*</span><span> alte</span>
+<span>schön dich zu sehen</span></p><p><span>man ist doch man selbst</span>
+<span>aber das gefühl</span>
+<span>das gefühl jemand anders sein zu können</span>
+<span>jederzeit</span>
+<span>es ist wahr</span>
+<span>man ist ja nur man selbst für sich</span>
+<span>für alle anderen bist du nur</span>
+<span>eine wahrnehmung</span>
+<span>eine sammlung von asoziationen</span>
+<span>die veraltet</span>
+<span>mit jeder sekunde</span>
+<span>die man sich nicht mehr gesehen hat</span>
+<span>vor dem balkon nur nacht</span>
+<span>pechschwarze nacht</span>
+<span>wo sind die sterne</span>
+<span>nur noch nacht</span>
+<span>ein streifen himmel</span>
+<span>links rechts oben</span>
+<span>etwas verdeckt den himmel</span>
+<span>eine schwarze wand</span>
+<span>ein schwarzer würfel</span>
+<span>etwas das schon immer da war</span>
+<span>etwas das immer da sein wird</span>
+<span>nach mir</span>
+<span>nach allem</span>
+<span>nach dem atommüll</span>
+<span>ich ganz nah</span>
+<span>stehe auf dem balkon</span>
+<span>strecke</span>
+<span>die</span>
+<span>hand</span>
+<span>aus</span>
+<span>berühre die oberfläche</span>
+<span>es könnte alles sein</span>
+<span>(es ist) fremd</span>
+<span>dort wo meine hand ist</span>
+<span>ein abdruck</span>
+<span>von mir</span>
+<span>ein loch</span>
+<span>im würfel</span>
+<span>ein loch das meine form hat</span>
+<span>in das ich passe</span>
+<span>in das ich exakt hineinpassen würde</span>
+<span>wenn ich teil werde</span>
+<span>(ich) steige auf den klappstuhl</span>
+<span>auf die liege</span>
+<span>halte mich am sonnenschirm</span>
+<span>will teil sein</span>
+<span>überdauern</span>
+<span>die wenigen dinge</span>
+<span>die ich glaube</span>
+<span>glaube verstanden zu haben</span>
+<span>all mein</span>
+<span>potential</span>
+<span>in diesen würfel geben</span>
+<span>in die glatte schwarze oberfläche gießen</span>
+<span>setze einen fuß auf das geländer</span>
+<span>versuche vorsichtig den zweiten</span>
+<span>auf die kante des lochs im würfel zu setzen</span>
+<span>die kante hat eine lücke dort</span>
+<span>wo meine zehen sind</span>
+<span>die lücke ist mein zeh</span>
+<span>ich strecke die hände aus</span>
+<span>fasse in hände</span>
+<span>in meine hände</span>
+<span>drücke meine nase</span>
+<span>die haare</span>
+<span>die stirn</span>
+<span>in eine aussparung der wand</span>
+<span>sie riecht nicht</span>
+<span>sie schmeckt nicht</span>
+<span>sie ist nicht weich</span>
+<span>nicht hart</span>
+<span>sie ist</span>
+<span>einfach ich</span>
+<span>wie das tauchen in einen pool</span>
+<span>der die temperatur meines körpers hat</span>
+<span>ich merke nichts mehr</span></p><p><span>da wo der würfel (stand)</span>
+<span>(liegt) der blumenkasten</span>
+<span>aus dem ersten</span>
+<span>grüner rasen</span>
+<span>schwarze erde</span>
+<span>rotes blut</span>
+<span>eine kaputte brille</span>
+<span>aus dunkelgrünem plastik</span>
+<span>grün wie fichten in brandenburg</span></p><hr /><h2 id='in-einem-krankenhaus'><span>in einem krankenhaus</span></h2><p><span>gefahren ohne zu reden</span>
+<span>gegessen</span>
+<span>ohne zu reden</span>
+<span>bei {mces}</span>
+<span>ich habe </span><span>*</span><span> gesagt </span><span>*</span><span> soll {einen burger ohne fleisch} essen</span>
+<span>{mces} hat das jetzt</span>
+<span>wann war ich das letzte mal bei {mces}</span>
+<span>wann war ich das letzte mal mit </span><span>*</span><span> essen</span></p><p><span>die wissen wer wir sind</span></p><p><span>können wir da parken</span></p><p><span>ich war </span><span>*</span><span> noch nie so nah</span>
+<span>glaube ich</span>
+<span>wann habe ich das letzte mal mit </span><span>*</span><span> in einem zimmer geschlafen</span>
+<span>wann habe ich </span><span>*</span><span> das letzte mal weinen gesehen</span></p><p><span>*</span><span> steht im schrank im flur</span>
+<span>*</span><span> will nicht dass wir</span>
+<span>*</span><span> sagt</span></p><p><span>alles gut</span>
+<span>alles gut</span>
+<span>hey alles gut</span></p><p><span>hat meinen kopf gestreichelt</span>
+<span>ich hatte einen topfschnitt damals</span>
+<span>aber es war nicht alles gut</span>
+<span>das wusste ich</span>
+<span>*</span><span> war weg</span>
+<span>einfach so</span>
+<span>ich habe das damals nicht verstanden</span>
+<span>ich verstehe es heute nicht</span>
+<span>*</span><span> hat ihre träume aus den magazinen ausgeschnitten und in den schrank geklebt</span>
+<span>das konnte ja nicht gut gehen</span>
+<span>ich habe wenig von meinen eltern mitgenommen</span>
+<span>von </span><span>*</span><span> nur den einen satz</span>
+<span>von </span><span>*</span><span> vielleicht nur das</span></p><p><span>wie war das abitreffen</span></p><p><span>okay</span></p><p><span>war das nicht cool</span>
+<span>alle so wieder zu sehen</span>
+<span>was machen die denn jetzt alle</span></p><p><span>weißt du</span>
+<span>wenn man so alt ist wie ich</span>
+<span>hat jed* sein päckchen zu tragen</span></p><p><span>-</span></p><p><span>du kannst </span><span>*</span><span> von deiner uni erzählen </span></p><p><span>ich glaub </span><span>*</span><span> weiß das </span></p><p><span>du kannst </span><span>*</span><span> hand nehmen und streicheln</span></p><p><span>es ist tiefste nacht</span>
+<span>*</span><span> redet</span>
+<span>leise</span>
+<span>*</span><span> ist schon nicht mehr da</span>
+<span>glaube ich</span>
+<span>gehe rauchen</span>
+<span>gehe schlafen</span></p><p><span>willst du eine decke</span></p><p><span>nein alles gut</span></p><p><span>schlafe im mantel</span>
+<span>in socken</span>
+<span>in pullover</span>
+<span>den kopf</span>
+<span>auf einem zusammen gerollten pullover</span>
+<span>wann habe ich je in einem krankenhaus geschlafen</span>
+<span>wann habe ich je mit meiner familie in einem raum geschlafen</span>
+<span>das letzte mal in meinem mantel geschlafen habe ich in diesem sommer</span></p><p><span>als ich aufwache</span>
+<span>atmet </span><span>*</span><span> noch</span>
+<span>langsam</span>
+<span>immer leiser</span>
+<span>dann ein tiefer zug</span>
+<span>der schleim in der lunge</span>
+<span>rasselt</span></p><p><span>das tut nicht weh</span>
+<span>sie haben nicht mehr abgesaugt</span></p><p><span>die hand ist warm</span>
+<span>knochig</span>
+<span>und warm</span>
+<span>ich habe angst</span>
+<span>will gehen</span>
+<span>will in einem garten stehen</span>
+<span>ich habe angst</span>
+<span>dass</span>
+<span>wenn</span>
+<span>man</span>
+<span>stirbt</span>
+<span>die</span>
+<span>hand</span>
+<span>die</span>
+<span>ich</span>
+<span>halte</span>
+<span>plötzlich</span>
+<span>kalt</span>
+<span>wird</span>
+<span>oder</span>
+<span>verkrampft</span>
+<span>wie</span>
+<span>ein</span>
+<span>schraubstock</span>
+<span>und</span>
+<span>mich</span>
+<span>nicht</span>
+<span>gehen</span>
+<span>lässt</span>
+<span>oder</span>
+<span>mich</span>
+<span>anschaut</span>
+<span>und</span>
+<span>da</span>
+<span>nichts</span>
+<span>mehr</span>
+<span>ist</span>
+<span>hinter der iris</span>
+<span>das</span>
+<span>die</span>
+<span>hand</span>
+<span>die</span>
+<span>ich</span>
+<span>halte</span>
+<span>mir</span>
+<span>einen</span>
+<span>elektrischen schlag gibt</span>
+<span>oder einen impuls</span>
+<span>vielleicht vibriert</span>
+<span>irgendwas</span>
+<span>muss doch passieren wenn </span>
+<span>man</span>
+<span>stirbt</span></p><p><span>jemand geht</span>
+<span>es ist dienstag</span>
+<span>es ist ein dienstag in einem kleinen krankenhaus</span>
+<span>in einem kleinen dorf und</span>
+<span>jemand geht</span>
+<span>ich habe immer gedacht</span>
+<span>zu gehen wäre ein größeres ding</span>
+<span>aber es ist ein dienstag</span>
+<span>vielleicht deshalb</span>
+<span>ich dachte immer das wäre was größeres</span>
+<span>aber ist nur ein dienstag</span>
+<span>obwohl es so viel verändert</span>
+<span>aber das tut ein dienstag manchmal auch</span>
+<span>-</span>
+<span>das fenster ist angekippt</span>
+<span>es scheint die sonne im dezember</span>
+<span>der himmel ist klar</span>
+<span>in der ferne leutet es zwölf</span>
+<span>ich weine</span>
+<span>ich weine zum ersten mal in meinem leben wirklich</span>
+<span>ohne rückhalt furcht und scham</span>
+<span>ich weine</span>
+<span>weil</span>
+<span>etwas</span>
+<span>tief</span>
+<span>in</span>
+<span>mir</span>
+<span>gerade</span>
+<span>zerbrochen ist</span>
+<span>man kann das nicht mehr reparieren</span>
+<span>da ist nichts zu reparieren</span>
+<span>keine scherben</span>
+<span>es ist einfach weg</span></p><p><span>jed* trägt sein päckchen</span></p><p><span>vom himmel</span>
+<span>fällt ein riesen</span>
+<span>großer klotz</span>
+<span>ganz schwarz</span>
+<span>und setzt sich vor das fenster</span>
+<span>bleibt dort stehen</span>
+<span>wo mal dorf war</span>
+<span>ein dorf in dem an einem dienstag jemand gegangen ist</span>
+<span>da ist jetzt ein schwarzer würfel</span>
+<span>schrumpft</span>
+<span>durchs fenster</span>
+<span>setzt sich in ans bett</span>
+<span>in meine brust</span>
+<span>dort ist jetzt</span>
+<span>ein schwarzer würfel</span>
+<span>und nichts sonst mehr</span>
+<span>ich trage jetzt auch</span>
+<span>mein kleines schwarzes päckchen in der brust</span></p><hr /><h2 id='auf-einem-friedhof'><span>auf einem friedhof</span></h2><p><span>ich kaufe mir einen schwarzen anzug</span>
+<span>ein schwarzes hemd</span>
+<span>schwarze schuhe</span>
+<span>schwarze krawatte</span></p><p><span>wie ihr habt keine schwarzen hemden</span></p><p><span>wie wäre es mit einem schwarzen pullover mit hohem kragen</span></p><p><span>ich will ein hemd</span></p><p><span>vielleicht weiß</span></p><p><span>ich trage immer schwarz wieso soll ich auf einer beerdigung damit aufhören</span></p><p><span>der anzug ist scheiße</span>
+<span>er sitzt scheiße</span>
+<span>der einzige den es gab</span>
+<span>außen schwarz</span>
+<span>aber innen neon</span>
+<span>das geht nicht</span>
+<span>es geht doch nicht</span>
+<span>darum wie es aussieht</span>
+<span>sondern</span>
+<span>wie es sich anfühlt</span>
+<span>es fühlt sich nicht an</span>
+<span>wie ein anzug</span>
+<span>den man auf einer beerdigung tragen würde</span>
+<span>auch wenn er schwarz ist</span></p><p><span>man muss ja kein schwarz auf einer beerdigung tragen</span></p><p><span>ich will aber</span>
+<span>-</span>
+<span>ich will keinen anzug</span>
+<span>den ich nur auf beerdigungen trage</span>
+<span>ich will keinen beerdigungsanzug</span>
+<span>ich will ja auch keinen hochzeitsanzug</span>
+<span>sondern in einem anzug heiraten</span>
+<span>in einem anzug arbeiten</span>
+<span>mal in einem anzug arbeiten</span>
+<span>so ein richtiger white collar job</span>
+<span>mies daneben ethisch</span>
+<span>aber gut bezahlt</span>
+<span>mit warmen muffins in der konsole</span>
+<span>firmenwagen</span>
+<span>firmenhandy</span>
+<span>firmenvisitenkarten</span>
+<span>mit meinem namen</span>
+<span>in serifen</span>
+<span>firmenparkplatz</span>
+<span>firmenboni</span>
+<span>firmenfeiern</span>
+<span>ein paar jahre</span>
+<span>nur ein paar jahre</span>
+<span>wahrscheinlich bleibt man doch hängen</span>
+<span>kauft wohnungen</span>
+<span>weil wohin mit dem geld</span>
+<span>so viel wohnen kann man gar nicht</span>
+<span>wohin mit dem geld</span>
+<span>mit ins grab nehmen kann man das nicht</span>
+<span>aber es ist geld</span>
+<span>davon kann man leben</span>
+<span>ich will einen schwarzen anzug</span>
+<span>den ich auf einer beerdigung trage</span>
+<span>in einem vorstellungsgespräch</span>
+<span>mit schwitzenden händen</span>
+<span>und keinen gehaltsvorstellungen</span>
+<span>zum leben reicht es</span>
+<span>wer weniger verdient</span>
+<span>kann einfach weniger leben</span>
+<span>aber man lebt ja nur einmal</span>
+<span>da kann man auch gut leben</span>
+<span>wie viel geld brauch ich</span>
+<span>um gut zu leben</span>
+<span>ich will einen schwarzen anzug</span>
+<span>in dem ich gut leben kann</span>
+<span>der gutes geld kostet</span>
+<span>einen schwarzen anzug</span>
+<span>in dem ich jemanden gut beerdigen kann</span>
+<span>jemand wichtigen</span>
+<span>einen schwarzen anzug</span>
+<span>in dem ich mal beerdigt werden kann</span>
+<span>ein anzug fürs leben</span>
+<span>und fürs sterben</span></p><p><span>ein anzug eben</span></p><p><span>ich bringe den anzug zurück</span>
+<span>kaufe einen anderen</span>
+<span>der auch von innen schwarz ist</span></p><p><span>das haus ist leer</span>
+<span>ich gehe rauchen am muschelpfad</span>
+<span>der längst nur noch sand ist</span>
+<span>mal muscheln war</span>
+<span>hier grüßt man</span>
+<span>wenn man wen trifft</span>
+<span>ein dorf eben</span>
+<span>mich grüßt man nicht</span>
+<span>ich trage einen schwarzen anzug</span>
+<span>man weiß wer ich bin</span>
+<span>wer trägt sonst einen schwarzen anzug</span></p><p><span>sollen wir sie kurz allein lassen</span></p><p><span>wie findest du das mit den blumen</span>
+<span>das ist doch schön oder</span></p><p><span>ja</span></p><p><span>das bild auch</span>
+<span>das habe ich gerahmt zuhause</span>
+<span>-</span>
+<span>ist immer schwer</span>
+<span>fotos von dir zu machen</span></p><p><span>ich kann nicht hinsehen</span></p><p><span>geh raus</span></p><p><span>ich geh raus</span>
+<span>sehe familie</span>
+<span>die ich nie sehe</span>
+<span>familie</span>
+<span>die ich mir nicht ausgesucht habe</span>
+<span>trage anzug</span>
+<span>als einzige</span><span>*</span><span>r</span>
+<span>trage nur schwarz</span>
+<span>schwarz</span>
+<span>nur ich trage nur schwarz</span></p><p><span>d</span><span>*</span><span> pastor*in spricht von einem menschen</span>
+<span>den </span><span>*</span><span> nicht kennt</span>
+<span>zu menschen die ich nicht kenne</span>
+<span>ein mensch den ich nicht kenne</span>
+<span>nimmt die urne</span>
+<span>von der stehle</span>
+<span>trägt sie</span>
+<span>in einen funktionalen</span>
+<span>multivan</span>
+<span>von mercedes</span>
+<span>der von innen mit holz getäfelt ist</span>
+<span>der eine ladungssicherung hat</span>
+<span>und gardinen</span>
+<span>und eine hydraulische ladeunterstützung</span>
+<span>falls es doch mal ein sarg ist</span></p><p><span>die kirche geht zum friedhof</span></p><p><span>es ist kalt</span>
+<span>ich will rauchen</span>
+<span>nicht sprechen</span></p><p><span>der mensch</span>
+<span>den ich nicht kenne</span>
+<span>nimmt die urne</span>
+<span>senkt sie</span>
+<span>mit flachen plastikgurten umwunden</span>
+<span>in ein loch im boden</span>
+<span>dessen ränder</span>
+<span>mit viel zu grünem kunstrasen bedeckt sind</span>
+<span>grün wie fichten in brandenburg</span></p><p><span>die familie</span>
+<span>nimmt blumenblätter</span>
+<span>und wirft sie ins grab</span>
+<span>erst die nahen</span>
+<span>dann die fernen verwandten</span>
+<span>ich stehe da und starre ins nichts</span>
+<span>in die weite</span>
+<span>in das flache land</span>
+<span>auf dem kühe unter oberlandleitungen</span>
+<span>zwischen regionalbahnschienen</span>
+<span>und windanlagen grasen</span>
+<span>dann die fremden</span>
+<span>alle werfen sie blumenblätter</span>
+<span>in das loch im kunstrasen</span>
+<span>es ist als würden alle</span>
+<span>fragen</span>
+<span>warum</span>
+<span>ich das nicht tue</span>
+<span>ich kann nicht</span>
+<span>das ist doch keine ende</span>
+<span>kein abschied</span>
+<span>so geht das nicht</span>
+<span>ich mag das so nicht</span>
+<span>ich bin d</span><span>*</span><span> letzte</span>
+<span>ich kann nicht</span>
+<span>mehr</span>
+<span>nicht weinen</span>
+<span>weine</span>
+<span>ich weiß nicht wann ich das letzte mal vor fremden geweint habe</span>
+<span>vielleicht noch nie</span>
+<span>ich weine</span>
+<span>gehe zum grab</span>
+<span>verneige mich</span>
+<span>bücke mich</span>
+<span>schaue hinein</span>
+<span>weiß nicht</span>
+<span>was richtig ist</span>
+<span>weiß gar nichts mehr</span>
+<span>stehe auf</span>
+<span>die familie</span>
+<span>mit der ich kein wort wechsel</span>
+<span>obwohl wir in der selben scheiß stadt leben</span>
+<span>nimmt mich ohne zu fragen</span>
+<span>in den arm</span>
+<span>-</span>
+<span>das ist also familie</span>
+<span>für einen kurzen moment </span>
+<span>ist da familie</span>
+<span>wir gehen</span>
+<span>ich bleibe</span></p><p><span>hey</span></p><p><span>alles gut</span></p><p><span>ich bin da</span></p><p><span>alles gut</span></p><p><span>ich bin jetzt woanders</span></p><p><span>oder nirgendwo</span></p><p><span>wo geht man hin</span></p><p><span>vielleicht</span></p><p><span>ist man einfach nicht mehr</span></p><p><span>einfach weg</span></p><p><span>weiß gar nicht</span>
+<span>dass man nicht mehr da ist</span></p><p><span>ich weiß nicht</span></p><p><span>es tut mir leid</span></p><p><span>dass ich so selten da war</span></p><p><span>ich hab dich lieb</span></p><p><span>mach es gut</span></p><p><span>was soll man da sagen</span></p><p><span>ich gehe</span>
+<span>mit dem rücken zum tor</span>
+<span>in den wind</span>
+<span>will nicht reden</span></p><p><span>alles gut</span></p><p><span>wird sind da</span></p><p><span>das ist familie</span>
+<span>-</span>
+<span>die person die etwas abseits steht</span>
+<span>in einer grünen latzhose</span>
+<span>geht zum grab</span>
+<span>verneigt sich</span>
+<span>nimmt die schaufel</span>
+<span>und schüttet erde in das loch</span>
+<span>nimmt den kunstrasen weg</span>
+<span>hebt den grabstein</span>
+<span>stellt</span>
+<span>einen</span>
+<span>kleinen</span>
+<span>schwarzen</span>
+<span>würfel</span>
+<span>auf</span>
+<span>das</span>
+<span>loch</span>
+<span>im</span>
+<span>boden</span>
+<span>das</span>
+<span>ein</span>
+<span>grab</span>
+<span>ist</span>
+<span>steigt in den pritschenwagen</span>
+<span>fährt davon</span>
+<span>einfach so</span>
+<span>als würde sie das jeden tag machen</span></p><p><span>die fremden gehen</span>
+<span>die familie bleibt</span>
+<span>zum kaffee</span>
+<span>ich esse nicht</span>
+<span>rede nicht</span>
+<span>wie kann man da reden</span>
+<span>ich habe noch nie jemand sterben sehen</span>
+<span>noch nie jemand beerdigt</span>
+<span>ich kann das nicht</span></p><p><span>willst du die stereoanlagen haben</span></p><p><span>ein geburstag</span></p><p><span>schicker anzug</span></p><p><span>das leben geht weiter</span></p><p><span>fahre mit dem regionalexpress</span>
+<span>vorbei an windkraftanlagen</span>
+<span>die untenrum</span>
+<span>in verschiedenen stufen grün gestrichen sind</span>
+<span>um sich besser in die natur einzufügen</span></p><blockquote><p><span>ANKUNFT</span></p></blockquote><p><span>aber da ist nichts</span>
+<span>nichts</span>
+<span>in dass es sich einzufügen lohnt</span>
+<span>kein kreuz</span>
+<span>an dass ich mich nageln könnte</span></p><p><span>da ist nichts zu retten</span>
+<span>da ist nichts mehr</span>
+<span>rein gar nichts mehr</span>
+<span>da oben</span></p><p><span>das entscheidet</span>
+<span>das bestimmt und vorhersieht</span>
+<span>nichts ist mehr richtig</span>
+<span>oder falsch</span>
+<span>nichts soll mehr und soll nicht</span>
+<span>nicht ist mehr real</span>
+<span>echt</span>
+<span>alles ist nur</span>
+<span>in mir</span>
+<span>aber in mir</span>
+<span>ist nichts mehr</span>
+<span>das richtig</span>
+<span>oder falsch sein kann</span>
+<span>alles ist bloß</span>
+<span>ich</span>
+<span>sonst nichts</span>
+<span>keine konsequenz</span>
+<span>nur handlung</span>
+<span>im leeren raum</span>
+<span>ist nur noch konsequenzlose handlung im leeren raum</span></p><h2 id='in-einem-loft'><span>in einem loft</span></h2><p>&nbsp;</p><p><span>hey</span>
+<span>schön dass du wieder da bist</span></p><p><span>hey</span>
+<em><span>(flüchtiger kuss)</span></em>
+<span>ich hab was mitgebracht</span></p><p><span>zeig</span></p><p><span>das</span></p><p><span>ja das</span></p><p><span>das ist</span>
+<span>-</span>
+<span>schrecklich</span></p><p><span>findest du</span></p><p><span>ja</span>
+<span>es sind menschen</span>
+<span>sie leiden doch</span>
+<span>guck doch</span>
+<span>die leiden doch</span></p><p><span>aber das ist es doch gerade</span></p><p><span>du magst das </span></p><p><span>nicht das leiden</span>
+<span>aber dass es menschen sind</span>
+<span>die ganzen anderen szenen von der sinntflut</span>
+<span>dem weltenbrand</span>
+<span>ragnarök</span>
+<span>weltuntergang halt</span>
+<span>zeigen immer</span>
+<span>weites land</span>
+<span>flammen</span>
+<span>schlachten</span>
+<span>aber das ist nicht weltuntergang</span>
+<span>das sind nur die symptome</span>
+<span>der weltuntergang</span>
+<span>sind menschen die leiden</span>
+<span>menschen in angst</span>
+<span>die sich fürchten</span>
+<span>vor dem was plötzlich über sie kommt</span>
+<span>was sie nicht verstehen</span>
+<span>einfach um ihr leben kämpfen</span>
+<span>das einzige was sie haben</span>
+<span>nackt</span>
+<span>im schlamm</span>
+<span>an einer böschung</span>
+<span>um ihr leben kämpfen</span></p><p><span>-</span></p><p><span>soll ich was kochen</span></p><p><span>ach lass</span>
+<span>-</span>
+<span>bestell was</span>
+<span>sushi oder so</span></p><p><span>kannst du das noch sehen</span></p><p><span>sushi</span></p><p><span>ja sushi</span>
+<span>-</span>
+<span>isst man dass da nicht den ganzen tag</span></p><p><span>keine ahnung</span></p><p><span>du warst doch da</span></p><p><span>ja</span></p><p><span>weisst du nicht was man da isst</span></p><p><span>nein</span>
+<span>-</span>
+<span>ich glaube nicht</span>
+<span>-</span>
+<span>ich erinnere mich nicht</span>
+<span>-</span>
+<span>saß eigentlich nur im hotel</span>
+<span>und in den meetingräumen</span></p><p><span>ist man da kein sushi</span></p><p><span>kann sein</span></p><p><span>-</span></p><p><span>war es denn gut</span></p><p><span>ach</span>
+<span>-</span>
+<span>schon</span></p><p><span>was hast du gemacht</span></p><p><span>ach was schon</span>
+<span>-</span>
+<span>du verstehst davon ja eh nichts</span></p><p><span>erzähl trotzdem</span></p><p><span>na gut</span>
+<span>-</span>
+<span>also die mussten kosten sparen</span>
+<span>wegen den anteilhaber*innen</span>
+<span>und den investor</span><span>*</span><span>innen</span>
+<span>die brauchen mehr geld</span></p><p><span>und</span>
+<span>konntest du was sparen</span></p><p><span>ja ein wenig</span>
+<span>ein paar leute haben die jetzt entlassen</span></p><p><span>aber es ist doch bald weihnachten</span></p><p><span>ich glaube die feiern da kein weihnachten</span></p><p><span>trotzdem</span>
+<span>ist das nicht schön</span></p><p><span>deswegen mache ich das ja</span>
+<span>und nicht du</span></p><p><span>geht dir das gar nicht nah</span>
+<span>leute einfach so</span>
+<span>auf die strasse zu setzen</span></p><p><span>nein</span>
+<span>nicht wirklich</span>
+<span>es ist</span>
+<span>ein job </span>
+<span>ein job eben</span></p><p><span>dein job</span>
+<span>-</span>
+<span>den sucht man sich ja aus</span></p><p><span>ich weiß nicht</span>
+<span>ich hab da nichts</span>
+<span>ich weiß nicht</span>
+<span>nichts in mir</span></p><p><span>kein herz</span></p><p><span>doch</span>
+<span>vielleicht</span>
+<span>-</span>
+<span>ich weiß nicht</span></p><p><span>aber du liebst mich doch</span>
+<span>-</span>
+<span>oder</span></p><p><span>ja</span></p><p><span>ohne herz</span>
+<span>da ist nichts</span></p><p><span>doch schon</span>
+<span>-</span>
+<span>ach du verstehst das nicht</span></p><p><span>erklärs mir</span></p><p><span>-</span>
+<span>ich weiß dass ich dich liebe</span></p><p><span>mit dem herz</span></p><p><span>mit dem kopf mehr</span></p><p><span>du liebst mit dem kopf</span></p><p><span>das klingt jetzt hart</span></p><p><span>ja</span></p><p><span>aber es ist doch auch was gutes</span>
+<span>ich weiß dass ich liebe</span></p><p><span>aber du spürst es nicht</span></p><p><span>doch</span>
+<span>-</span>
+<span>nein</span>
+<span>-</span>
+<span>ich weiß es nicht</span></p><p><span>merkst du nichts wenn du mich anschaust</span></p><p><span>doch</span>
+<span>-</span>
+<span>so einfach ist das nicht</span>
+<span>das ist nicht wie du es dir vorstellst</span></p><p><span>aha</span>
+<span>-</span>
+<span>wie stelle ich mir das denn vor</span></p><p><span>na</span>
+<span>-</span>
+<span>guck</span>
+<span>-</span>
+<span>wenn du sagst</span>
+<span>ich habe zu viel stress zu</span>
+<span>viel zu tuen</span>
+<span>sagst du immer ich soll mehr selbstliebe betreiben</span>
+<span>-</span>
+<span>aber</span>
+<span>da ist kein</span>
+<span>-</span>
+<span>kein selbst</span>
+<span>dass es zu lieben gäbe</span>
+<span>-</span>
+<span>kein wesen mit vergangheit</span>
+<span>zukunft</span>
+<span>kein wesen mit träumen</span>
+<span>oder</span>
+<span>wünschen</span>
+<span>da ist</span>
+<span>-</span>
+<span>wenn ich in mich hineinhöre</span>
+<span>-</span>
+<span>ist da nichts</span>
+<span>eine schwarze box</span>
+<span>mein herz</span>
+<span>ist eine blackbox</span>
+<span>sozusagen</span>
+<span>-</span>
+<span>ich bin einfach da</span>
+<span>bin bin einfach</span>
+<span>mehr nicht</span>
+<span>-</span>
+<span>ich weiß dass ich bin</span>
+<span>aber ich kenne mich nicht</span>
+<span>ich weiß wer ich bin</span>
+<span>aber da ist nichts in mir</span>
+<span>da bin nur ich</span>
+<span>was du siehst</span>
+<span>und ich was ich kenne</span>
+<span>aber mehr ist da nicht</span>
+<span>kein selbst</span>
+<span>-</span>
+<span>es ist schwer</span>
+<span>ich weiß</span>
+<span>-</span>
+<span>ich bin schwer</span>
+<span>ich weiß</span></p><p><span>es geht</span></p><p><span>ich weiß das es nicht geht</span></p><p><span>es ist schwer mit dir</span>
+<span>du bist nie</span>
+<span>nie da</span>
+<span>-</span>
+<span>hast immer etwas zu tuen</span>
+<span>musst wohin</span>
+<span>warum</span>
+<span>wo musst du immer hin</span>
+<span>-</span>
+<span>es ist</span>
+<span>als ob alles dir davon läuft</span>
+<span>und du immer nur hinterher bist</span>
+<span>nie stehen bleibst</span></p><p><span>wozu</span></p><p><span>ich weiß nicht</span>
+<span>wozu bleibt man stehen</span>
+<span>durchatmen</span>
+<span>sich umschauen</span>
+<span>verweilen</span></p><p><span>verweilen</span></p><p><span>ja</span>
+<span>verweilen</span>
+<span>ich weiß das sagt man nicht mehr</span>
+<span>aber es passt</span>
+<span>manchmal muss man</span>
+<span>einfach stehen bleiben</span>
+<span>-</span><span> und verweilen</span>
+<span>-</span>
+<span>wo musst du immer hin</span>
+<span>was verpasst du</span></p><p><span>nichts</span>
+<span>-</span>
+<span>wirklich</span>
+<span>-</span>
+<span>nichts wirklich</span>
+<span>-</span>
+<span>ich habe</span>
+<span>habe einfach nur angst</span></p><p><span>angst</span></p><p><span>angst</span>
+<span>angst dass</span>
+<span>-</span>
+<span>na dass ich sterbe</span>
+<span>nicht mehr bin</span>
+<span>und alles</span>
+<span>was ich hätte sein können</span>
+<span>jede möglichkeit</span>
+<span>all das potential</span>
+<span>einfach weg ist</span>
+<span>ich mache alles immer sofort</span>
+<span>und muss immer weiter</span>
+<span>weil ich angst habe</span>
+<span>dass wenn ich einmal stehen bleibe</span>
+<span>und kurz warte</span>
+<span>die zeit am ende fehlen wird</span>
+<span>und etwas</span>
+<span>das ich hätte machen können</span>
+<span>ungetan bleibt</span>
+<span>-</span>
+<span>weißt du</span>
+<span>es fällt mir schwer</span>
+<span>dinge einfach sein zu lassen</span>
+<span>das einzige was hilft</span>
+<span>ist alles so gut zu machen</span>
+<span>wie es geht</span>
+<span>so weit und so viel zu machen</span>
+<span>wie es eben geht</span>
+<span>wenn es dann nicht klappt</span>
+<span>hat es nicht sein sollen</span>
+<span>dann hätte ich</span>
+<span>nichts sonst machen können</span></p><p><span>du glaubst doch an nichts</span></p><p><span>wieso</span></p><p><span>es hätte nicht sein sollen</span>
+<span>wer entscheidet denn</span>
+<span>was sein soll</span>
+<span>wer</span>
+<span>was gut ist</span>
+<span>was gut gemacht ist</span>
+<span>wer</span>
+<span>du</span>
+<span>bist du eine gottheit</span></p><p><span>es gibt kein</span>
+<span>da ist nichts</span></p><p><span>aber wer dann</span>
+<span>-</span>
+<span>wer treibt dich</span>
+<span>wovor läufst du</span>
+<span>wer entscheidet über dich</span>
+<span>was zieht dich</span></p><p><span>ich weiß nicht</span>
+<span>-</span>
+<span>du verstehst das nicht</span>
+<span>-</span>
+<span>verstehst das</span>
+<span>mich nicht</span></p><hr /><h2 id='auf-einem-flughafen'><span>auf einem flughafen</span></h2><p><span>meine uhr zeigt 12</span>
+<span>als ich aus dem flugzeug steige</span>
+<span>die zwölf ein dreieck</span>
+<span>andere marker sind kreise</span>
+<span>6 und 9 ein strich</span>
+<span>an stelle der 3 steht das datum</span>
+<span>heute 24</span>
+<span>weihnachten</span>
+<span>am flughafen merkt man das nicht so</span>
+<span>es steht ein weihnachtsbaum zwischen den palmen</span></p><p><span>eine gefälschte rolex</span>
+<span>erkennt man gut daran</span>
+<span>dass das datum nicht ganz mittig sitzt</span>
+<span>und die vergrößerung muss exakt 2.5 betragen</span>
+<span>nicht 1 komma 5</span>
+<span>nicht 2</span>
+<span>und ganz besonders nicht 3</span></p><p><span>durch diese lupe</span>
+<span>wird der sekundenzeiger</span>
+<span>einmal in der minute</span>
+<span>plötzlich sehr groß</span></p><p><span>ich warte noch auf den moment</span>
+<span>in dem ich das datum ablese</span>
+<span>es vom sekundenzeiger verdeckt ist</span>
+<span>ich müsste eine sekunde länger warten</span>
+<span>um das datum zu nennen</span></p><p><span>der sekundenzeiger wird</span>
+<span>von einem kleinen kreis markiert</span>
+<span>genau dieser runde kreis sorgt dafür</span>
+<span>dass der sekundenzeiger</span>
+<span>überhaupt in der lage ist</span>
+<span>das datum zu verdecken</span>
+<span>bei anderen uhren ginge das nicht</span>
+<span>dort ist der sekundenzeiger</span>
+<span>nur ein langer dünner strich</span>
+<span>aber taucheruhren sollen schnell ablesbar sein</span>
+<span>unter stress</span>
+<span>unter druck</span></p><p><span>wer taucht so tief</span></p><p><span>was mich an taucheruhren immer gestört hat ist</span>
+<span>dass ich sie nie beim tauchen trage</span>
+<span>ich tauche nicht</span>
+<span>ich stehe nur im hotelpool</span>
+<span>ich schwimme auch nicht</span>
+<span>da würden auch 100m reichen</span>
+<span>ich war auch noch nie surfen</span>
+<span>ich dusche auch nicht lange</span>
+<span>ich dusche immer kalt</span>
+<span>eigentlich würde es eine daytona auch tuen</span>
+<span>aber das ist dann halt keine taucheruhr</span></p><p><span>der sekundenzeiger fließt nicht über die uhr</span>
+<span>er springt 60zig mal in der minute</span>
+<span>auch daran erkennt man eine gefälschte rolex</span>
+<span>wenn man die krone bedient</span>
+<span>macht der sekundenzeiger</span>
+<span>einen kleinen sprung</span>
+<span>bevor er stehen bleibt</span>
+<span>er bleibt stehen</span>
+<span>damit man die zeit auf die sekunde exakt einstellen kann</span>
+<span>auch das stört mich</span>
+<span>wer braucht die zeit jemals auf die sekunde genau</span></p><p><span>bei einigen uhren springt der sekundenzeiger nicht nur einmal in der sekunde</span>
+<span>vielleicht sogar 8 mal</span>
+<span>bei einem chronograph zum beispiel</span>
+<span>der pilot meines fliegers trägt vielleicht eine.</span>
+<span>aber wer schaut auf die uhr</span>
+<span>wenn es um bruchteile von sekunden geht</span>
+<span>ich hoffe niemand</span></p><p><span>das beruhigt mich am fliegen</span>
+<span>obwohl ich es eigentlich nicht mag</span>
+<span>wenn etwas schief geht</span>
+<span>bin ich auf jeden fall tot</span>
+<span>wenn es nicht die zigaretten</span>
+<span>sind wird es ein flugzeug sein</span>
+<span>da bin ich mir sicher.</span></p><p><span>seiko hat einen neuen kaliber entwickelt</span>
+<span>ein quarzkristall sorgt für minimale abweichung</span>
+<span>aber statt einer batterie</span>
+<span>versorgt eine mechanik den quarz mit strom</span>
+<span>dadurch ist die uhr sehr genau</span>
+<span>und der sekundenzeiger gleitet</span>
+<span>frei über das ziffernblatt</span>
+<span>anstatt zu springen</span></p><p><span>in der brochüre heißt es</span>
+<span>das würde den</span>
+<span>kontinuierlichen lauf der zeit repräsentieren</span>
+<span>aber zeit verläuft nicht kontinuierlich</span>
+<span>sie springt</span>
+<span>das mag ich nicht</span>
+<span>und wer würde auch so viel geld für eine seiko ausgeben</span></p><p><span>quarz braucht wenig strom</span>
+<span>wenn eine milliarde menschen</span>
+<span>so eine uhr hätten</span>
+<span>würde der strom nicht einmal</span>
+<span>für eine einzige glühbirne ausreichen</span>
+<span>aber dazu müssten sich eine milliarde menschen</span>
+<span>erst einmal so eine uhr leisten</span>
+<span>es ist eine seiko</span>
+<span>aber nicht billig</span></p><p><span>ich wollte nie nach dubai</span>
+<span>die haben da diese palme aus sand ins meer gebaut</span>
+<span>die sieht man aus dem weltraum</span>
+<span>das war sehr viel arbeit</span>
+<span>es wäre viel weniger arbeit</span>
+<span>hätten sie stattdessen</span>
+<span>die palme aus wasser in den sand gebaut</span>
+<span>auch das sähe man aus dem weltraum</span>
+<span>aber es ging wohl nicht darum kosten einzusparen</span>
+<span>arbeit kostet hier kein geld</span>
+<span>darum wollte ich nicht nach dubai</span>
+<span>auf der palme ist alles aufgebaut wie in einer amerikanischen kleinstadt</span>
+<span>meine wohnung ist in zweiter reihe am yachthafen und schaut auf die palme</span>
+<span>eigentlich wollte ich nach singapur</span></p><p><span>am flughafen gibt es lounges</span>
+<span>ich sitze in so einer</span>
+<span>diese lounges sind nicht öffentlich</span>
+<span>man muss etwas trinken um dort zu sitzen</span>
+<span>ich trinke ein heineken</span>
+<span>in dubai darf man keinen alkohol in der öffentlichkeit trinken</span>
+<span>vom flughafen schaut man in die wüste</span>
+<span>am horizont die skyline</span>
+<span>den flughafen haben sie in die wüste bauen müssen</span>
+<span>weil sie zwischen den hochhäusern nicht hätten landen können</span>
+<span>warum sie dubai überhaupt in die wüste gebaut haben weiß ich nicht</span></p><p><span>in meiner wohnung in berlin habe ich alles zurück gelassen</span>
+<span>in meiner wohnung in hamburg die möbel die vor mir da waren</span>
+<span>in meiner wohnung in frankfurt einen ungeschmückten weihnachtsbaum und meine freundin</span>
+<span>in dubai werde ich keine neuen möbel kaufen</span>
+<span>ich werde eh die meiste zeit im hotel schlafen</span>
+<span>in singapur werde ich keine neuen möbel kaufen</span>
+<span>ich will eigentlich nach tokyo</span>
+<span>ich habe angst vor tokyo</span></p><p><span>in der raucherlounge lese ich erst in der faz</span>
+<span>dann einen brief aus frankfurt</span></p><p><span>von deinem flug nach asien hast du es mitgebracht</span>
+<span>was dort liegt</span>
+<span>auf dem tisch am sofa neben den magazinen</span>
+<span>wir führen eine lockere beziehung in einem loft</span>
+<span>wenn du es betrachtest strahlen deine augen</span>
+<span>ich lege es in den kühlschrank</span>
+<span>den keiner von uns benutzt</span>
+<span>nachts sitzt du vor der geöffneten tür und schaust</span>
+<span>in das licht hinein</span>
+<span>du legst es nicht wieder auf den tisch</span>
+<span>du weißt ich mag es nicht sonderlich</span>
+<span>du nennst das meinen hass auf alles schöne und gute</span>
+<span>ich sage dass ich schlecht gegessen habe und lege mich auf das bett</span>
+<span>seit du wieder hier bist hast du diesen blick</span>
+<span>noch etwas</span>
+<span>dass du aus dem fernen land mit dir gebracht hast</span>
+<span>ich schwitze das bett voll und starre an die decke</span>
+<span>du kniest vor dem kühlschrank und schaust in das grelle licht</span></p><p><span>ein </span><span>*</span><span> spricht mich an</span>
+<span>fragt</span></p><p><span>kommen sie aus deutschland</span>
+<span>hier liest niemand der nicht aus deutschland ist</span>
+<span>schon gar nicht faz</span>
+<span>sind sie aus frankfurt</span>
+<span>-</span>
+<span>was machen sie hier</span>
+<span>urlaub am flughafen</span></p><p><span>in der stadt darf man nicht rauchen und auch nicht trinken</span></p><p><span>ich hole mein gepäck nicht</span>
+<span>es wird wohl direkt in meine wohnung gebracht</span>
+<span>eigentlich will ich mein gepäck nicht</span>
+<span>ich habe bloß einen kleinen schwarzen koffer mitgenommen</span>
+<span>er ist sehr groß</span>
+<span>fast würfelförmig</span>
+<span>ich mag flughäfen</span>
+<span>hier ist niemand</span>
+<span>der nicht etwas vorhat</span>
+<span>niemand der nicht weiß wohin</span>
+<span>ich lehne am geländer und schaue auf das rollfeld</span>
+<span>ich habe neulich dune im kino gesehen</span>
+<span>ich wünschte so ein riesen sandwurm würde den flughafen fressen</span></p><p><span>ich erinnere mich an die erste firmenfeier in meiner agentur</span>
+<span>alle hatten jüngere begleitung</span>
+<span>und schnieften</span>
+<span>kokain vom waschbecken</span>
+<span>und vom spülkasten</span>
+<span>unsere toiletten</span>
+<span>waren nicht besonders schön</span>
+<span>das schien niemandem etwas auszumachen</span>
+<span>auf agenturtoiletten</span>
+<span>kokst es sich modern</span>
+<span>dort rauscht</span>
+<span>der dyson airblade</span></p><p><span>am nächsten morgen sagt mein* chef*in</span></p><p><span>das waren alles nutten</span>
+<span>alles nutten gestern</span>
+<span>stell dir das vor</span>
+<span>alles</span>
+<span>fucking</span>
+<span>nutten</span>
+<span>alles nutten</span></p><p><span>ich wünschte</span>
+<span>so ein riesen sandwurm</span>
+<span>würde den ganze scheiß welt fressen</span></p><hr /><h2 id='auf-einem-berg'><span>auf einem berg</span></h2><p><span>das navi will uns durch den tunnel lotsen</span></p><p><span>das navi ist alt</span></p><p><span>und der tunnel eine baustelle</span></p><p><span>wir fahren über die serpentinen</span></p><p><span>es regnet</span></p><p><span>höhengewitter</span></p><p><span>etwas passiert hier</span></p><p><span>über einem see {in der schweiz}</span></p><p><span>die dörfer spiegeln sich</span></p><p><span>knallt es</span></p><p><span>unglaublich laut</span></p><p><span>der</span>
+<span>H</span>
+<span>I</span>
+<span>M</span>
+<span>M</span>
+<span>E</span>
+<span>L</span></p><p><span>f</span>
+<span> ä</span>
+<span>  l</span>
+<span>   l</span>
+<span>    t</span></p><p><span>vom himmel ab</span>
+<span>dahinter nichts als weiß</span></p><p>&nbsp;</p><blockquote><p><span>OFFENBARUNG</span></p><p>&nbsp;</p></blockquote><p><em><span>(gemeinsam)</span></em>
+<span>roter lack</span>
+<span>auf fingern</span>
+<span>und karosse</span>
+<span>wind im haar</span>
+<span>heißer als sommer</span>
+<span>licht frisst hinten</span>
+<span>chrom vom spiegel</span>
+<span>es ist</span>
+<span>als ob der wind</span>
+<span>die obere kante</span>
+<span>des pappaufstellers</span>
+<span>der der bahnhof</span>
+<span>in der stadt ist</span>
+<span>erfasst</span>
+<span>und der bahnhof</span>
+<span>langsam auf mich zu kippt</span>
+<span>ich erkenne</span>
+<span>dass der bahnhof</span>
+<span>nie ein bahnhof war</span>
+<span>dass nie menschen</span>
+<span>mit zügen in ferne länder gefahren sind</span>
+<span>durch das stahlgestell</span>
+<span>dass die pappe gehalten hat</span>
+<span>kann ich in die stadt blicken</span>
+<span>meine stadt</span>
+<span>die stadt in der ich lebe</span>
+<span>und die stadt ist aus pappe</span>
+<span>und stürzt zusammen</span>
+<span>nein</span>
+<span>sie stürzt nicht</span>
+<span>sie kippt einfach um</span>
+<span>vom wind erfasst</span>
+<span>kippt einfach um</span>
+<span>klappt auf die bürgersteige</span>
+<span>die sind echt</span>
+<span>glaube ich</span>
+<span>aber die häuser sind pappe</span>
+<span>klappen weg im wind</span>
+<span>der himmel schwarz</span>
+<span>ein leichtes flimmern</span>
+<span>am horizont</span>
+<span>dann reisst die wolkendecke auf</span>
+<span>gibt den blick frei auf das</span>
+<span>was einmal himmel war</span>
+<span>jetzt nichts als weiß</span>
+<span>strahlend weißes kaltes neonlicht</span>
+<span>dass alles ausleuchtet</span>
+<span>den dreckigsten winkel der welt</span>
+<span>ausleuchtet</span>
+<span>und wo schatten sind</span>
+<span>ist licht</span>
+<span>weil da nur noch licht ist</span>
+<span>alles ist klar</span>
+<span>klar zu sehen</span>
+<span>dinge wie sie sind</span>
+<span>nicht wie sie zu sein scheinen</span>
+<span>denn überall ist licht</span>
+<span>da kann nichts mehr scheinen</span>
+<span>und obwohl alles klar ist</span>
+<span>eindeutig</span>
+<span>hart umrissen und kontur</span>
+<span>versteht man nicht</span>
+<span>was es ist</span>
+<span>wie es zusammen hängt</span>
+<span>was alles in summe ergibt</span>
+<span>denn das licht ist so hell</span>
+<span>das nichts mehr zu erkennen ist</span>
+<span>nur licht</span>
+<span>nichts mehr geheim</span>
+<span>und verborgen ist</span>
+<span>alles ist was es ist</span>
+<span>nur strahlend helles weißes licht</span>
+<span>in mein gesicht</span>
+<span>das mir die augen aus dem kopf brennt</span>
+<span>aus dem licht stürzen streifen</span>
+<span>noch heller</span>
+<span>heller als hell</span>
+<span>streifen hellen lichtes</span>
+<span>die rauchfahnen</span>
+<span>hinter sich tragen</span>
+<span>stürzen aus dem himmel</span>
+<span>schlagen ein</span>
+<span>der boden erzittert</span>
+<span>der bordstein bricht auf</span>
+<span>asphalt</span>
+<span>karossen</span>
+<span>menschmassen</span>
+<span>zitternd</span>
+<span>brechend</span>
+<span>stürzend</span>
+<span>es ist erst nur licht</span>
+<span>reines weiß</span>
+<span>255</span>
+<span>eine farbe die wir nur</span>
+<span>aus dem computer kannten</span>
+<span>eine farbe</span>
+<span>die es gar nicht geben sollte</span>
+<span>eine farbe die keine farbe ist</span>
+<span>blitzt</span>
+<span>flasht</span>
+<span>reisst</span>
+<span>flutet über das</span>
+<span>was mal der himmel war</span>
+<span>dann sog</span>
+<span>ein flugzeug stürzt ab in meiner brust</span>
+<span>mein bauch will fliehen richtung weg</span>
+<span>alles in mir versucht herauszubrechen</span>
+<span>aus mir</span>
+<span>dann</span>
+<span>druck</span>
+<span>erst nur die ohren</span>
+<span>ein knacken</span>
+<span>ein pochen-</span>
+<span>pochender</span>
+<span>dumpfer schmerz</span>
+<span>ein gefühl</span>
+<span>eine ahnung</span>
+<span>ein vorgeschmack von salpeter auf der zunge</span>
+<span>auf das was in nur wenig bruchteilen</span>
+<span>von sekundenbruchteilen</span>
+<span>folgen wird</span>
+<span>elektron trifft atom</span>
+<span>spaltet</span>
+<span>spaltet elektronen ab</span>
+<span>treffen atome</span>
+<span>spalten</span>
+<span>treffen</span>
+<span>spalten</span>
+<span>treffen</span>
+<span>spalten</span>
+<span>treffen</span>
+<span>druck</span>
+<span>ein druck</span>
+<span>als wenn mein schädel</span>
+<span>unter einen gigantischen</span>
+<span>würfel aus beton</span>
+<span>gelegt worden wäre</span>
+<span>und einfach zerquetscht</span>
+<span>nicht zerquetscht</span>
+<span>zermalmt</span>
+<span>von einem elektronenspin auf den nächsten</span>
+<span>von einem container für mein hirn</span>
+<span>in eine</span>
+<span>ein einziges atom dicke schicht verwandelt</span>
+<span>meine stadt schwebt</span>
+<span>frei</span>
+<span>nur noch schwarze umrisse</span>
+<span>vor reinem weiß</span>
+<span>an den rändern frisst das licht</span>
+<span>macht kanten zackig und fransig</span>
+<span>alles hadert mit sich selbst</span>
+<span>bleibt einen moment im freien fall</span>
+<span>stehen</span>
+<span>fragt sich</span>
+<span>was passiert</span>
+<span>doch bevor die elektrischen ströme</span>
+<span>meines gehirns</span>
+<span>das geschehen</span>
+<span>in chemische impulse verwandeln kann</span>
+<span>die ein hormon ausschütten würden</span>
+<span>das angst verursacht</span>
+<span>stürzt meine stadt aus der stasis</span>
+<span>mit einer megatonnenkraft</span>
+<span>in richtung erde</span>
+<span>da ist</span>
+<span>keine erde mehr</span>
+<span>nur noch oberfläche</span>
+<span>eines balls</span>
+<span>nur noch abstraktion</span>
+<span>schwarze formen vor reinem weiß</span>
+<span>werden erst zu umrissen</span>
+<span>dann zu linien</span>
+<span>dann zu strichen</span>
+<span>dann zu nichts</span>
+<span>nur noch licht</span>
+<span>reines weiß</span>
+<span>255</span>
+<span>eine farbe</span>
+<span>die es niemals geben sollte</span></p><blockquote><p><span>ENDE (ALSO FAST)</span></p><hr /></blockquote><h2 id='in-einer-wüste'><span>in einer wüste</span></h2><p><em><span>(wo einmal {dubai} war)</span></em></p><p><span>die alten sagen</span></p><p><span>geht da nicht hin</span></p><p><span>die alten haben immer recht gehabt</span></p><p><span>bestimmt auch damit</span></p><p><span>wo blaue katzen sind</span></p><p><span>katzen die blau leuchten</span></p><p><span>katzen die blau leuchten</span>
+<span>da soll niemand hingehen</span>
+<span>das bringt</span>
+<span>bringt</span></p><p><span>tiefes unglück</span>
+<span>und nur leid</span></p><p><span>sagen die alten</span>
+<span>die alten die immer recht behalten werden</span></p><p><span>man geht da nicht hin</span></p><p><span>sagen die alten</span></p><p><span>aber sie sind auch nur alt</span></p><p><span>nicht uralt</span>
+<span>nicht so uralt</span>
+<span>wie das</span></p><p><span>wenn man das dorf verlässt</span></p><p><span>kommt eine weile nichts</span>
+<span>eigentlich ist nirgendwo etwas</span>
+<span>nur sand</span></p><p><span>sand der einmal etwas war</span></p><p><span>hinter dem sand die wüste</span></p><p><span>wo hört der sand auf</span></p><p><span>wo fängt die wüste an</span></p><p><span>alles ist eins</span>
+<span>alles ist</span>
+<span>was einmal war</span></p><p><span>in der wüste ist nichts von bedeutung</span></p><p><span>nur andere dörfer</span></p><p><span>mit anderen alten</span>
+<span>die den kindern sagen werden</span></p><p><span>geht da nicht hin</span></p><p><span>in der wüste sind nur</span>
+<span>andere alte</span>
+<span>die immer recht hatten</span>
+<span>und auch diesmal</span></p><p><span>recht behalten werden</span></p><p><span>durch die wüste zieht</span></p><p><span>eine schaar kinder</span></p><p><span>die nicht auf die alten hörten</span></p><p><span>die wissen wollten</span>
+<span>was hinter dem sand ist</span></p><p><span>hinter dem sand ist die wüste</span></p><p><span>aber was ist hinter der wüste</span></p><p><span>nur mehr dörfer</span>
+<span>mehr alte</span>
+<span>mehr kinder</span></p><p><span>aber um die beine der kinder</span></p><p><span>streifen katzen</span></p><p><span>katzen die blau leuchten</span>
+<span>das bringt tiefes unglück</span>
+<span>sagen die alten in jedem dorf in der wüste</span></p><p><span>aber warum leuchten die katzen</span>
+<span>warum leuchtet nichts sonst</span>
+<span>nur die sterne</span>
+<span>das feuer</span>
+<span>und die katzen</span>
+<span>die augen der alten</span>
+<span>wenn sie von früher erzählen</span>
+<span>wo kein sand war</span>
+<span>und die katzen</span>
+<span>nicht geleuchtet hatten</span>
+<span>-</span>
+<span>wie kann man sich da nicht fragen</span>
+<span>was hinter der wüste liegt</span>
+<span>da kann nicht nichts sein</span>
+<span>da kann nicht nur sand sein</span></p><p><span>wenn ich die augen zusammen kneife</span>
+<span>an einem guten tag</span>
+<span>und mich auf die düne stelle</span>
+<span>die große hinter dem dorf</span>
+<span>kann ich hinter den horizont sehen</span>
+<span>dort blitzt etwas</span></p><p><span>hinter dem dorf</span>
+<span>hinter dem sand</span>
+<span>hinter der größten düne</span>
+<span>hinter der wüste</span>
+<span>ist ein tal</span></p><p><span>hinter dem tal</span></p><p><span>sind stacheln</span></p><p><span>stacheln die die sonne spiegeln</span>
+<span>so klar</span>
+<span>so glasklar</span>
+<span>sind sie</span>
+<span>auch der sand hat sie nicht abgeschliffen</span></p><p><span>ein kreis aus stacheln</span>
+<span>riesigen glänzenden stacheln</span>
+<span>inmitten der wüste</span></p><p><span>hinter den stacheln</span></p><p><span>ein würfel</span></p><p><span>ein würfel</span>
+<span>aus nachthimmel</span>
+<span>schwarz</span>
+<span>reines schwarz</span>
+<span>eine farbe</span>
+<span>die keine farbe ist</span>
+<span>eine farbe</span>
+<span>die es nicht geben sollte </span>
+<span>einfach 0</span></p><p><span>erst als wir näher kommen</span></p><p><span>sehen wir die größe der stacheln</span>
+<span>sehen die katzen</span>
+<span>die in ihrem schatten spielen</span>
+<span>ihr blau spiegelt sich sauber</span>
+<span>in den glatten stacheln</span></p><p><span>wenn wir vor den stacheln stehen</span>
+<span>ist die sonne verdeckt</span>
+<span>stehen in einem schatten</span>
+<span>größer als das dorf</span>
+<span>vielleicht so groß wie die wüste selbst</span></p><p><span>die stacheln glühen heiß</span>
+<span>die hitze der sonne</span>
+<span>lässt sie zu heißen nadeln werden</span>
+<span>aber jahre auf dem heißen wüstensand</span>
+<span>haben unsere sohlen gebrannt</span>
+<span>mit einer schicht aus glas und dreck überzogen</span>
+<span>wir wandern über die stacheln</span>
+<span>ziehen schnell die füße hoch</span>
+<span>denn es brennt trotzdem ungeheuer</span>
+<span>um unsere beine </span>
+<span>streichen die katzen</span>
+<span>die katzen die blau leuchten</span>
+<span>die katzen vor denen die alten warnten</span>
+<span>die katzen die tiefes unglück bringen</span></p><p><span>es wird nacht</span></p><p><span>die stacheln kühlen ab</span></p><p><span>wir gehen noch ein paar schritte</span></p><p><span>bis es ganz dunkel ist</span></p><p><span>wir laufen seit wochen durch die wüste</span>
+<span>seit tagen auf den rücken der stacheln</span>
+<span>sie sind glatt</span>
+<span>man hat kaum halt</span>
+<span>wenn man versucht sie zu erklimmen</span>
+<span>aber wir kämpfen uns voran</span></p><p><span>die nacht ist schwarz</span>
+<span>der himmel voller sterne</span>
+<span>doch da</span>
+<span>inmitten der stacheln</span>
+<span>ein stück frei</span>
+<span>frei von sternen</span></p><p><span>hart umrissen</span></p><p><span>was ist das</span></p><p><span>hinter dem dorf</span>
+<span>hinter dem sand</span>
+<span>hinter der wüste</span>
+<span>hinter den stacheln</span>
+<span>was ist das</span>
+<span>was wird von blauen katzen bewacht</span></p><p><span>wir schlafen</span></p><p><span>eingerollt mit den katzen</span></p><p><span>auf den glatten rücken der stacheln</span></p><p><span>träumen nicht wie sonst</span></p><p><span>von sand</span>
+<span>von wüste</span>
+<span>vom dorf</span></p><p><span>träumen fremde träume</span></p><p><span>träumen von zeiten</span>
+<span>die waren</span>
+<span>den zeiten der alten</span>
+<span>städte aus glas</span>
+<span>grüne wälder</span>
+<span>zeiten vor den alten</span>
+<span>riesige echsen</span>
+<span>keine städte</span>
+<span>nur wälder</span>
+<span>zeiten vor den echsen</span>
+<span>die erde noch lava</span>
+<span>das universum noch leer</span>
+<span>zeiten vor der erde</span>
+<span>alles was sein wird</span>
+<span>nur zittern im raum</span>
+<span>spins von elektronen</span>
+<span>nur das summen von atomen nach formen von helium</span></p><p><span>es ist erst mittag als wir erwachen</span></p><p><span>der riesige würfel steht so groß über uns</span></p><p><span>das die sonne uns erst zum mittag geweckt hat</span></p><p><span>heute werden wir ihn sehen</span>
+<span>ihn berühren</span>
+<span>sehen was immer hinter dem dorf</span>
+<span>hinter dem sand</span>
+<span>hinter der wüste war</span>
+<span>sehen wovor die alten immer warnten</span>
+<span>sehen ob sie auch diesmal recht behalten werden</span></p><p><span>es ist weniger als erwartet</span></p><p><span>irgendwie einfach nur dunkel</span></p><p><span>der sand unter unseren füßen ist kalt</span></p><p><span>hier war noch nie sonne</span></p><p><span>keine katzen mehr</span></p><p><span>ein brummen in der luft</span>
+<span>eine spannung</span>
+<span>eine ladung</span>
+<span>ich kann es fast riechen</span></p><p><span>der block ist schwarz</span></p><p><span>einfach schwarz und glatt</span>
+<span>auch mit dem kopf im nacken</span>
+<span>scheint er bis durch den himmel zu ragen</span></p><p><span>ich strecke die hand aus</span>
+<span>berühre die oberfläche fast</span></p><p><span>eine wärme</span>
+<span>eine strahlung</span></p><p><span>dort</span>
+<span>wo ich die hand auflegen wollte</span>
+<span>ist ein loch</span>
+<span>eine kleine mulde</span>
+<span>die sich langsam zu meiner hand formt</span>
+<span>in der glatten oberfläche des würfels ist eine mulde</span>
+<span>in die meine hand genau hinein passt</span></p><p><span>woher weiß der würfel</span></p><p><span>dass wir da sind</span></p><p><span>woher</span></p><p><span>dass wir kommen würden</span></p><p><span>woher kennt der würfel uns</span></p><p><span>woher die form meiner hand</span></p><p><span>ich bücke mich</span>
+<span>knie mich hin</span></p><p><span>dort ist eine vertiefung</span>
+<span>groß wie dein knie</span></p><p><span>eine rille</span>
+<span>geformt wie mein schienbein</span></p><p><span>da ein platz</span>
+<span>in den mein kopf passen würde</span>
+<span>nase</span>
+<span>stirn</span>
+<span>kinn</span>
+<span>alles da</span></p><p><span>ich strecke die hand aus</span>
+<span>lege sie in meine hand</span>
+<span>trete hinein in die lücke</span>
+<span>lege meinen kopf</span>
+<span>in seinen dafür vorgesehen platz im würfel</span>
+<span>es ist</span>
+<span>als würde ich mich selbst umarmen</span>
+<span>dort ist nichts</span>
+<span>kein würfel</span>
+<span>nur ich</span>
+<span>und ich</span>
+<span>ineinander</span>
+<span>vereint</span></p><p><span>die alten hatten recht</span></p><p>&nbsp;</p><blockquote><p><span>ENDE (NUN WIRKLICH)</span></p></blockquote></div></div>
+</body>
+</html>

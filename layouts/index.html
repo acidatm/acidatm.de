@@ -24,6 +24,24 @@
               </div>
             </li>
             <li class="index-item">
+              <time class="index-item-time">
+
+              </time>
+              <div class="index-item-title freeheight">
+                <div class="index-item-text">
+                  <a href="https://soundcloud.com/acidatm" title="Soundcloud" target="_blank">Soundcloud</a>
+                </div>
+                <br>
+                <div class="index-item-text">
+                  <a href="https://acidatm.bandcamp.com" title="Bandcamp" target="_blank">Bandcamp</a>
+                </div>
+                <br>
+                <div class="index-item-text">
+                  <a href="https://instagram.com/acidatm" title="Instagram" target="_blank">Instagram</a>
+                </div>
+              </div>
+            </li>
+            <li class="index-item">
             <br>
           </li>
             {{ range where .Site.Pages.ByDate.Reverse "Type" "blog" }}{{ if (time .Date).After now }}
